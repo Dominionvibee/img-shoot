@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, develop, "milestone/**", "fix/**", "hotfix/**"]
+    branches: [main, develop, "frontend/**", "backend/**", "milestone/**", "fix/**", "hotfix/**"]
   pull_request:
     branches: [main, develop]
 
@@ -25,3 +25,9 @@ jobs:
           test -f docs/git-workflow.md
           test -f docs/milestones/README.md
           test -f .github/pull_request_template.md
+      - name: Validate frontend milestone
+        if: contains(github.ref, 'frontend/') || github.event_name == 'pull_request'
+        run: |
+          cd shoot-frontend
+          npm test
+          npm run build

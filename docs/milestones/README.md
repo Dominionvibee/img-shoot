@@ -4,10 +4,10 @@ Milestones are recorded here once their scope and acceptance criteria are agreed
 
 | ID | Component | Folder | Status |
 |---|---|---|---|
-| M00 | Repository workflow | repository root | Initialized locally |
-| F00 | Frontend setup/baseline | `shoot-frontend/` | Scope label reserved; stack and acceptance criteria pending |
-| F01 | First frontend feature | `shoot-frontend/` | Scope pending |
-| B00 | Backend setup/baseline | `shoot-backend/` | Scope label reserved; stack and acceptance criteria pending |
-| B01 | First backend feature | `shoot-backend/` | Scope pending |
+| M00 | Repository workflow | repository root | Implemented; open PR #1 targeting `develop` |
+| F00 | Frontend setup/baseline | `shoot-frontend/` | Implemented; awaiting review on `frontend/F00-frontend-setup` |
+| F01 | Website replication | `shoot-frontend/` | Implemented; open PR #2 |
+| B00 | Backend setup/baseline | `shoot-backend/` | Not started |
+| B01 | Backend feature | `shoot-backend/` | Not started |
 
-Do not create branches for F00/F01/B00/B01 until the actual milestone scope is defined and approved.
+Create each milestone branch from the approved `develop` baseline after its scope is supplied. Keep frontend, backend, and repository milestone work on separate branches. Do not merge a pull request without approval.

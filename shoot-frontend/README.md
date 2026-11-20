@@ -1,8 +1,16 @@
 # shoot-frontend
 
-Frontend application workspace. Frontend milestones use the `F` prefix:
+Frontend workspace for img-shoot. Frontend milestones use the `F` prefix:
 
 - **F00** — frontend setup and baseline.
-- **F01** and later — frontend feature milestones.
+- **F01** — website replication, followed by later user-specified frontend milestones.
 
-This folder is currently an empty application scaffold. Define the stack and milestone acceptance criteria before implementation or branch creation.
+F00 establishes a dependency-free baseline using native HTML, CSS, and JavaScript ES modules with Node.js built-ins. See the local commands below.
+
+```sh
+npm run dev
+npm test
+npm run build
+```
+
+The development server listens on `http://127.0.0.1:4173`. Product routes and feature behavior are added by their own frontend milestones.
