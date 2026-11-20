@@ -48,7 +48,8 @@ jobs:
               return;
             }
 
-            const [, , id, slug] = match;
+            const id = match[2] ?? match[3];
+            const slug = match[4];
             const component = branch.startsWith('frontend/') ? 'shoot-frontend' : 'shoot-backend';
             const docsPath = `${component}/docs/milestones/${id}/README.md`;
             const titleText = slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());

@@ -8,15 +8,15 @@ Full-stack monorepo with one Git repository, one `main` branch, and one `develop
 
 ## Development
 
-Install the frontend and root packages after checkout:
+Install the available app packages after checkout:
 
 ```sh
-npm install --prefix shoot-frontend
-npm install
+npm ci --prefix shoot-frontend
+npm ci
 npm run dev
 ```
 
-The root command starts each initialized application concurrently. The frontend listens at `http://localhost:5173`; the backend listens at `http://localhost:4000` after B00 is present. During the F00-only phase, the root supervisor starts the frontend and clearly reports that the backend package is not initialized yet.
+The root command starts each initialized application concurrently. The frontend listens at `http://localhost:5173`. The backend listens at `http://localhost:4000` after B00 is approved and merged into `develop`; until then the runner clearly reports that the backend package is not initialized on this branch.
 
 Independent commands:
 

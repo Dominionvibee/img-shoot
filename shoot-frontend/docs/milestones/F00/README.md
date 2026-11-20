@@ -51,15 +51,15 @@ Validation completed with Node.js 24.13.0 and npm 11.6.2:
 - Browser smoke check at 320, 390, 768, and 1440 px: React shell rendered without horizontal overflow; keyboard focus reached the skip link first.
 - `git diff --check`: passed.
 
-MongoDB is not part of F00. B00 will validate backend connectivity separately.
+MongoDB is not part of F00. B00 provides the independent backend connection configuration and is open for review in [PR #4](https://github.com/Dominionvibee/img-shoot/pull/4).
 
 ## Outstanding integration
 
-The root supervisor starts the frontend in F00. It starts the backend as well once B00's package is present. Run the combined root command and verify both ports after B00 is implemented. Existing F01 remains a separate review branch and will be safely synchronized to the approved `develop` baseline before its next integration step.
+The root supervisor starts the frontend in F00 and starts the backend when its package is present. A temporary integration copy containing both independently developed branches started both services, returned HTTP 200 for the frontend, and returned connected status through the Vite health proxy. Both branches still need approval and integration on `develop`. Existing F01 remains a separate review branch and will be synchronized from approved `develop` before further feature work.
 
 ## Review references
 
 - Branch: `frontend/F00-frontend-setup`
 - Pull request: [#3 targeting `develop`](https://github.com/Dominionvibee/img-shoot/pull/3)
 - Implementation commit: `cfe06b1570c48cd2c18a005b76cb95f59d204ba5`.
-- Completion: implementation and local validation complete; awaiting review and integration with B00.
+- Completion: F00 implementation and local validation complete; awaiting review. B00 is independently available in PR #4.
