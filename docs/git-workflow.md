@@ -4,7 +4,9 @@
 
 - `main`: stable, approved release history.
 - `develop`: integration branch for approved milestone work.
-- `milestone/<ID>-<description>`: one branch per defined milestone, branched from the latest approved `develop`.
+- `frontend/Fxx-<description>`: one branch per defined frontend milestone, branched from the latest approved `develop`.
+- `backend/Bxx-<description>`: one branch per defined backend milestone, branched from the latest approved `develop`.
+- `milestone/Mxx-<description>`: one branch per defined repository milestone, branched from the latest approved `develop`.
 - `fix/<description>` and `hotfix/<description>`: scoped fixes.
 
 Do not create milestone branches until their scope is defined. Never combine unrelated milestones on one branch. Do not force-push or rewrite shared history.
@@ -17,15 +19,15 @@ Do not create milestone branches until their scope is defined. Never combine unr
 - `B01` and later: backend feature milestones in `shoot-backend/`.
 - `M00`: repository and workflow initialization.
 
-Use the ID in branch names and commit scopes, for example `milestone/F01-first-route`, `feat(F01): add first route`, and `feat(B01): add first endpoint`.
+Use the ID in branch names and commit scopes, for example `frontend/F01-website-replication`, `feat(F01): replicate public website`, and `feat(B01): add first endpoint`.
 
 ## Milestone procedure
 
 1. Define one objective, acceptance criteria, affected component/routes, and validation plan in `docs/milestones/`.
 2. Update local `develop` from the approved remote `develop`.
-3. Create one `milestone/<ID>-<description>` branch.
+3. Create one component-scoped branch (`frontend/Fxx-*`, `backend/Bxx-*`) or repository milestone branch (`milestone/Mxx-*`). Every milestone branch starts from the same approved `develop` commit; never derive one milestone branch from another.
 4. Implement only that milestone; make reviewable commits such as `feat(F01): ...`, `fix(B01): ...`, or `docs(F00): ...`.
-5. Push the branch. CI runs and GitHub Actions opens or updates a pull request targeting `develop`.
+5. Push the branch. CI runs and GitHub Actions opens or updates a pull request targeting `develop` when repository Actions permissions allow it. Before later implementation, merge the latest approved `develop` into that milestone branch; do not force-push.
 6. Review the diff and passing checks; merge only after approval. Never auto-merge.
 7. Remove the milestone branch after merge according to repository policy.
 

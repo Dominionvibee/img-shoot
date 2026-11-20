@@ -3,6 +3,8 @@ name: Milestone pull request
 on:
   push:
     branches:
+      - "frontend/**"
+      - "backend/**"
       - "milestone/**"
 
 permissions:
@@ -18,19 +20,22 @@ jobs:
         with:
           script: |
             const branch = context.ref.replace('refs/heads/', '');
-            const match = branch.match(/^milestone\/(F\d{2}|B\d{2}|M\d{2,})-(.+)$/);
+            const match = branch.match(/^(?:frontend\/(F\d{2})|backend\/(B\d{2})|milestone\/(M\d{2,}))-(.+)$/);
             if (!match) {
-              core.setFailed(`Branch '${branch}' must use milestone/<ID>-<description> (for example milestone/F01-first-route).`);
+              core.setFailed(`Branch '${branch}' must use frontend/Fxx-<description>, backend/Bxx-<description>, or milestone/Mxx-<description>.`);
               return;
             }
 
-            const [, id, slug] = match;
+            const id = match[1] || match[2] || match[3];
+            const slug = match[4];
             const titleText = slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             const title = `${id}: Implement ${titleText}`;
             const body = [
               `## Milestone ${id}`,
               '',
-              'Describe the completed work, affected routes/components, validation results, and outstanding issues using the repository pull request template.',
+              `Implementation notes: [${id} milestone documentation](shoot-frontend/docs/milestones/${id}/README.md)`,
+              '',
+              'Review the milestone documentation and repository pull request template for completed work, validation results, and outstanding issues.',
               '',
               `Source branch: \`${branch}\``,
               'Target branch: `develop`'
