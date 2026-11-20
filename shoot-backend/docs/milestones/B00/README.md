@@ -34,7 +34,7 @@ The backend does not emit cross-origin access headers. Local frontend requests g
 - `npm test`: passed (2 tests: connected-state health response and unknown-route 404).
 - `npm run build`: passed (Node syntax checks).
 - Live `npm run dev` on port 4000: `/api/health` returned HTTP 200 and `database: "connected"`; unknown routes returned 404.
-- Environment configuration: `node --env-file=.env.example` loaded `PORT=4000` and the local MongoDB URI. No real `.env` file or credential was created.
+- Environment configuration: copied `.env.example` to a temporary `.env` in the disposable integration copy and ran root `npm run dev` without shell variables; the backend loaded `PORT=4000` and connected using `MONGODB_URI`. The temporary file was removed after the test.
 - MongoDB connectivity: a read-only ping to the existing local instance succeeded; no database records were changed.
 - Connection failure: starting against closed local port 1 logged the failure, kept the server alive, and returned HTTP 200 with `database: "disconnected"`.
 - Headers/CORS: Helmet's `X-Content-Type-Options: nosniff` was present; no cross-origin allow header was returned for an unrelated origin.
