@@ -1,6 +1,6 @@
 # F00 — Frontend initialization
 
-**Status:** Implemented; awaiting review on `frontend/F00-frontend-setup`
+**Status:** Validated; open for review on `frontend/F00-frontend-setup`
 **Baseline branch:** latest approved `develop`
 **Scope:** frontend initialization only; no product/business features.
 
@@ -44,22 +44,28 @@ Set up the React/Vite frontend, package dependencies, responsive project shell, 
 Validation completed with Node.js 24.13.0 and npm 11.6.2:
 
 - `npm ci`: passed from the committed frontend lockfile.
+- `npm audit --audit-level=moderate`: passed; 0 vulnerabilities.
 - `npm run lint`: passed.
 - `npm test`: 3 API-helper tests passed.
 - `npm run build`: passed with Vite 8.3.8.
-- Root `npm run dev`: started Vite on port 5173 and reported that the backend package is not initialized yet; no database process was started.
-- Browser smoke check at 320, 390, 768, and 1440 px: React shell rendered without horizontal overflow; keyboard focus reached the skip link first.
+- Root `npm ci --ignore-scripts`: passed.
+- Root `npm run dev` on F00 branch started Vite on port 5173 and skipped the absent backend package.
+- Headless Edge 157 browser check: `/` rendered the React shell; direct refresh worked; skip link and favicon loaded; no console errors or failed resources.
+- Responsive widths 320, 390, 768, and 1440 px: document width matched viewport width at each size.
+- Vite HMR websocket connected and delivered a stylesheet update after a temporary change in a disposable integration copy.
+- F00 provides `/` only and adds no React Router or product routes; refresh behavior for `/` passed.
+- Full-stack integration with the separate B00 branch returned HTTP 200 for frontend, API, and Vite `/api/health` proxy; MongoDB reported connected.
 - `git diff --check`: passed.
 
 MongoDB is not part of F00. B00 provides the independent backend connection configuration and is open for review in [PR #4](https://github.com/Dominionvibee/img-shoot/pull/4).
 
 ## Outstanding integration
 
-The root supervisor starts the frontend in F00 and starts the backend when its package is present. A temporary integration copy containing both independently developed branches started both services, returned HTTP 200 for the frontend, and returned connected status through the Vite health proxy. Both branches still need approval and integration on `develop`. Existing F01 remains a separate review branch and will be synchronized from approved `develop` before further feature work.
+F00 and B00 have separate passing PR checks and target `develop`. A merge preview identified conflicts in the shared README and milestone tracking files; those files are being aligned before integration. Both branches still require approval before merging. Existing F01 remains a separate review branch and will be synchronized from approved `develop` before further feature work.
 
 ## Review references
 
 - Branch: `frontend/F00-frontend-setup`
 - Pull request: [#3 targeting `develop`](https://github.com/Dominionvibee/img-shoot/pull/3)
 - Implementation commit: `cfe06b1570c48cd2c18a005b76cb95f59d204ba5`.
-- Completion: F00 implementation and local validation complete; awaiting review. B00 is independently available in PR #4.
+- Completion: F00 validation passed; open for review. B00 is independently available in PR #4.
