@@ -60,10 +60,12 @@ jobs:
 
             const { owner, repo } = context.repo;
             const head = `${owner}:${branch}`;
-            const existing = await github.rest.pulls.list({ owner, repo, state: 'open', head, base: 'develop' });
+            // Search by source branch first so an existing PR with an older base
+            // is retargeted instead of triggering a second PR creation attempt.
+            const existing = await github.rest.pulls.list({ owner, repo, state: 'open', head });
             if (existing.data.length) {
               const pr = existing.data[0];
-              await github.rest.pulls.update({ owner, repo, pull_number: pr.number, title, base: 'develop' });
+              await github.rest.pulls.update({ owner, repo, pull_number: pr.number, title, body, base: 'develop' });
               core.info(`Updated pull request #${pr.number}.`);
             } else {
               const pr = await github.rest.pulls.create({ owner, repo, head: branch, base: 'develop', title, body });
