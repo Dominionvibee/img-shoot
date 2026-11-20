@@ -1,8 +1,8 @@
 # M00 — Repository and Git workflow setup
 
-- **Status:** In Progress
+- **Status:** Implemented — Awaiting Review
 - **Branch:** `setup/M00`
-- **Pull request:** Pending
+- **Pull request:** Not created; GitHub Actions lacks permission to create pull requests.
 
 ## Original requirements and objectives
 
@@ -44,6 +44,8 @@ The repository `.gitignore` excludes environment secrets, keys, dependency folde
 
 - Repository layout/documentation preflight: passed locally.
 - `git diff --cached --check`: passed locally after removing trailing whitespace.
+- GitHub CI run: passed — https://github.com/Dominionvibee/img-shoot/actions/runs/44744279175
+- Milestone PR workflow: validation step passed; PR creation failed with GitHub's message: “GitHub Actions is not permitted to create or approve pull requests.” Run: https://github.com/Dominionvibee/img-shoot/actions/runs/44744279472
 - No application tests were available or run because there is no application code yet.
 - The GitHub Actions workflows have not yet been verified by a run for this documentation update.
 
@@ -56,11 +58,11 @@ No application bugs were in scope. Documentation now explicitly keeps milestone 
 - M01 instructions have not been supplied; its scope and branch do not exist yet.
 - Frontend and backend stacks and their checks remain undefined.
 - GitHub branch protection could not be inspected with the available API authentication. Configure protection for `main` and `develop` in repository settings.
-- GitHub Actions may require the repository setting that permits workflows to create pull requests.
+- Repository setting required for the PR automation: Settings → Actions → General → Workflow permissions → allow GitHub Actions to create and approve pull requests. Organization policy may also need to permit this.
 
 ## Git and review references
 
 - Branch: `setup/M00`
-- Commit references: pending
-- Pull request link/status: pending
-- Completion status: in progress pending push, workflow validation, and review tracking.
+- Commit reference: `38bc6c0` (`docs(M00): document user-directed milestone workflow`)
+- Pull request link/status: no PR; blocked by repository Actions permission above.
+- Completion status: implemented and pushed; awaiting PR creation and review.
