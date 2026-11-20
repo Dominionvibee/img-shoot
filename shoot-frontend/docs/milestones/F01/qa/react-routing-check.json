@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/",
+    "url": "http://127.0.0.1:4173/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Met Gala 2026\n\nLETICIA HALL V MAGAZINE\n\nDISCOVER THE ROSTER\nMODEL\nDEVELOPMENT\nTALENT\n\nANOK YAI, PALOMA ELSESSER, & ALEX CONSANI\n\nSILVER LINING BY CARLOS NAZARIO\n\nLATEST\n\nKYLEE DIXON\n\nCELINE SPRING 2027\n\nANOK YAI\n\nREVOLVE FW26\n\nKAI SCHREIBER\n\nI-D BEAUTY ZINE WINTER 2026\n\nHANA JIRICKOVA\n\nVOGUE PORTUGAL NOVEMBER 2026\n\nMATY FALL\n\nGUERLAIN X GERMANIER H",
+    "html": 35152,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/directory/",
+    "url": "http://127.0.0.1:4173/directory/?view=grid&sort=az&gender=any&category=any&selectedTerritory=any",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Directory\n\nTERRITORY\n\nLONDON\nLOS ANGELES\nMILAN\nNEW YORK\nPARIS\nSYDNEY\n\nTYPE\n\nMODEL\nDEVELOPMENT\nTALENT\n\nGENDER\n\nWOMEN\nMEN\nALL\nLIST VIEW\n/\nGRID VIEW\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nLIST VIEW\n/\nGRID VIEW\n\nAALYAH ROSS\n\nAB SHARLING\n\nABDALLA AMOUR\n\nABDOUL\n\nABDOUL DIA\n\nABHAY MISHRA\n\nABIGAIL O’NEILL\n\nABOUBAKAR\n\nACHOK\n\nACHOK AKOI\n\nADAM HA",
+    "html": 35681,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/directory/new-york/aalyah-ross/",
+    "url": "http://127.0.0.1:4173/directory/new-york/aalyah-ross/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Aalyah ROSS\nPORTFOLIO\nDIGITALS\nDOWNLOAD PDF\nDOWNLOAD DIGITALS\n2K\n\nHEIGHT 5'10.5'' // 179 CM\n\nSHOE 9",
+    "html": 37051,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/directory/london/vanesa-lorenzo/",
+    "url": "http://127.0.0.1:4173/directory/london/vanesa-lorenzo/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Vanesa LORENZO\nDOWNLOAD PDF\n465.4K",
+    "html": 33295,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/work/harpers-bazaar-italia/",
+    "url": "http://127.0.0.1:4173/work/harpers-bazaar-italia/?featured-work-id=8022",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Met Gala 2026\n\nLETICIA HALL V MAGAZINE\n\nDISCOVER THE ROSTER\nMODEL\nDEVELOPMENT\nTALENT\n\nANOK YAI, PALOMA ELSESSER, & ALEX CONSANI\n\nSILVER LINING BY CARLOS NAZARIO\n\nLATEST\n\nKYLEE DIXON\n\nCELINE SPRING 2027\n\nANOK YAI\n\nREVOLVE FW26\n\nKAI SCHREIBER\n\nI-D BEAUTY ZINE WINTER 2026\n\nHANA JIRICKOVA\n\nVOGUE PORTUGAL NOVEMBER 2026\n\nMATY FALL\n\nGUERLAIN X GERMANIER H",
+    "html": 41190,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/category/uncategorized/",
+    "url": "http://127.0.0.1:4173/category/uncategorized/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "404.",
+    "html": 17250,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/author/barbara/",
+    "url": "http://127.0.0.1:4173/author/barbara/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "404.",
+    "html": 17250,
+    "externalInternal": [],
+    "errors": []
+  },
+  {
+    "path": "/directory/sydney/liam-swiderski/",
+    "url": "http://127.0.0.1:4173/directory/sydney/liam-swiderski/",
+    "title": "IMG Models",
+    "reactRoot": true,
+    "text": "Liam SWIDERSKI\nDOWNLOAD PDF\n226.4K\n\nHEIGHT 6'0.5'' // 184 CM\n\nSHOE 46\n\nLiam Swiderski is an Australian social media personality turning a spotlight onto agriculture and farming through his TikTok and Instagram accounts, of which he has amassed over 1 million followers in just a few short years. Between Swiderski’s classic good looks and the adorabl",
+    "html": 32154,
+    "externalInternal": [],
+    "errors": []
+  }
+]

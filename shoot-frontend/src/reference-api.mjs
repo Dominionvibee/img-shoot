@@ -127,7 +127,7 @@ async function localize(value) {
   const assets = await readJson('asset-map.json').catch(() => ({}));
   const replacements = Object.entries(assets).sort(([a], [b]) => b.length - a.length);
   const localHref = href => {
-    if (!/^https:\/\/imgmodels\.com\/(?:directory\/london\/vanesa-lorenzo\/?$|about-us\/|contact\/|from-the-archive\/|recruitmentwarning\/|under-18-faq\/|new-york-state-fashion-workers-act)/.test(href)) return href;
+    if (!href.startsWith('https://imgmodels.com/')) return href;
     const url = new URL(href); return `${url.pathname}${url.search}${url.hash}`;
   };
   function visit(item) {
@@ -157,7 +157,12 @@ export async function referenceApi(input) {
     case 'get_talent': body = filterDirectory(url.searchParams); break;
     case 'get_search_directory_items': body = filterDirectory(url.searchParams, true); break;
     case 'get_work': body = filterWork(url.searchParams); break;
-    case 'get_single_work': body = singleWork(url.searchParams); break;
+    case 'get_single_work': {
+      const featured=url.searchParams.get('featured-work-id'), work=url.searchParams.get('work-id');
+      const id=featured||work;
+      const captured=/^\d+$/.test(id||'') ? await readJson(`reference-api/${featured?'featured-work':'work'}-${id}.json`).catch(()=>null) : null;
+      body=captured||singleWork(url.searchParams);break;
+    }
     case 'get_search_dropdown_items': {
       body = { talent: filterDirectory(url.searchParams, true).slice(0, 10), work: filterWork(url.searchParams).sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10).map(({ id, title }) => ({ id, title })) };
       break;

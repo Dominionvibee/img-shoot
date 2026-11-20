@@ -1,5 +1,17 @@
 # F01 — IMG Models reference reclone
 
+## React routing expansion
+
+The subsequent routing update uses React 18 with React Router 6.30.1. Sitemap discovery found 3,563 published URLs across 12 sitemap documents. All published paths, plus archive pagination, now resolve locally through React routes. Internal profile, work, category, author and footer links stay on localhost.
+
+`data/routes.json` records discovered paths, captured page filenames and pending captures. At this update, 898 local page templates are indexed; 2,693 published URLs remain to be stored in advance. Pending routes use an allowlisted, read-only public page cache on first visit. Previously captured gallery responses are local; new galleries can also be fetched and cached. Portfolio PDF requests use a validated local download endpoint.
+
+Bulk capture encountered HTTP 429 and was stopped. A slower retry captured additional pages without errors. The resumable capture command is `node scripts/capture-all-routes.mjs`; it processes one request at a time and stops immediately on a rate limit. This is **not a fully offline copy of every page**: uncached pages, galleries and remote media require reference-site access. No claim is made that thousands of newly discovered pages have each received the earlier screenshot matrix.
+
+Browser checks confirmed React roots and local URLs on home, directory, New York and London profiles, a work URL, category/author URLs, and an uncached Sydney profile fetched through the local cache. No runtime exceptions were recorded. The reference itself returns a visible `404.` for the sampled category and author paths; those source states are retained. Existing 9 tests and the production build passed after the routing change.
+
+The earlier report below describes the prior visual-validation baseline; its statements about profile links remaining external are superseded by this routing expansion.
+
 **Branch:** `frontend/F01-website-replication`
 **Reference:** [IMG Models](https://imgmodels.com/)
 **Inspected:** 20 November 2026

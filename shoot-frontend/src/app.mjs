@@ -3,17 +3,10 @@ import { setupConsent } from './consent.mjs';
 
 // Public presentation captured 20 November 2026. The original theme's public
 // interactions use a local, read-only snapshot API, with no production writes.
-const path = location.pathname.replace(/\/+$/, '') || '/';
-const routes = new Map([
-  ['/', 'home'], ['/directory', 'directory'], ['/search', 'search'],
-  ['/from-the-archive', 'from-the-archive'], ['/contact', 'contact'],
-  ['/about-us', 'about-us'], ['/recruitmentwarning', 'recruitmentwarning'],
-  ['/under-18-faq', 'under-18-faq'],
-  ['/new-york-state-fashion-workers-act', 'new-york-state-fashion-workers-act'],
-  ['/directory/london/vanesa-lorenzo', 'profile-vanesa-lorenzo'],
-]);
-const archivePage = Number(path.match(/^\/from-the-archive\/page\/(\d+)$/)?.[1] || 1);
-const slug = routes.get(path) || (archivePage > 1 && archivePage <= 29 ? `archive-${archivePage}` : null);
+const manifest = await fetch('/data/routes.json').then(r=>r.json());
+const normalize = path => path.replace(/\/+$/, '') + '/';
+const routes = new Map(Object.entries(manifest.routes));
+routes.set('/directory/london/vanesa-lorenzo/', 'profile-vanesa-lorenzo');
 const asset = url => assetMap[url] || url;
 function localizeTree(root) {
   root.querySelectorAll('[src], [data-banner-src], [poster]').forEach(el => {
@@ -24,7 +17,7 @@ function localizeTree(root) {
     if(assetMap[href]){el.href=assetMap[href];return;}
     if (href?.startsWith('https://imgmodels.com')) {
       const url = new URL(href);
-      if (routes.has(url.pathname.replace(/\/+$/, '') || '/') || /^\/from-the-archive\//.test(url.pathname)) el.href = url.pathname + url.search + url.hash;
+      el.href = url.pathname + url.search + url.hash;
     }
   });
 }
@@ -40,16 +33,13 @@ async function loadScript(src) {
     script.onload = resolve;script.onerror = () => reject(new Error(`Unable to load ${src}`));document.head.append(script);
   });
 }
-if (!slug) {
-  document.querySelector('#app').innerHTML = '<main style="padding:40px"><h1>Page not found</h1><a href="/">Return home</a></main>';
-} else {
-  const template = await fetch(`/data/pages/${slug}.json`).then(r=>r.json());
-  document.body.className = template.bodyClass;document.body.innerHTML = template.html;localizeTree(document.body);
+async function initializePage(root) {
+  localizeTree(root);
   new MutationObserver(records => {
     for (const record of records) for (const node of record.addedNodes) if (node.nodeType === 1) {
       if (node.matches('[src]')) node.setAttribute('src', asset(node.getAttribute('src')));localizeTree(node);
     }
-  }).observe(document.body, { childList: true, subtree: true });
+  }).observe(root, {childList:true,subtree:true});
   window.WP_SETTINGS = {
     rest_nonce: '', isLoggedIn: '', transientsDateTime: 'f01-reference-2026-11-20', hideDirectory: '',
     directoryUnderConstructionMessage: 'The directory will be fully operational within the next 24 hours.',
@@ -57,7 +47,7 @@ if (!slug) {
     searchCategories: {model:'Model',development:'Development',talent:'Talent'},
     directoryIncludeFeatured: {'new-york':false,'los-angeles':false,paris:true,sydney:true,london:true,milan:true},
   };
-  await loadScript('/assets/original/react.min.js');await loadScript('/assets/original/react-dom.min.js');
+
   window.wp = {
     element: {...window.React, ...window.ReactDOM},
     apiFetch: async ({path: apiPath, signal}) => {
@@ -70,3 +60,28 @@ if (!slug) {
   document.dispatchEvent(new Event('DOMContentLoaded'));
   await setupConsent();
 }
+
+await loadScript('/assets/original/react.min.js');
+await loadScript('/assets/original/react-dom.min.js');
+await loadScript('/assets/original/remix-router.js');
+await loadScript('/assets/original/react-router.js');
+await loadScript('/assets/original/react-router-dom.js');
+const {createElement:h,useState,useEffect,useRef}=window.React;
+const {BrowserRouter,Routes,Route,useLocation,Link}=window.ReactRouterDOM;
+function ReferencePage(){
+ const location=useLocation(),root=useRef(null),[page,setPage]=useState(null),[error,setError]=useState('');
+ const slug=routes.get(normalize(location.pathname));
+ useEffect(()=>{
+  let active=true;
+  const source=slug?'/data/pages/'+slug+'.json':'/api/reference-page?path='+encodeURIComponent(normalize(location.pathname));
+  fetch(source).then(async r=>{const data=await r.json();if(!r.ok)throw new Error(data.message||'The captured page is unavailable.');return data}).then(p=>{if(active)setPage(p)}).catch(e=>{if(active)setError(e.message)});
+  return()=>{active=false};
+ },[slug]);
+ useEffect(()=>{if(page&&root.current){document.body.className=page.bodyClass;initializePage(root.current).catch(e=>setError(e.message));}},[page]);
+ if(error)return h('main',{style:{padding:'60px 30px'}},h('h1',null,'Page capture unavailable'),h('p',null,error),h(Link,{to:'/',reloadDocument:true},'Return home'));
+ return h('div',{ref:root,className:'reference-page',dangerouslySetInnerHTML:{__html:page?.html||''}});
+}
+// React Router resolves all captured paths, including deep links and refreshes.
+// Document navigation reinitializes the original theme's global page lifecycle.
+const patterns=['/','/directory','/directory/:territory/:talent/*','/work/:slug/*','/from-the-archive/*','/category/*','/talent-category/*','/author/*','/:page','*'];
+window.ReactDOM.createRoot(document.getElementById('app')).render(h(BrowserRouter,null,h(Routes,null,...patterns.map(path=>h(Route,{key:path,path,element:h(ReferencePage)})))));

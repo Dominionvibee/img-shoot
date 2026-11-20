@@ -4,6 +4,7 @@ import { stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { handleReferenceApi } from './src/reference-api.mjs';
+import { handleRouteCache } from './src/route-cache.mjs';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const types = {
@@ -19,6 +20,7 @@ const types = {
 export function createFrontendServer() {
   return createServer(async (req, res) => {
     try {
+      if (await handleRouteCache(req, res)) return;
       if (await handleReferenceApi(req, res)) return;
       if (!['GET', 'HEAD'].includes(req.method)) {
         res.writeHead(405, { Allow: 'GET, HEAD' }); res.end('Method not allowed'); return;
