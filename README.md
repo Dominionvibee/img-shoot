@@ -8,7 +8,7 @@ Full-stack monorepo with one Git repository, one `main` branch, and one `develop
 
 ## Development
 
-Install dependencies for the initialized apps after checkout:
+Install packages for each initialized app after checkout. A milestone branch may contain only one app; after F00 and B00 are approved into `develop`, all three installs apply:
 
 ```sh
 npm ci --prefix shoot-frontend
@@ -17,7 +17,7 @@ npm ci
 npm run dev
 ```
 
-The root command starts every initialized application concurrently. F00 serves the frontend at `http://localhost:5173`; B00 serves the backend at `http://localhost:4000`. Each milestone branch contains its own app foundation; after both are approved into `develop`, the root command starts both services.
+The root command starts every initialized application concurrently. F00 serves the frontend at `http://localhost:5173`; B00 serves the backend at `http://localhost:4000`. A milestone branch reports and skips an app whose package is absent. Once both are approved into `develop`, the root command starts both.
 
 Independent commands:
 
