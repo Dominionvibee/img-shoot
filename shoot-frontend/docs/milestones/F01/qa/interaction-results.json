@@ -1,0 +1,93 @@
+[
+  {
+    "test": "archive",
+    "page": 2,
+    "status": "2 of 29",
+    "links": [
+      {
+        "label": "Previous page",
+        "href": "/from-the-archive/"
+      },
+      {
+        "label": "Next page",
+        "href": "/from-the-archive/page/3/"
+      }
+    ],
+    "cards": 36
+  },
+  {
+    "test": "archive",
+    "page": 29,
+    "status": "29 of 29",
+    "links": [
+      {
+        "label": "Previous page",
+        "href": "/from-the-archive/page/28/"
+      }
+    ],
+    "cards": 12
+  },
+  {
+    "test": "search",
+    "text": "RESULT TYPE\n\nALL\nDIRECTORY\nWORK\n\nFILTERS\n\nTERRITORY\n+\nLONDON\nLOS ANGELES\nMILAN\nNEW YORK\nPARIS\nSYDNEY\nCATEGORY\n+\nMODEL\nDEVELOPMENT\nTALENT\nGENDER\n+\nMAN\nWOMAN\n\nSORT BY\n\nALPHABETICAL\nLATEST\nRESET FILTERS\n\n101 RESULTS FOR \"ANOK\"\n\nDIRECTORY  (1)\n\nANOK YAI\n\nWORK  (100)\n\nANOK YAI\n\nALAIA SUMMER/FALL 2023\n\nANOK YAI\n\nVERSACE FW23\n\nANOK YAI\n\nFERRAGAMO FW23\n\nANOK YAI\n\nLOUIS VUITTON X YAYOI KUSAMA 2023\n\nANOK YAI\n\nLOEWE FW22\n\nANOK YAI\n\nSAINT LAURENT DENIM 2021\n\nANOK YAI\n\nBOTTEGA VENETA FW21\n\nANOK YAI\n\nV SPRING",
+    "groups": [
+      "Directory  (1)",
+      "Work  (100)"
+    ]
+  },
+  {
+    "test": "profile-pdf",
+    "links": [
+      "/assets/original/vanesa_lorenzo_portfolio.pdf"
+    ]
+  },
+  {
+    "test": "portfolio",
+    "value": {
+      "images": 22,
+      "buttons": [
+        "Previous image",
+        "Next image",
+        "Close",
+        "Close preference center",
+        "Cookie Details button opens Cookie List menu",
+        "Cookie Details button opens Cookie List menu"
+      ]
+    }
+  },
+  {
+    "test": "cookie-custom",
+    "height": 720,
+    "checked": true,
+    "inert": true,
+    "saved": {
+      "value": "custom",
+      "choices": {
+        "1": true,
+        "2": true,
+        "3": false,
+        "4": false
+      },
+      "at": "2026-11-20T18:05:27.129Z",
+      "source": "local-simulation"
+    }
+  },
+  {
+    "test": "cookie-escape",
+    "value": {
+      "hidden": "true",
+      "inert": false
+    }
+  },
+  {
+    "test": "header-autocomplete",
+    "value": {
+      "text": "TALENT\n\nANOK YAI\n\nWORK\n\nACNE STUDIOS FW23\nALAIA SS25\nALAIA SS26\nALAIA SUMMER/FALL 2023\nALAIA SUMMER/FALL 2025 ARCHETYPES\nAMINA MUADDI SUMMER 2024\nBALENCIAGA COUTURE FW26\nBALENCIAGA FW26\nBALENCIAGA SPRING 2027\nBALENCIAGA SS27",
+      "dropdown": 2501
+    }
+  },
+  {
+    "test": "browser-errors",
+    "errors": []
+  }
+]

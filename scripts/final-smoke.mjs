@@ -1,0 +1,17 @@
+import{connectBrowser}from'./browser.mjs';import{writeFile}from'node:fs/promises';
+const b=await connectBrowser({newTab:true}), out=[];
+await b.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+async function go(path){await b.send('Page.navigate',{url:'http://127.0.0.1:4173'+path});await new Promise(r=>setTimeout(r,1400));await b.eval(`document.querySelector('#onetrust-reject-all-handler')?.click()`);}
+for(const page of[2,29]){await go(`/from-the-archive/page/${page}/`);out.push({test:'archive',page,...await b.eval(`({status:document.querySelector('.workGrid__paginationStatus').textContent.trim(),links:[...document.querySelectorAll('.workGrid__pagination a')].map(a=>({label:a.textContent.trim(),href:a.getAttribute('href')})),cards:document.querySelectorAll('.workGrid__gridItem').length})`)});}
+await go('/search/');await b.eval(`sessionStorage.setItem('searchTerm','Anok')`);await go('/search/');await new Promise(r=>setTimeout(r,1500));
+out.push({test:'search',...await b.eval(`({text:document.querySelector('.search-app').innerText.slice(0,500),groups:[...document.querySelectorAll('.searchResultsGroupLabel')].map(e=>e.textContent)})`)});
+await go('/directory/london/vanesa-lorenzo/');out.push({test:'profile-pdf',links:await b.eval(`[...document.querySelectorAll('a')].filter(a=>a.textContent.includes('Download PDF')).map(a=>a.getAttribute('href'))`)});
+await b.eval(`document.querySelector('[aria-label="Next image"]')?.click()`);out.push({test:'portfolio',value:await b.eval(`({images:document.querySelectorAll('.talentBanner img').length,buttons:[...document.querySelectorAll('button[aria-label]')].map(e=>e.getAttribute('aria-label')).slice(0,6)})`)});
+await go('/');await b.eval(`OneTrust.ToggleInfoDisplay();document.querySelector('[ot-accordion="true"][aria-controls="ot-desc-id-2"]').click();document.querySelector('#ot-group-id-2').click();document.querySelector('.save-preference-btn-handler').click();OneTrust.ToggleInfoDisplay()`);
+out.push({test:'cookie-custom',...await b.eval(`({height:document.querySelector('#onetrust-pc-sdk').getBoundingClientRect().height,checked:document.querySelector('#ot-group-id-2').checked,inert:document.querySelector('main').inert,saved:JSON.parse(localStorage.getItem('f01-cookie-consent'))})`)});
+await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});out.push({test:'cookie-escape',value:await b.eval(`({hidden:document.querySelector('#onetrust-pc-sdk').getAttribute('aria-hidden'),inert:document.querySelector('main').inert})`)});
+const input=await b.eval(`document.querySelector('.header__searchApp input').outerHTML`);console.log('header input',input);
+await b.eval(`{const i=document.querySelector('.header__searchApp input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(i,'Anok');i.dispatchEvent(new Event('input',{bubbles:true}));i.focus()}`);await new Promise(r=>setTimeout(r,1000));
+out.push({test:'header-autocomplete',value:await b.eval(`({text:document.querySelector('.header__searchApp').innerText.slice(0,1000),dropdown:document.querySelector('.header__searchApp').innerHTML.length})`)});
+out.push({test:'browser-errors',errors:b.events.filter(e=>e.method==='Runtime.exceptionThrown')});
+await writeFile('reference/qa/final-smoke.json',JSON.stringify(out,null,2));console.log(JSON.stringify(out,null,2));b.close();

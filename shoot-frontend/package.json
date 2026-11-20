@@ -3,5 +3,5 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "scripts": { "dev": "node server.mjs", "build": "node build.mjs", "test": "node --test" }
+  "scripts": { "dev": "node server.mjs", "build": "node build.mjs", "preview": "node dist/server.mjs", "test": "node --test" }
 }
