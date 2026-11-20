@@ -1,0 +1,32 @@
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated output (frontend/backend)
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+target/
+bin/
+obj/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local tooling and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*

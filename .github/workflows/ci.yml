@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, "milestone/**", "fix/**", "hotfix/**"]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  repository-structure:
+    name: Repository structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate project layout and workflow documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d shoot-frontend
+          test -d shoot-backend
+          test -f README.md
+          test -f docs/git-workflow.md
+          test -f docs/milestones/README.md
+          test -f .github/pull_request_template.md

@@ -1,0 +1,49 @@
+name: Milestone pull request
+
+on:
+  push:
+    branches:
+      - "milestone/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-or-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const match = branch.match(/^milestone\/(F\d{2}|B\d{2}|M\d{2,})-(.+)$/);
+            if (!match) {
+              core.setFailed(`Branch '${branch}' must use milestone/<ID>-<description> (for example milestone/F01-first-route).`);
+              return;
+            }
+
+            const [, id, slug] = match;
+            const titleText = slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const title = `${id}: Implement ${titleText}`;
+            const body = [
+              `## Milestone ${id}`,
+              '',
+              'Describe the completed work, affected routes/components, validation results, and outstanding issues using the repository pull request template.',
+              '',
+              `Source branch: \`${branch}\``,
+              'Target branch: `develop`'
+            ].join('\n');
+
+            const { owner, repo } = context.repo;
+            const head = `${owner}:${branch}`;
+            const existing = await github.rest.pulls.list({ owner, repo, state: 'open', head, base: 'develop' });
+            if (existing.data.length) {
+              const pr = existing.data[0];
+              await github.rest.pulls.update({ owner, repo, pull_number: pr.number, title, body, base: 'develop' });
+              core.info(`Updated pull request #${pr.number}.`);
+            } else {
+              const pr = await github.rest.pulls.create({ owner, repo, head: branch, base: 'develop', title, body });
+              core.info(`Created pull request #${pr.data.number}.`);
+            }
