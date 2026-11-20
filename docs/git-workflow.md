@@ -1,42 +1,33 @@
 # Git and GitHub workflow
 
-## Branches
+## Repository and branches
 
-- `main`: stable, approved release history.
-- `develop`: integration branch for approved milestone work.
-- `frontend/Fxx-<description>`: one branch per defined frontend milestone, branched from the latest approved `develop`.
-- `backend/Bxx-<description>`: one branch per defined backend milestone, branched from the latest approved `develop`.
-- `milestone/Mxx-<description>`: one branch per defined repository milestone, branched from the latest approved `develop`.
-- `fix/<description>` and `hotfix/<description>`: scoped fixes.
+- One repository contains both `shoot-frontend/` and `shoot-backend/`.
+- `main` holds approved releases; `develop` integrates approved work.
+- Frontend milestones use `frontend/Fxx-<description>`.
+- Backend milestones use `backend/Bxx-<description>`.
+- Each milestone branch starts from the latest approved `develop`; never derive one milestone branch from another.
 
-Do not create milestone branches until their scope is defined. Never combine unrelated milestones on one branch. Do not force-push or rewrite shared history.
+Only create a milestone branch after its instructions are provided. Reuse an existing scoped branch when one already exists. Never overwrite branches, force-push, rewrite history, or merge without approval.
 
-## Component and milestone IDs
+## Component scopes
 
-- `F00`: frontend setup/baseline in `shoot-frontend/`.
-- `F01` and later: frontend feature milestones in `shoot-frontend/`.
-- `B00`: backend setup/baseline in `shoot-backend/`.
-- `B01` and later: backend feature milestones in `shoot-backend/`.
-- `M00`: repository and workflow initialization.
-
-Use the ID in branch names and commit scopes, for example `frontend/F00-frontend-setup`, `feat(F00): establish frontend baseline`, and `feat(B01): add first endpoint`.
+- F00/F01 and later: frontend initialization/features in `shoot-frontend/`.
+- B00/B01 and later: backend initialization/features in `shoot-backend/`.
+- Keep each milestone in its own branch and document it in the corresponding app's `docs/milestones/<ID>/README.md`.
 
 ## Milestone procedure
 
-1. Define one objective, acceptance criteria, affected component/routes, and validation plan in `docs/milestones/`.
-2. Update local `develop` from the approved remote `develop`.
-3. Create one component-scoped branch (`frontend/Fxx-*`, `backend/Bxx-*`) or repository milestone branch (`milestone/Mxx-*`). Every milestone branch starts from the same approved `develop` baseline; never derive one milestone branch from another.
-4. Implement only that milestone; make reviewable commits such as `feat(F01): ...`, `fix(B01): ...`, or `docs(F00): ...`.
-5. Push the branch. CI runs and GitHub Actions opens or updates a pull request targeting `develop` when repository Actions permissions allow it. Before beginning later milestone work, merge the latest approved `develop` into its branch without force-pushing.
-6. Review the diff and passing checks; merge only after approval. Never auto-merge.
-7. Remove the milestone branch after merge according to repository policy.
+1. Read the supplied requirements and prior milestone documentation.
+2. Check local and remote refs; preserve existing branches and PRs.
+3. Fetch `origin/develop`, confirm the working tree is clean, and create a missing branch from that approved baseline.
+4. Implement only the supplied milestone and its shared tracking/workflow updates.
+5. Run relevant install, lint, test, build, and startup checks; document actual results and limitations.
+6. Commit with the component ID, push the branch, and create/update its PR targeting `develop`.
+7. Review and merge only after approval. Before later work resumes, synchronize its branch safely with approved `develop` changes.
 
-## Pull requests
+## Validation and safety
 
-Use the shared [pull request template](../.github/pull_request_template.md). Titles should include the milestone ID, e.g. `F01: Implement first frontend route` or `B01: Implement first backend endpoint`. Explain completed work, affected routes/components, checks run, and outstanding issues.
+GitHub Actions validates each initialized app with its lockfile, lint, tests, and production build. PR creation automation runs after successful branch validation; if repository permissions prohibit creation, it provides a manual PR link without failing the validation run. PR checks target `main` and `develop` only.
 
-## Validation and protection
-
-CI validates repository structure and runs the frontend test and build commands. Add app-specific checks as each component stack is selected. Configure GitHub rulesets/branch protection for `main` and `develop` to require pull requests and successful checks, block force pushes, and prevent deletion. GitHub account/repository permissions are required for those settings.
-
-Never commit secrets or real `.env` files. Add safe `.env.example` files when needed. Keep generated output and dependency folders out of commits.
+Never commit secrets, local `.env` files, dependency folders, or generated output. Keep `.env.example` values non-secret. The root development command starts app servers only; it must never start, seed, erase, or replace a database service.

@@ -1,12 +1,41 @@
 # img-shoot
 
-Repository for the img-shoot application, organized as a frontend and backend:
+Full-stack monorepo with one Git repository, one `main` branch, and one `develop` integration branch.
 
-- `shoot-frontend/` — frontend application. Frontend milestones use **F00, F01, ...**.
-- `shoot-backend/` — backend application. Backend milestones use **B00, B01, ...**.
+- `shoot-frontend/` — React and Vite application; frontend milestones use F-series IDs.
+- `shoot-backend/` — Node.js, Express, and Mongoose API; backend milestones use B-series IDs.
+- `docs/` — project workflow and independent frontend/backend milestone tracking.
 
-The component folders are currently empty. Add the approved application stack and its development instructions in each folder before implementing application code. See [Git workflow](docs/git-workflow.md) and the [milestone index](docs/milestones/README.md).
+## Development
 
-## Development workflow
+Install the frontend and root packages after checkout:
 
-Use `main` for approved releases, `develop` for integration, and one `milestone/<ID>-<description>` branch per scoped milestone. Open milestone pull requests against `develop`; merge only after review and required checks pass. CI currently validates repository structure. Add stack-specific install, lint, test, typecheck, and build checks once the frontend and backend stacks are established.
+```sh
+npm install --prefix shoot-frontend
+npm install
+npm run dev
+```
+
+The root command starts each initialized application concurrently. The frontend listens at `http://localhost:5173`; the backend listens at `http://localhost:4000` after B00 is present. During the F00-only phase, the root supervisor starts the frontend and clearly reports that the backend package is not initialized yet.
+
+Independent commands:
+
+Frontend:
+
+```sh
+cd shoot-frontend
+npm run dev
+```
+
+Backend:
+
+```sh
+cd shoot-backend
+npm run dev
+```
+
+Set `MONGODB_URI` in the backend's local `.env` file to connect an already-running MongoDB service. The development command never installs or starts MongoDB and does not seed, drop, or reset databases.
+
+## Validation
+
+Each app provides independent `lint`, `test`, and build scripts. GitHub Actions runs applicable checks on milestone branches and pull requests. See [Git workflow](docs/git-workflow.md), the [milestone index](docs/milestones/README.md), and [milestone tracker](docs/MILESTONE_TRACKER.md).

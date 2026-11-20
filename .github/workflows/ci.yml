@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, develop, "frontend/**", "backend/**", "milestone/**", "fix/**", "hotfix/**"]
+    branches: [main, develop]
   pull_request:
     branches: [main, develop]
 
@@ -15,19 +15,61 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate project layout and workflow documentation
-        shell: bash
+      - name: Validate monorepo foundation
         run: |
           set -euo pipefail
+          test -f README.md
+          test -f package.json
+          test -f package-lock.json
           test -f shoot-frontend/README.md
           test -f shoot-backend/README.md
-          test -f README.md
           test -f docs/git-workflow.md
-          test -f docs/milestones/README.md
+          test -f docs/MILESTONE_TRACKER.md
           test -f .github/pull_request_template.md
-      - name: Validate frontend milestone
-        if: contains(github.ref, 'frontend/') || github.event_name == 'pull_request'
-        run: |
-          cd shoot-frontend
-          npm test
-          npm run build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate root package
+        run: npm ci --ignore-scripts
+
+  frontend:
+    name: Frontend validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install frontend dependencies
+        if: hashFiles('shoot-frontend/package.json') != ''
+        run: npm ci --prefix shoot-frontend
+      - name: Lint frontend
+        if: hashFiles('shoot-frontend/package.json') != ''
+        run: npm run lint --prefix shoot-frontend
+      - name: Test frontend
+        if: hashFiles('shoot-frontend/package.json') != ''
+        run: npm test --prefix shoot-frontend
+      - name: Build frontend
+        if: hashFiles('shoot-frontend/package.json') != ''
+        run: npm run build --prefix shoot-frontend
+
+  backend:
+    name: Backend validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install backend dependencies
+        if: hashFiles('shoot-backend/package.json') != ''
+        run: npm ci --prefix shoot-backend
+      - name: Lint backend
+        if: hashFiles('shoot-backend/package.json') != ''
+        run: npm run lint --prefix shoot-backend
+      - name: Test backend
+        if: hashFiles('shoot-backend/package.json') != ''
+        run: npm test --prefix shoot-backend
+      - name: Build backend
+        if: hashFiles('shoot-backend/package.json') != ''
+        run: npm run build --prefix shoot-backend
