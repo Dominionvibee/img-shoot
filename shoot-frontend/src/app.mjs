@@ -158,14 +158,18 @@ function useLocalNavigation() {
 }
 
 function activatePageStyles(page) {
-  const base=document.querySelector('link[href="/src/styles.css"]');
+  const base=document.querySelector('#integration-style');
+  const reference=document.querySelector('#reference-style');
+  const consent=document.querySelector('#consent-style');
   const isolated=page.kind&&page.kind!=='img';
   if(base)base.disabled=Boolean(isolated);
+  if(reference)reference.disabled=Boolean(isolated);
+  if(consent)consent.disabled=Boolean(isolated);
   const links=(page.styles||[]).map(href=>{
     const link=document.createElement('link');link.rel='stylesheet';link.href=href;
     document.head.append(link);return link;
   });
-  return()=>{for(const link of links)link.remove();if(base)base.disabled=false;};
+  return()=>{for(const link of links)link.remove();if(base)base.disabled=false;if(reference)reference.disabled=false;if(consent)consent.disabled=false;};
 }
 
 function setupLegal(root) {
