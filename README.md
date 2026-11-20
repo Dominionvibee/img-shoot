@@ -16,7 +16,7 @@ npm ci
 npm run dev
 ```
 
-The root command starts each initialized application concurrently. F00's React/Vite server uses `http://localhost:5173`; the preserved F01 implementation currently serves on `http://localhost:4173`. The backend listens at `http://localhost:4000` after B00 is approved and merged into `develop`; until then the runner reports that the backend package is not initialized on this branch.
+The root command starts each initialized application concurrently. F00's React/Vite server uses `http://127.0.0.1:4175`; the preserved F01 implementation currently serves on `http://localhost:4173`. The backend listens at `http://localhost:4000` after B00 is approved and merged into `develop`; until then the runner reports that the backend package is not initialized on this branch.
 
 Independent commands:
 

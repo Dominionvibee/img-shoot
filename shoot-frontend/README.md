@@ -1,7 +1,20 @@
 # shoot-frontend
 
-The frontend app contains independently tracked F-series milestones.
+Frontend milestone F01 is a dependency-free static replication of publicly accessible IMG Models pages. Its implementation, routes, source inspection, and known fidelity limits are documented in [F01](docs/milestones/F01/README.md).
 
-This branch preserves the completed F01 website replication: a dependency-free static site with a Node.js development server on port 4173. Its routes, public-content snapshot, tests, browser comparisons, and known asset-loading limitations are documented in [F01](docs/milestones/F01/README.md).
+## Run
 
-F00 establishes the React/Vite application foundation on its separate review branch. F01 will be safely synchronized with approved `develop` changes before further feature work.
+```sh
+npm run dev
+```
+
+The F01 development server listens at `http://127.0.0.1:4173`. The implementation uses native HTML/CSS/JavaScript modules and the captured public data in `data/`.
+
+## Validate
+
+```sh
+npm test
+npm run build
+```
+
+The directory and editorial data are snapshots. The local search does not query IMG Models, and the site does not collect scouting submissions or personal photos.

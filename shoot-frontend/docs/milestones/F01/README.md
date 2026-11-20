@@ -1,79 +1,65 @@
-# F01 — Website Replication
+# F01 — IMG Models Website Replication
 
-**Status:** Implemented; awaiting review on `frontend/F01-website-replication`  
-**Reference inspected:** [imgmodels.com](https://imgmodels.com/) on 20 November 2026  
-**Scope:** `shoot-frontend/` plus the shared milestone tracker and Git workflow/CI files.
+**Branch:** `frontend/F01-website-replication`  
+**Reference:** [imgmodels.com](https://imgmodels.com/)  
+**Status:** refreshed implementation; visual acceptance remains incomplete.
 
-## Delivered
+## Scope and reference inspection
 
-This is a dependency-free static frontend implemented with native HTML, CSS, JavaScript modules, and Node.js. It reproduces the publicly accessible site areas inspected for the milestone and uses a captured public-content snapshot for the directory and editorial archive.
+The attached master prompt requires page, state, responsive, and browser screenshot comparisons. I inspected the live public text and links exposed by the reference for the home page, directory, search, archive page 1, contact, About Us, Recruitment Warning, Under 18 FAQs, and the Fashion Workers Act route on 20 November 2026. The public page exposes Directory, Get Scouted, Search, Contact, Instagram, TikTok, and footer links for About Us, privacy, legal and safety information.
 
-- Home page with the reference hero, latest editorials, and cover grid.
-- Directory with location/category/gender filtering, alphabetical jump links, grid/list display, and links through to official IMG profile pages. Snapshot includes 1,156 public talent records.
-- Search page with directory and work results, query URL state, result tabs, and combined result counts.
-- From the Archive with all 29 captured pages and 1,020 public cards, plus previous/next pagination and image/video lightbox.
-- Contact page with six public IMG office contact blocks.
-- About page, recruitment warning, under-18 FAQ, and New York State Fashion Workers Act information route.
-- Responsive header/navigation, mobile menu, cookie notice, and responsive layouts for narrow phones through wide desktop screens.
+The computer-use browser service was unavailable in this session, and direct network requests from the shell were blocked. As a result, I could not capture reference screenshots, read computed styles, inspect hover/focus/consent states, or complete the required side-by-side comparisons at the nine requested viewport widths. The implementation must not be described as pixel-perfect. The Fashion Workers Act page content could not be read by the available page reader; the local route links to the official New York State Department of Labor information and documents that limitation instead of inventing copy.
 
-### Public route inventory
+## Implemented routes
 
-| Route | Implemented behavior |
-|---|---|
-| `/` | Hero, editorial cards, cover section, archive links |
-| `/directory/` | Filterable 1,156-person captured catalog, alphabet links, grid/list modes |
-| `/search/?q=...` | Local directory/archive search with result type tabs |
-| `/from-the-archive/` and `/from-the-archive/page/N/` | Captured archive cards with pagination |
-| `/contact/` | Six office addresses, email and telephone links |
-| `/about-us/` | Public company overview and directory link |
-| `/recruitmentwarning/` | Public anti-impersonation warning and verified contact route |
-| `/under-18-faq/` | Parent/guardian safety guidance in accessible accordions |
-| `/new-york-state-fashion-workers-act/` | Information route and official state labor resource |
+| Route | Local behavior |
+| --- | --- |
+| `/` | Current captured Met Gala 2026 feature, Latest work and Covers sections, archive link |
+| `/directory/` | Captured talent records with location, category and gender filters, alphabet links, grid/list modes |
+| `/search/` | Local search over the captured talent and work records, with Directory and Work result tabs |
+| `/from-the-archive/` | Captured editorial archive, 29-page snapshot and previous/next navigation |
+| `/contact/` | Six public office addresses, email links and telephone links |
+| `/about-us/` | Public About copy and observed office information |
+| `/recruitmentwarning/` | Public recruitment safety warning text |
+| `/under-18-faq/` | Seven public FAQs, shown as static question-and-answer sections |
+| `/new-york-state-fashion-workers-act/` | Route notice with official NY Department of Labor link; reference page text unavailable to inspect |
 
-Unknown routes show a simple not-found view. External destinations, including Get Scouted and individual talent profile pages, remain on their official IMG domains.
+The header follows the live public navigation labels. The footer includes the public legal, social, contact and safety links. Public IMG profile links and Get Scouted remain external; the clone does not collect credentials, photos, or applications.
 
-## Fidelity and safety notes
+## Data and behavior limits
 
-Reference inspection covered the homepage, directory, search, contact, about, archive, recruitment warning, under-18 FAQ, and Fashion Workers Act routes, along with desktop and mobile layouts. The frontend reuses the public reference’s wordmark text treatment, typefaces, public image/video URLs, and layout proportions. Search and directory data are local snapshots; profile links open the official IMG site. Get Scouted remains an external official link; this reproduction does not collect credentials or personal submissions. Cookie preferences are stored locally only; analytics/advertising scripts are not installed.
+The directory and editorial archive are snapshots (`data/talent.json`, `data/archive.json`), not live IMG APIs. They can become stale. Search only covers the captured records. Pagination and filters operate on local JSON. The archive and homepage cards use local presentation behavior; their exact destination/interaction on the live site was not verified. The Fashion Workers Act body, cookie-consent banner, detailed mobile menu states, loading states, and page-specific work/profile pages remain unverified or incomplete.
 
-Some differences remain: the wordmark and some UI glyphs are text/CSS instead of the reference SVG/icon set; non-home long-form legal/about copy is summarized rather than duplicated in full; profile details and search results are not live-updated; search covers the captured directory plus archive, not every current server-side result type. The browser comparison environment denied outbound media/font requests (`net::ERR_NETWORK_ACCESS_DENIED`), so local comparison screenshots could not render the remote reference images, video, or fonts. With network access, those URLs are used directly. The original site may change independently of this snapshot.
+## Design and responsiveness
 
-## Run and validate
+Styles use the existing Lay Grotesk font URLs and IMG public media URLs from the captured data. The layout has mobile and tablet breakpoints and responsive image grids. These rules were updated to reflect the observed black-and-white IMG presentation and current page hierarchy. No screenshot-based measurements or visual-diff score are available for this refresh; actual visual fidelity is still to be checked in a functioning browser against the live reference.
 
-From this directory:
+## Run locally
 
 ```sh
+cd shoot-frontend
 npm run dev
+```
+
+The Node development server listens at `http://127.0.0.1:4173`. In another shell, the checks are:
+
+```sh
 npm test
 npm run build
 ```
 
-The build writes static output to ignored `dist/`. Validation completed on this branch:
+## Validation record
 
-- `npm test`: 3 passing tests; checks catalog size/search, combined directory filters, and all 1,020 captured archive cards.
-- `npm run build`: passed; generated static output in ignored `dist/`.
-- Browser routes checked: `/`, `/directory/`, `/search/?q=Anok%20Yai`, `/contact/`, `/from-the-archive/`.
-- Browser interactions checked: New York directory filter, list view, mobile navigation open, and search result render; no page JavaScript errors observed.
-- Responsive viewport widths checked: 320, 375, 390, 430, 768, 1024, 1280, 1440, and 1920 px; no horizontal overflow observed on the home route.
-- Visual screenshots were captured and compared with reference screenshots. Layout structure was comparable, but blocked remote media/font loads prevent a full visual asset comparison in this environment.
+For this refresh, `npm test` passed (3 tests), `npm run build` passed, and `node --check src/app.mjs` passed. HTTP smoke checks returned 200 for all nine local content routes and both local JS/CSS assets. Browser-based interaction, responsive viewport, and screenshot comparison checks were not completed because the computer-use browser service failed to connect. Do not treat earlier F01 checks as evidence for this refreshed implementation.
 
-## Captured public data
+## Source URLs
 
-- `data/talent.json`: directory API snapshot, 1,156 entries.
-- `data/archive.json`: 29 archive pages, 1,020 cards.
-- `data/homepage.json`: homepage hero, latest cards, and cover cards.
-- `data/work.json`: supplementary public work query snapshot.
-
-Data was obtained from unauthenticated public pages/endpoints. Only publicly accessible material is represented.
-
-## Shared project workflow update
-
-The shared root runner, CI workflows, and milestone tracker now use separate F-series and B-series IDs. A lockfile was added for this dependency-free F01 package so `npm ci` works in CI. The website implementation and captured data remain unchanged. The workflow conditionally skips lint because this existing package has no lint script; tests and build run normally.
-
-Validation on the preserved F01 branch: `npm ci` passed; three tests passed; static build passed. The root runner starts this branch's frontend on port 4173 and reports that the backend package is not present on this branch.
-
-## Git and review
-
-- Branch: `frontend/F01-website-replication`.
-- Pull request: [#2 targeting `develop`](https://github.com/Dominionvibee/img-shoot/pull/2).
-- Existing F01 implementation remains intact; synchronize from approved `develop` before additional feature work.
+- [Home](https://imgmodels.com/)
+- [Directory](https://imgmodels.com/directory/)
+- [Search](https://imgmodels.com/search/)
+- [From the Archive](https://imgmodels.com/from-the-archive/)
+- [Contact](https://imgmodels.com/contact/)
+- [About Us](https://imgmodels.com/about-us/)
+- [Recruitment Warning](https://imgmodels.com/recruitmentwarning/)
+- [Under 18 FAQs](https://imgmodels.com/under-18-faq/)
+- [New York State Fashion Workers Act](https://imgmodels.com/new-york-state-fashion-workers-act/)

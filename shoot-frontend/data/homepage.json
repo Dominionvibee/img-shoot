@@ -1,1 +1,137 @@
-{"hero":{"image":"https://imgmodels.com/wp-content/uploads/2026/11/2026_VMAG_OCT7_05_871-scaled.jpeg","caption":"LETICIA HALL V MAGAZINE","title":"DISCOVER THE ROSTER"},"latest":[{"featuredId":"30801","title":"CELINE SPRING 2027","talent":"KYLEE DIXON","image":"https://imgmodels.com/wp-content/uploads/2026/11/Celine-Spring-2027-Ad-Campaign-The-Impression-012-819x1024.jpg","size":"regular"},{"featuredId":"30558","title":"REVOLVE FW26","talent":"ANOK YAI","image":"https://imgmodels.com/wp-content/uploads/2026/11/Anok-Yai-14-724x1024.jpg","size":"regular"},{"featuredId":"30902","title":"I-D BEAUTY ZINE WINTER 2026","talent":"KAI SCHREIBER","image":"","size":"large"},{"featuredId":"30789","title":"VOGUE PORTUGAL NOVEMBER 2026","talent":"HANA JIRICKOVA","image":"https://imgmodels.com/wp-content/uploads/2026/11/4-hana-jirickova-202611-vogueportugal-branislav-simoncik-841x1024.jpg","size":"regular"},{"featuredId":"30588","title":"GUERLAIN X GERMANIER HOLIDAY 2026","talent":"MATY FALL","image":"https://imgmodels.com/wp-content/uploads/2026/11/1-maty-fall-202610-guerlain-819x1024.jpg","size":"regular"},{"featuredId":"30874","title":"V WINTER 2026","talent":"LETICIA HALL","image":"","size":"large"},{"featuredId":"30820","title":"LOUIS VUITTON X KEITH HARING 2026","talent":"REAGAN LEE","image":"https://imgmodels.com/wp-content/uploads/2026/11/Louis-Vuitton-ad-2026-The-Impression-008-1-1024x576.jpeg","size":"regular"},{"featuredId":"30363","title":"CHLOÉ FESTIVE 2026","talent":"CLAUDIA SCHIFFER","image":"https://imgmodels.com/wp-content/uploads/2026/11/SnapInsta.to_883300488_18639601174059618_3659537926234432868_n-768x1024.jpg","size":"regular"}],"covers":[{"featuredId":"30763","title":"TEEN VOGUE 2026","talent":"ANOK YAI","image":"","size":"regular"},{"featuredId":"30805","title":"RE-EDITION FW26","talent":"ALEXA CHUNG","image":"","size":"regular"},{"featuredId":"30826","title":"M LA REVISTA DE MILENIO OCTOBER 2026","talent":"VALENTINA FERRER","image":"","size":"regular"},{"featuredId":"30753","title":"MIA LE JOURNAL NOVEMBER 2026","talent":"ANA CLARA FALCONI","image":"","size":"regular"},{"featuredId":"30585","title":"PUSS PUSS FW26","talent":"ALICE MCGRATH","image":"","size":"regular"},{"featuredId":"30547","title":"REVOLVE FW26","talent":"TEYANA TAYLOR","image":"","size":"regular"},{"featuredId":"30535","title":"REVOLVE FW26","talent":"ALEX CONSANI","image":"","size":"regular"},{"featuredId":"30580","title":"VOGUE HONG KONG NOVEMBER 2026","talent":"EILEEN GU","image":"","size":"regular"},{"featuredId":"30343","title":"BEAUTY PAPERS FW26","talent":"PALOMA ELSESSER","image":"","size":"regular"},{"featuredId":"30280","title":"SSAW FW26","talent":"VIVIEN SOLARI","image":"","size":"regular"}]}
+{
+    "hero":  {
+                 "image":  "https://imgmodels.com/wp-content/uploads/2026/11/SnapInsta.to_869133384_18113962175608094_1321497021851084065_n-818x1024.jpg",
+                 "caption":  "Anok Yai, Paloma Elsesser, \u0026 Alex Consani Silver Lining By Carlos Nazario",
+                 "title":  "Met Gala 2026"
+             },
+    "latest":  [
+                   {
+                       "featuredId":  "30801",
+                       "title":  "CELINE SPRING 2027",
+                       "talent":  "KYLEE DIXON",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/Celine-Spring-2027-Ad-Campaign-The-Impression-012-819x1024.jpg",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30558",
+                       "title":  "REVOLVE FW26",
+                       "talent":  "ANOK YAI",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/Anok-Yai-14-724x1024.jpg",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30902",
+                       "title":  "I-D BEAUTY ZINE WINTER 2026",
+                       "talent":  "KAI SCHREIBER",
+                       "image":  "",
+                       "size":  "large"
+                   },
+                   {
+                       "featuredId":  "30789",
+                       "title":  "VOGUE PORTUGAL NOVEMBER 2026",
+                       "talent":  "HANA JIRICKOVA",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/4-hana-jirickova-202611-vogueportugal-branislav-simoncik-841x1024.jpg",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30588",
+                       "title":  "GUERLAIN X GERMANIER HOLIDAY 2026",
+                       "talent":  "MATY FALL",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/1-maty-fall-202610-guerlain-819x1024.jpg",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30874",
+                       "title":  "V WINTER 2026",
+                       "talent":  "LETICIA HALL",
+                       "image":  "",
+                       "size":  "large"
+                   },
+                   {
+                       "featuredId":  "30820",
+                       "title":  "LOUIS VUITTON X KEITH HARING 2026",
+                       "talent":  "REAGAN LEE",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/Louis-Vuitton-ad-2026-The-Impression-008-1-1024x576.jpeg",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30363",
+                       "title":  "CHLOÉ FESTIVE 2026",
+                       "talent":  "CLAUDIA SCHIFFER",
+                       "image":  "https://imgmodels.com/wp-content/uploads/2026/11/SnapInsta.to_883300488_18639601174059618_3659537926234432868_n-768x1024.jpg",
+                       "size":  "regular"
+                   }
+               ],
+    "covers":  [
+                   {
+                       "featuredId":  "30763",
+                       "title":  "TEEN VOGUE 2026",
+                       "talent":  "ANOK YAI",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30805",
+                       "title":  "RE-EDITION FW26",
+                       "talent":  "ALEXA CHUNG",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30826",
+                       "title":  "M LA REVISTA DE MILENIO OCTOBER 2026",
+                       "talent":  "VALENTINA FERRER",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30753",
+                       "title":  "MIA LE JOURNAL NOVEMBER 2026",
+                       "talent":  "ANA CLARA FALCONI",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30585",
+                       "title":  "PUSS PUSS FW26",
+                       "talent":  "ALICE MCGRATH",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30547",
+                       "title":  "REVOLVE FW26",
+                       "talent":  "TEYANA TAYLOR",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30535",
+                       "title":  "REVOLVE FW26",
+                       "talent":  "ALEX CONSANI",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30580",
+                       "title":  "VOGUE HONG KONG NOVEMBER 2026",
+                       "talent":  "EILEEN GU",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30343",
+                       "title":  "BEAUTY PAPERS FW26",
+                       "talent":  "PALOMA ELSESSER",
+                       "image":  "",
+                       "size":  "regular"
+                   },
+                   {
+                       "featuredId":  "30280",
+                       "title":  "SSAW FW26",
+                       "talent":  "VIVIEN SOLARI",
+                       "image":  "",
+                       "size":  "regular"
+                   }
+               ]
+}
