@@ -17,7 +17,7 @@ All pictured footer destinations render directly as local React pages. The forme
 | Under 18 FAQs | `/under-18-faq` |
 | New York State Fashion Workers Act | `/new-york-state-fashion-workers-act` |
 
-Legacy IMG and `/legal/*` policy paths redirect to these routes. `/home` is the landing URL; the root redirect preserves query strings and fragments. Site Credits, Instagram and TikTok remain external. Copyright stays non-clickable. Scouting and privacy forms validate locally and clearly state that nothing was submitted to IMG/OneTrust.
+Legacy IMG and `/legal/*` policy paths redirect to these routes. `/#` is the landing URL; `/home` redirects to the root and preserves query strings and fragments. Site Credits, Instagram and TikTok remain external. Copyright stays non-clickable. Scouting and privacy forms validate locally and clearly state that nothing was submitted to IMG/OneTrust.
 
 `node scripts/check-footer-routes.mjs` clicked all ten footer destinations with the reference IMG, WME, scouting and OneTrust hosts blocked. All stayed at `localhost:4173` in the same React document, with zero iframes and zero runtime exceptions. The shared footer exposes exactly the three requested external links. Scouting acknowledgement and age18-to-form navigation passed. Browser Back, legacy redirect and direct page refresh were checked. All 11 unit tests and the production build passed. See `qa/footer-routing-check.json`.
 

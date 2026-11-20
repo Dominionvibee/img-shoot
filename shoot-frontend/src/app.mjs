@@ -9,8 +9,7 @@ import { setupPrivacyForm } from './privacy-form.mjs';
 const manifest = await fetch('/data/routes.json').then(r=>r.json());
 const normalize = path => path.replace(/\/+$/, '') + '/';
 const routes = new Map(Object.entries(manifest.routes));
-// F01 uses /home as its canonical landing URL while keeping the captured
-// homepage content shared with the site's root route.
+// Keep the previous landing path as an alias of the root homepage.
 routes.set('/home/', routes.get('/') || 'home');
 routes.set('/directory/london/vanesa-lorenzo/', 'profile-vanesa-lorenzo');
 const asset = url => assetMap[url] || url;
@@ -224,15 +223,22 @@ function ReferencePage(){
   else window.scrollTo(0,0);
   return()=>{cancelled=true;dispose?.();observer.disconnect();restoreStyles();};
  },[page]);
- if(error)return h('main',{style:{padding:'60px 30px'}},h('h1',null,'Page capture unavailable'),h('p',null,error),h(Link,{to:'/home'},'Return home'));
+ if(error)return h('main',{style:{padding:'60px 30px'}},h('h1',null,'Page capture unavailable'),h('p',null,error),h(Link,{to:'/#'},'Return home'));
  return h('div',{ref:root,className:'reference-page',dangerouslySetInnerHTML:{__html:page?.html||''}});
 }
 
 function AppRoutes(){
   const location=useLocation();
   const canonical=canonicalPath(location.pathname);
-  if(canonical!==location.pathname)return h(Navigate,{to:{pathname:canonical,search:location.search,hash:location.hash},replace:true});
-  const patterns=['/home','/directory','/directory/:territory/:talent/*','/work/:slug/*','/from-the-archive/*','/category/*','/talent-category/*','/author/*','/:page','*'];
+  useEffect(()=>{
+    // React Router normalizes an empty fragment away. Preserve the requested
+    // visible /# URL without changing its route or resetting the document.
+    if(location.pathname==='/'&&!window.location.hash&&!window.location.href.endsWith('#')) {
+      window.history.replaceState(window.history.state,'','/'+location.search+'#');
+    }
+  },[location.pathname,location.search,location.hash]);
+  if(canonical!==location.pathname)return h(Navigate,{to:{pathname:canonical,search:location.search,hash:location.hash||(canonical==='/'?'#':'')},replace:true});
+  const patterns=['/','/directory','/directory/:territory/:talent/*','/work/:slug/*','/from-the-archive/*','/category/*','/talent-category/*','/author/*','/:page','*'];
   return h(Routes,null,...patterns.map(pattern=>h(Route,{key:pattern,path:pattern,element:h(ReferencePage)})));
 }
 

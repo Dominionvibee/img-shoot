@@ -1,5 +1,5 @@
 const aliases = new Map([
-  ['/', '/home'], ['/home', '/home'],
+  ['/', '/'], ['/home', '/'],
   ['/about-us', '/about-us'], ['/contact', '/contact'],
   ['/get-scouted', '/get-scouted'], ['/scouting', '/get-scouted'],
   ['/we-love-your-genes', '/get-scouted'],
@@ -24,7 +24,10 @@ export function localRoute(href, currentUrl) {
   const current = new URL(currentUrl);
   const imgHost = ['imgmodels.com', 'www.imgmodels.com'].includes(url.hostname);
   const localHost = ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname) && url.port === current.port;
-  if (url.origin === current.origin || imgHost || localHost) return canonicalPath(url.pathname) + url.search + url.hash;
+  if (url.origin === current.origin || imgHost || localHost) {
+    const path=canonicalPath(url.pathname);
+    return path + url.search + (url.hash || (path==='/'?'#':''));
+  }
   if (url.hostname === 'getscouted.imgmodels.com') return '/get-scouted' + url.hash;
   if (['wmefashion.com', 'www.wmefashion.com'].includes(url.hostname)) {
     const path = canonicalPath(url.pathname);

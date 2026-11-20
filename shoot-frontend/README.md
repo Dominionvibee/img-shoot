@@ -2,7 +2,7 @@
 
 F01 uses React 18 and React Router 6.30.1 for local routes. The public IMG Models sitemap has 3,563 URLs; the route inventory also includes archive pagination. Captured original markup, CSS, SVG logos, fonts and media preserve the reference appearance. React and React Router are vendored, so no npm installation is needed.
 
-The landing URL is `/home` and `/` redirects there. IMG links use React navigation, including directory, profile, work, category, author and footer routes. Pages already captured load from disk. Other public IMG paths and uncaptured galleries use a read-only reference cache on first visit and require internet access. A reference rate limit returns an explicit retry message.
+The landing URL is `/#`; `/home` redirects there. IMG links use React navigation, including directory, profile, work, category, author and footer routes. Pages already captured load from disk. Other public IMG paths and uncaptured galleries use a read-only reference cache on first visit and require internet access. A reference rate limit returns an explicit retry message.
 
 Every pictured footer destination renders directly in the React document with local content and assets. Get Scouted and We Love Your Genes both use `/get-scouted`; policies use `/term-of-use`, `/privacy-policy`, and `/cookie-policy`. The privacy form uses `/do-not-sell-my-personal-info`. Legacy paths redirect to those canonical URLs. Site Credits, Instagram and TikTok retain their external destinations; copyright is non-clickable. No page is embedded in an iframe.
 
@@ -16,7 +16,7 @@ Run with Node 24:
 npm run dev
 ```
 
-Open `http://localhost:4173/home`. From the repository's main checkout, use `npm run dev --prefix .f01-work/shoot-frontend` to run the F01 worktree.
+Open `http://localhost:4173/#`. From the repository's main checkout, use `npm run dev --prefix .f01-work/shoot-frontend` to run the F01 worktree.
 
 ```sh
 npm test

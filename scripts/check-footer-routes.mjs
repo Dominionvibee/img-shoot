@@ -7,7 +7,7 @@ const {send,eval:evaluate}=browser;
 await send('Network.enable');
 await send('Network.setBlockedURLs',{urls:['*://imgmodels.com/*','*://www.imgmodels.com/*','*://getscouted.imgmodels.com/*','*://wmefashion.com/*','*://privacyportal.onetrust.com/*']});
 await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
-await send('Page.navigate',{url:'http://localhost:4173/home'});
+await send('Page.navigate',{url:'http://localhost:4173/#'});
 await new Promise(resolve=>setTimeout(resolve,1500));
 await evaluate(`window.__footerReactDocument='persistent'`);
 const targets=[
@@ -33,7 +33,7 @@ try{
       assert.equal(await evaluate(`document.querySelector('[data-scout-adult]').hidden`),false);
     }
   }
-  await evaluate(`window.F01Navigate('/home')`);await new Promise(resolve=>setTimeout(resolve,600));
+  await evaluate(`window.F01Navigate('/#')`);await new Promise(resolve=>setTimeout(resolve,600));
   const menuGetScouted=await evaluate(`[...document.querySelectorAll('.header a')].find(a=>a.textContent.trim()==='Get Scouted')?.getAttribute('href')`);
   assert.equal(menuGetScouted,'/get-scouted');
   const exceptions=browser.events.filter(event=>event.method==='Runtime.exceptionThrown');
