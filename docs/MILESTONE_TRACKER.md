@@ -1,9 +1,9 @@
 # Milestone tracker
 
-| ID | Component | Milestone | Status | Branch | Notes |
+| ID | Component | Milestone | Status | Branch | PR / notes |
 |---|---|---|---|---|---|
-| M00 | Repository | Repository and workflow initialization | Awaiting review | `setup/M00` | Changes are present on the setup branch; not yet merged to approved `develop`. |
-| F00 | Frontend | Frontend baseline | Complete | `develop` | Frontend directory baseline. |
-| F01 | Frontend | Website replication | Implemented; awaiting review | `frontend/F01-website-replication` | See [F01 implementation and validation notes](../shoot-frontend/docs/milestones/F01/README.md). |
-| B00 | Backend | Backend baseline | Complete | `develop` | Backend directory baseline. |
-| B01 | Backend | Backend first milestone | Not started | — | Do not begin until separately specified and approved. |
+| M00 | Repository | Repository and workflow setup | Implemented; open for review | `setup/M00` | [PR #1](https://github.com/Dominionvibee/img-shoot/pull/1), targets `develop` |
+| F00 | Frontend | Frontend setup and baseline | Implemented; awaiting review | `frontend/F00-frontend-setup` | See [F00 documentation](../shoot-frontend/docs/milestones/F00/README.md) |
+| F01 | Frontend | Website replication | Implemented; open for review | `frontend/F01-website-replication` | [PR #2](https://github.com/Dominionvibee/img-shoot/pull/2) |
+| B00 | Backend | Backend setup and baseline | Not started | — | No backend work included in F00 |
+| B01 | Backend | Backend feature milestone | Not started | — | No backend work included in F00 |
