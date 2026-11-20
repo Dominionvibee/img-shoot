@@ -45,7 +45,7 @@ The backend does not emit cross-origin access headers. Local frontend requests g
 
 ## Outstanding items
 
-No B00-scope blockers remain. The production CORS allowlist depends on the eventual hosted frontend origin. F00/B00 integration into `develop` requires approval; neither branch has been merged.
+No B00-scope blockers remain. A read-only merge preview of the current F00 and B00 branch heads reports no conflicts. The production CORS allowlist depends on the eventual hosted frontend origin. Integration into `develop` requires approval; neither branch has been merged.
 
 ## Git and review
 
