@@ -2,15 +2,17 @@
 
 ## React routing expansion
 
+The footer and site navigation now use client-side React transitions. `/home` is the landing URL, and `/` preserves query strings and fragments when redirecting. The IMG routes in the header, footer, directory, profiles, work, archive, category and search stay in the React document. Current WME policy pages are captured under local `/legal/*` routes; the official Get Scouted and OneTrust privacy form are embedded under local routes. Site Credits, Instagram and TikTok keep their external destinations, and the copyright text remains non-clickable. Browser checks confirmed these footer routes and repeated transitions without runtime exceptions.
+
 The subsequent routing update uses React 18 with React Router 6.30.1. Sitemap discovery found 3,563 published URLs across 12 sitemap documents. All published paths, plus archive pagination, now resolve locally through React routes. Internal profile, work, category, author and footer links stay on localhost.
 
-`data/routes.json` records discovered paths, captured page filenames and pending captures. At this update, 898 local page templates are indexed; 2,693 published URLs remain to be stored in advance. Pending routes use an allowlisted, read-only public page cache on first visit. Previously captured gallery responses are local; new galleries can also be fetched and cached. Portfolio PDF requests use a validated local download endpoint.
+`data/routes.json` records discovered paths, captured page filenames and pending captures. At this update, 898 local page templates are indexed; 2,693 published URLs remain to be stored in advance. Uncaptured public IMG paths use a read-only public page cache on first visit. Previously captured gallery responses are local; new galleries can also be fetched and cached. Portfolio PDF requests use a validated local download endpoint.
 
 Bulk capture encountered HTTP 429 and was stopped. A slower retry captured additional pages without errors. The resumable capture command is `node scripts/capture-all-routes.mjs`; it processes one request at a time and stops immediately on a rate limit. This is **not a fully offline copy of every page**: uncached pages, galleries and remote media require reference-site access. No claim is made that thousands of newly discovered pages have each received the earlier screenshot matrix.
 
 Browser checks confirmed React roots and local URLs on home, directory, New York and London profiles, a work URL, category/author URLs, and an uncached Sydney profile fetched through the local cache. No runtime exceptions were recorded. The reference itself returns a visible `404.` for the sampled category and author paths; those source states are retained. Existing 9 tests and the production build passed after the routing change.
 
-The earlier report below describes the prior visual-validation baseline; its statements about profile links remaining external are superseded by this routing expansion.
+The earlier report below describes the prior visual-validation baseline; its statements about profile links, scouting and legal links remaining external are superseded by this routing expansion.
 
 **Branch:** `frontend/F01-website-replication`
 **Reference:** [IMG Models](https://imgmodels.com/)

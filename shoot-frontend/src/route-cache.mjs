@@ -33,7 +33,10 @@ export async function handleRouteCache(req,res){
    const manifest=await read('routes.json');
    if(manifest.routes[path])value=await read('pages/'+manifest.routes[path]+'.json');
    else{
-    if(!manifest.discoveredRoutes?.includes(path))throw Object.assign(new Error('Page not found'),{status:404});
+    // Public pages absent from the sitemap can still be reached through the
+    // site's links. Read them from the fixed IMG origin on first visit.
+    if(/^\/(?:api|assets|src|data|wp-json|wp-admin|wp-login)(?:\/|$)/.test(path)||path.includes('..'))
+     throw Object.assign(new Error('Page not found'),{status:404});
     const slug='route-'+createHash('sha256').update(path).digest('hex').slice(0,20);
     const cached=await read('pages/'+slug+'.json').catch(()=>null);
     const raw=cached?null:await(await publicGet(path)).text(),body=raw?.match(/<body\b[^>]*class=["']([^"']*)["'][^>]*>([\s\S]*?)<\/body>/i);
