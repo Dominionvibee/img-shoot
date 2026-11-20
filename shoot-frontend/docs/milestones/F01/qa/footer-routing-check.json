@@ -1,0 +1,147 @@
+{
+  "blockedReferenceHosts": true,
+  "iframes": 0,
+  "exceptions": [],
+  "results": [
+    {
+      "label": "About Us",
+      "path": "/about-us",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 22222,
+      "body": "wp-singular page-template-default page page-id-9482 wp-theme-img-models  no-banner page-about-us",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Contact",
+      "path": "/contact",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 20248,
+      "body": "wp-singular page-template-default page page-id-57 wp-theme-img-models  no-banner page-contact",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Recruitment Warning",
+      "path": "/recruitment-warning",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 19655,
+      "body": "wp-singular page-template-default page page-id-9442 wp-theme-img-models  no-banner page-recruitmentwarning",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Terms of use",
+      "path": "/term-of-use",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 25161,
+      "body": "f01-legal wp-singular page-template page-template- page-template-templates page-template-pages page-template-policy page-template-templatespagespolicy-php page page-id-337 wp-theme-wme-fashion page-terms-of-use",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Privacy Policy",
+      "path": "/privacy-policy",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 48544,
+      "body": "f01-legal wp-singular page-template page-template- page-template-templates page-template-pages page-template-scroll-policy page-template-templatespagesscroll-policy-php page page-id-1200 wp-theme-wme-fashion page-privacy-policy",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Cookie Policy",
+      "path": "/cookie-policy",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 12002,
+      "body": "f01-legal wp-singular page-template page-template- page-template-templates page-template-pages page-template-policy page-template-templatespagespolicy-php page page-id-327 wp-theme-wme-fashion page-cookies",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Under 18 FAQs",
+      "path": "/under-18-faq",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 21279,
+      "body": "wp-singular page-template-default page page-id-9461 wp-theme-img-models  no-banner page-under-18-faq",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "New York State Fashion Workers Act",
+      "path": "/new-york-state-fashion-workers-act",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 19044,
+      "body": "wp-singular page-template-default page page-id-26752 wp-theme-img-models  no-banner page-new-york-state-fashion-workers-act",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "Do not sell my personal info",
+      "path": "/do-not-sell-my-personal-info",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 13869,
+      "body": "f01-privacy-form",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    },
+    {
+      "label": "We Love Your Genes",
+      "path": "/get-scouted",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "frames": 0,
+      "content": 25163,
+      "body": "f01-scouting  __variable_58d43c __variable_32e7b0 __variable_2d8a47 __variable_a30072  antialiased",
+      "externalFooter": [
+        "instagram",
+        "site credits",
+        "tiktok"
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ const types = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
   '.gif': 'image/gif', '.webp': 'image/webp', '.ico': 'image/x-icon',
   '.mp4': 'video/mp4', '.webm': 'video/webm', '.woff': 'font/woff',
-  '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.pdf': 'application/pdf',
+  '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.otf': 'font/otf', '.pdf': 'application/pdf',
 };
 
 export function createFrontendServer() {

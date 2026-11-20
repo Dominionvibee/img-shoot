@@ -2,7 +2,24 @@
 
 ## React routing expansion
 
-The footer and site navigation now use client-side React transitions. `/home` is the landing URL, and `/` preserves query strings and fragments when redirecting. The IMG routes in the header, footer, directory, profiles, work, archive, category and search stay in the React document. Current WME policy pages are captured under local `/legal/*` routes; the official Get Scouted and OneTrust privacy form are embedded under local routes. Site Credits, Instagram and TikTok keep their external destinations, and the copyright text remains non-clickable. Browser checks confirmed these footer routes and repeated transitions without runtime exceptions.
+All pictured footer destinations render directly as local React pages. The former embedded pages have been replaced with captured policy markup, a local scouting implementation and a local privacy form. Original fonts, logos, videos and images needed by these pages are stored locally.
+
+| Link | Canonical route |
+| --- | --- |
+| About Us | `/about-us` |
+| Contact | `/contact` |
+| We Love Your Genes / Get Scouted | `/get-scouted` |
+| Recruitment Warning | `/recruitment-warning` |
+| Do not sell my personal info | `/do-not-sell-my-personal-info` |
+| Terms of use | `/term-of-use` |
+| Privacy Policy | `/privacy-policy` |
+| Cookie Policy | `/cookie-policy` |
+| Under 18 FAQs | `/under-18-faq` |
+| New York State Fashion Workers Act | `/new-york-state-fashion-workers-act` |
+
+Legacy IMG and `/legal/*` policy paths redirect to these routes. `/home` is the landing URL; the root redirect preserves query strings and fragments. Site Credits, Instagram and TikTok remain external. Copyright stays non-clickable. Scouting and privacy forms validate locally and clearly state that nothing was submitted to IMG/OneTrust.
+
+`node scripts/check-footer-routes.mjs` clicked all ten footer destinations with the reference IMG, WME, scouting and OneTrust hosts blocked. All stayed at `localhost:4173` in the same React document, with zero iframes and zero runtime exceptions. The shared footer exposes exactly the three requested external links. Scouting acknowledgement and age18-to-form navigation passed. Browser Back, legacy redirect and direct page refresh were checked. All 11 unit tests and the production build passed. See `qa/footer-routing-check.json`.
 
 The subsequent routing update uses React 18 with React Router 6.30.1. Sitemap discovery found 3,563 published URLs across 12 sitemap documents. All published paths, plus archive pagination, now resolve locally through React routes. Internal profile, work, category, author and footer links stay on localhost.
 

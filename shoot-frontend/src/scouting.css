@@ -1,0 +1,11 @@
+@import url('/assets/scouting/original.css');
+body.f01-scouting { margin: 0; font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+body.f01-scouting [hidden] { display: none !important; }
+body.f01-scouting [data-scout-ack]:focus-visible,
+body.f01-scouting [data-scout-home]:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+body.f01-scouting .scout-age-option { min-height: 24px; border-bottom: 1px solid #ddd; cursor: pointer; width: 100%; }
+body.f01-scouting .scout-age-option:hover,
+body.f01-scouting .scout-age-option:focus-visible { background: #eee; }
+body.f01-scouting .scout-status { padding: 20px 0; font-size: 16px; line-height: 1.4; }
+body.f01-scouting .scout-mobile-menu { position: fixed; top: 60px; left: 0; right: 0; background: #fff; color: #111; padding: 24px; z-index: 102; }
+body.f01-scouting .scout-mobile-menu a { display: block; padding: 12px; text-transform: uppercase; }

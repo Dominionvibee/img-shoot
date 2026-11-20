@@ -18,6 +18,9 @@ export async function setupConsent() {
   if (document.querySelector('#onetrust-consent-sdk')?.dataset.localConsentReady) return;
   const {html} = await fetch('/data/pages/cookie.json').then(response => response.json());
   const fragment = document.createElement('template'); fragment.innerHTML = html;
+  // OneTrust's blank text measurement frame is unnecessary for the local
+  // consent controller, which sizes the captured dialog itself.
+  fragment.content.querySelectorAll('iframe.ot-text-resize').forEach(frame => frame.remove());
   document.body.append(fragment.content);
   const root = document.querySelector('#onetrust-consent-sdk');
   if (!root) return;

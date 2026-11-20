@@ -7,3 +7,5 @@ Photography and video URLs originate from `imgmodels.com/wp-content/uploads/` an
 React 18 and ReactDOM retain their original copyright and license headers. The accompanying `original/REACT-LICENSE.txt` is the [React v18.3.1 MIT license](https://github.com/facebook/react/blob/v18.3.1/LICENSE).
 
 These source attributions identify the reference material; they do not transfer ownership of the IMG Models branding, photography, video or fonts.
+
+The local scouting assets under `scouting/` originate from https://getscouted.imgmodels.com/ and its public MediaSlide videos. The legal fonts and logos under `legal/` originate from WME Fashion and its public Typekit font URLs. The privacy logo, fonts and SVG under `privacy/` originate from the linked OneTrust webform. They were captured on 20 November 2026 for the local F01 rendering; original ownership is retained.

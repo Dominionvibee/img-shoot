@@ -1,5 +1,8 @@
 import assetMap from '../data/asset-map.json' with { type: 'json' };
 import { setupConsent } from './consent.mjs';
+import { canonicalPath, localRoute } from './navigation.mjs';
+import { setupScouting } from './scouting.mjs';
+import { setupPrivacyForm } from './privacy-form.mjs';
 
 // Public presentation captured 20 November 2026. The original theme's public
 // interactions use a local, read-only snapshot API, with no production writes.
@@ -11,30 +14,17 @@ const routes = new Map(Object.entries(manifest.routes));
 routes.set('/home/', routes.get('/') || 'home');
 routes.set('/directory/london/vanesa-lorenzo/', 'profile-vanesa-lorenzo');
 const asset = url => assetMap[url] || url;
-const partnerRoutes = new Map([
-  ['https://wmefashion.com/terms-of-use/', '/legal/terms-of-use/'],
-  ['https://wmefashion.com/privacy-policy/', '/legal/privacy-policy/'],
-  ['https://wmefashion.com/cookies/', '/legal/cookies/'],
+const footerPages = new Map([
+  ['/get-scouted/', 'get-scouted'],
+  ['/term-of-use/', 'legal-terms-of-use'],
+  ['/privacy-policy/', 'legal-privacy-policy'],
+  ['/cookie-policy/', 'legal-cookies'],
+  ['/do-not-sell-my-personal-info/', 'do-not-sell-my-personal-info'],
 ]);
-const scoutingOrigin = 'https://getscouted.imgmodels.com';
-const privacyForm = 'https://privacyportal.onetrust.com/webform/889c435d-64b4-46d8-ad05-06332fe1d097/db459d3a-bffa-4cb2-a6fd-0daa31651507?website=imgmodels.com';
-const legalPages = new Map([
-  ['/legal/terms-of-use/', {title: 'Terms of Use', src: '/data/legal/terms-of-use.html'}],
-  ['/legal/privacy-policy/', {title: 'Privacy Policy', src: '/data/legal/privacy-policy.html'}],
-  ['/legal/cookies/', {title: 'Cookie Policy', src: '/data/legal/cookies.html'}],
-]);
+routes.set('/recruitment-warning/', routes.get('/recruitmentwarning/'));
+for (const [path, slug] of footerPages) routes.set(path, slug);
 function localHref(href) {
-  if (!href || href.startsWith('#')) return null;
-  if (assetMap[href]) return assetMap[href];
-  let url;
-  try { url = new URL(href, window.location.href); } catch { return null; }
-  if (!['http:', 'https:'].includes(url.protocol)) return null;
-  if (url.origin === window.location.origin || ['imgmodels.com', 'www.imgmodels.com'].includes(url.hostname)) {
-    return (url.pathname === '/' ? '/home' : url.pathname) + url.search + url.hash;
-  }
-  if (url.origin === scoutingOrigin) return '/get-scouted/' + (url.pathname === '/' ? '' : url.pathname.replace(/^\/+/, '')) + url.search + url.hash;
-  if (url.origin === new URL(privacyForm).origin && url.pathname === new URL(privacyForm).pathname) return '/do-not-sell-my-personal-info/';
-  return partnerRoutes.get(url.origin + url.pathname) || null;
+  return assetMap[href] || localRoute(href, window.location.href);
 }
 function localizeTree(root) {
   const media = root.matches?.('[src], [data-banner-src], [poster], [data-href]') ? [root] : [];
@@ -47,7 +37,10 @@ function localizeTree(root) {
   anchors.push(...root.querySelectorAll('a[href]'));
   for (const el of anchors) {
     const href = localHref(el.getAttribute('href'));
-    if (href) el.setAttribute('href', href);
+    if (href) {
+      el.setAttribute('href', href);
+      if (!href.startsWith('/assets/') && !el.hasAttribute('download')) el.removeAttribute('target');
+    }
   }
 }
 function localizeData(value) {
@@ -165,31 +158,30 @@ function useLocalNavigation() {
   },[navigate]);
 }
 
-function HomeRedirect(){
-  const location=useLocation();
-  return h(Navigate,{to:{pathname:'/home',search:location.search,hash:location.hash},replace:true});
+function activatePageStyles(page) {
+  const base=document.querySelector('link[href="/src/styles.css"]');
+  const isolated=page.kind&&page.kind!=='img';
+  if(base)base.disabled=Boolean(isolated);
+  const links=(page.styles||[]).map(href=>{
+    const link=document.createElement('link');link.rel='stylesheet';link.href=href;
+    document.head.append(link);return link;
+  });
+  return()=>{for(const link of links)link.remove();if(base)base.disabled=false;};
 }
 
-function ExternalPage({title,src,allowInnerLinks=false}){
-  const frame=useRef(null),navigate=useNavigate();
-  useLocalNavigation();
-  useEffect(()=>{document.title=title+' - IMG Models';document.body.className='f01-external-body';},[title]);
-  const onLoad=()=>{
-    if(!allowInnerLinks)return;
-    try{
-      frame.current.contentDocument.addEventListener('click',event=>{
-        const anchor=event.target.closest?.('a[href]');
-        if(!anchor||event.defaultPrevented||event.button!==0)return;
-        const target=localHref(anchor.href);
-        if(!target)return;
-        event.preventDefault();
-        navigate(target);
-      });
-    }catch{/* Live partner frames are cross-origin. */}
-  };
-  return h('main',{className:'f01-external-page'},
-    h('a',{className:'f01-external-return',href:'/home'},'← IMG Models'),
-    h('iframe',{ref:frame,src,title,onLoad,className:'f01-external-frame'}));
+function setupLegal(root) {
+  // Policy contents and section anchors are local DOM, including its mobile
+  // menu. The IMG footer keeps all ten requested destinations available here.
+  document.documentElement.classList.add('weLoaded');
+  const header=root.querySelector('.header');
+  header?.classList.add('dark');
+  const toggle=root.querySelector('.burger');
+  const click=()=>{header?.classList.toggle('active');};
+  if(toggle){toggle.setAttribute('role','button');toggle.tabIndex=0;toggle.setAttribute('aria-label','Toggle navigation');}
+  toggle?.addEventListener('click',click);
+  const key=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();click();}};
+  toggle?.addEventListener('keydown',key);
+  return()=>{toggle?.removeEventListener('click',click);toggle?.removeEventListener('keydown',key);document.documentElement.classList.remove('weLoaded');};
 }
 
 function ReferencePage(){
@@ -213,29 +205,35 @@ function ReferencePage(){
   if(!page||!root.current)return;
   let cancelled=false,dispose;
   document.body.className=page.bodyClass;
-  document.title='IMG Models';
-  initializePage(root.current).then(cleanup=>{
-    if(cancelled)cleanup();else dispose=cleanup;
+  document.title=page.title||'IMG Models';
+  const restoreStyles=activatePageStyles(page);
+  let cleanup;
+  if(page.kind==='scouting')cleanup=setupScouting(root.current);
+  else if(page.kind==='privacy-form')cleanup=setupPrivacyForm(root.current);
+  else if(page.kind==='legal')cleanup=setupLegal(root.current);
+  else cleanup=initializePage(root.current);
+  localizeTree(root.current);
+  const observer=new MutationObserver(records=>{
+    for(const record of records)for(const node of record.addedNodes)if(node.nodeType===1)localizeTree(node);
+  });
+  observer.observe(root.current,{childList:true,subtree:true});
+  Promise.resolve(cleanup).then(cleanup=>{
+    if(cancelled)cleanup?.();else dispose=cleanup;
   }).catch(cause=>{if(!cancelled)setError(cause.message)});
   if(location.hash)document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
   else window.scrollTo(0,0);
-  return()=>{cancelled=true;dispose?.()};
+  return()=>{cancelled=true;dispose?.();observer.disconnect();restoreStyles();};
  },[page]);
  if(error)return h('main',{style:{padding:'60px 30px'}},h('h1',null,'Page capture unavailable'),h('p',null,error),h(Link,{to:'/home'},'Return home'));
  return h('div',{ref:root,className:'reference-page',dangerouslySetInnerHTML:{__html:page?.html||''}});
 }
 
 function AppRoutes(){
-  const location=useLocation(),path=normalize(location.pathname);
-  const legal=legalPages.get(path);
-  if(legal)return h(ExternalPage,{...legal,allowInnerLinks:true});
-  if(path.startsWith('/get-scouted/')){
-    const tail=path.slice('/get-scouted/'.length);
-    return h(ExternalPage,{title:'Get Scouted',src:scoutingOrigin+'/'+tail+location.search+location.hash});
-  }
-  if(path==='/do-not-sell-my-personal-info/')return h(ExternalPage,{title:'Do not sell my personal info',src:privacyForm});
+  const location=useLocation();
+  const canonical=canonicalPath(location.pathname);
+  if(canonical!==location.pathname)return h(Navigate,{to:{pathname:canonical,search:location.search,hash:location.hash},replace:true});
   const patterns=['/home','/directory','/directory/:territory/:talent/*','/work/:slug/*','/from-the-archive/*','/category/*','/talent-category/*','/author/*','/:page','*'];
-  return h(Routes,null,h(Route,{path:'/',element:h(HomeRedirect)}),...patterns.map(pattern=>h(Route,{key:pattern,path:pattern,element:h(ReferencePage)})));
+  return h(Routes,null,...patterns.map(pattern=>h(Route,{key:pattern,path:pattern,element:h(ReferencePage)})));
 }
 
 window.ReactDOM.createRoot(document.getElementById('app')).render(h(BrowserRouter,null,h(AppRoutes)));
