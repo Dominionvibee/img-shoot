@@ -28,12 +28,17 @@ jobs:
 
             const id = match[1] || match[2] || match[3];
             const slug = match[4];
+            const docsPath = branch.startsWith('frontend/')
+              ? `shoot-frontend/docs/milestones/${id}/README.md`
+              : branch.startsWith('backend/')
+                ? `shoot-backend/docs/milestones/${id}/README.md`
+                : `docs/milestones/${id}/README.md`;
             const titleText = slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             const title = `${id}: Implement ${titleText}`;
             const body = [
               `## Milestone ${id}`,
               '',
-              `Implementation notes: [${id} milestone documentation](shoot-frontend/docs/milestones/${id}/README.md)`,
+              `Implementation notes: [${id} milestone documentation](${docsPath})`,
               '',
               'Review the milestone documentation and repository pull request template for completed work, validation results, and outstanding issues.',
               '',
