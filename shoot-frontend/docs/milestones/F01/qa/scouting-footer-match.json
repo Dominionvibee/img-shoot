@@ -1,0 +1,620 @@
+[
+  {
+    "width": 390,
+    "url": "https://getscouted.imgmodels.com/",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "column",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "https://www.imgmodels.com/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "https://www.imgmodels.com/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "https://www.imgmodels.com/recruitmentwarning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "https://privacyportal.onetrust.com/webform/889c435d-64b4-46d8-ad05-06332fe1d097/db459d3a-bffa-4cb2-a6fd-0daa31651507?website=imgmodels.com",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "https://wmefashion.com/terms-of-use/",
+        "x": 40,
+        "y": 386.953125,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "https://wmefashion.com/privacy-policy/",
+        "x": 40,
+        "y": 411.34375,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "https://wmefashion.com/cookies/",
+        "x": 40,
+        "y": 435.734375,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "https://www.imgmodels.com/faqunder18",
+        "x": 40,
+        "y": 460.125,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "https://imgmodels.com/new-york-state-fashion-workers-act/",
+        "x": 40,
+        "y": 484.515625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 40,
+        "y": 598.296875,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 40,
+        "y": 622.6875,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 40,
+        "y": 647.078125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  },
+  {
+    "width": 390,
+    "url": "http://localhost:4173/get-scouted",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "column",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "/recruitment-warning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "/do-not-sell-my-personal-info",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "/term-of-use",
+        "x": 40,
+        "y": 386.953125,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "/privacy-policy",
+        "x": 40,
+        "y": 411.34375,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "/cookie-policy",
+        "x": 40,
+        "y": 435.734375,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "/under-18-faq",
+        "x": 40,
+        "y": 460.125,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "/new-york-state-fashion-workers-act",
+        "x": 40,
+        "y": 484.515625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 40,
+        "y": 598.296875,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 40,
+        "y": 622.6875,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 40,
+        "y": 647.078125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  },
+  {
+    "width": 768,
+    "url": "https://getscouted.imgmodels.com/",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "row",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "https://www.imgmodels.com/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "https://www.imgmodels.com/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "https://www.imgmodels.com/recruitmentwarning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "https://privacyportal.onetrust.com/webform/889c435d-64b4-46d8-ad05-06332fe1d097/db459d3a-bffa-4cb2-a6fd-0daa31651507?website=imgmodels.com",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "https://wmefashion.com/terms-of-use/",
+        "x": 303.28125,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "https://wmefashion.com/privacy-policy/",
+        "x": 303.28125,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "https://wmefashion.com/cookies/",
+        "x": 303.28125,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "https://www.imgmodels.com/faqunder18",
+        "x": 303.28125,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "https://imgmodels.com/new-york-state-fashion-workers-act/",
+        "x": 303.28125,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 612.78125,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 612.78125,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 612.78125,
+        "y": 248.78125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  },
+  {
+    "width": 768,
+    "url": "http://localhost:4173/get-scouted",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "row",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "/recruitment-warning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "/do-not-sell-my-personal-info",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "/term-of-use",
+        "x": 303.28125,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "/privacy-policy",
+        "x": 303.28125,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "/cookie-policy",
+        "x": 303.28125,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "/under-18-faq",
+        "x": 303.28125,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "/new-york-state-fashion-workers-act",
+        "x": 303.28125,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 612.78125,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 612.78125,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 612.78125,
+        "y": 248.78125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  },
+  {
+    "width": 1440,
+    "url": "https://getscouted.imgmodels.com/",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "row",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "https://www.imgmodels.com/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "https://www.imgmodels.com/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "https://www.imgmodels.com/recruitmentwarning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "https://privacyportal.onetrust.com/webform/889c435d-64b4-46d8-ad05-06332fe1d097/db459d3a-bffa-4cb2-a6fd-0daa31651507?website=imgmodels.com",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "https://wmefashion.com/terms-of-use/",
+        "x": 415,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "https://wmefashion.com/privacy-policy/",
+        "x": 415,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "https://wmefashion.com/cookies/",
+        "x": 415,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "https://www.imgmodels.com/faqunder18",
+        "x": 415,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "https://imgmodels.com/new-york-state-fashion-workers-act/",
+        "x": 415,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 790,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 790,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 790,
+        "y": 248.78125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  },
+  {
+    "width": 1440,
+    "url": "http://localhost:4173/get-scouted",
+    "font": "12px / 14.4px laygrotesk, \"laygrotesk Fallback\"",
+    "padding": "200px 40px 150px",
+    "gap": "75px",
+    "direction": "row",
+    "height": 350,
+    "links": [
+      {
+        "text": "ABOUT US",
+        "href": "/about-us",
+        "x": 40,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "CONTACT",
+        "href": "/contact",
+        "x": 40,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "RECRUITMENT WARNING",
+        "href": "/recruitment-warning",
+        "x": 40,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "DO NOT SELL MY PERSONAL INFO",
+        "href": "/do-not-sell-my-personal-info",
+        "x": 40,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "SITE CREDITS",
+        "href": "https://www.mediaslide.com",
+        "x": 40,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "TERMS OF USE",
+        "href": "/term-of-use",
+        "x": 415,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "PRIVACY POLICY",
+        "href": "/privacy-policy",
+        "x": 415,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "COOKIE POLICY",
+        "href": "/cookie-policy",
+        "x": 415,
+        "y": 248.78125,
+        "height": 14.390625
+      },
+      {
+        "text": "UNDER 18 FAQ'S",
+        "href": "/under-18-faq",
+        "x": 415,
+        "y": 273.171875,
+        "height": 14.390625
+      },
+      {
+        "text": "NEW YORK STATE FASHION WORKERS ACT",
+        "href": "/new-york-state-fashion-workers-act",
+        "x": 415,
+        "y": 297.5625,
+        "height": 14.390625
+      },
+      {
+        "text": "INSTAGRAM",
+        "href": "https://www.instagram.com/imgmodels",
+        "x": 790,
+        "y": 200,
+        "height": 14.390625
+      },
+      {
+        "text": "FACEBOOK",
+        "href": "https://www.facebook.com/IMGmodels",
+        "x": 790,
+        "y": 224.390625,
+        "height": 14.390625
+      },
+      {
+        "text": "X",
+        "href": "https://x.com/imgmodels",
+        "x": 790,
+        "y": 248.78125,
+        "height": 14.390625
+      }
+    ],
+    "copyright": "COPYRIGHT IMG WORLDWIDE, INC"
+  }
+]

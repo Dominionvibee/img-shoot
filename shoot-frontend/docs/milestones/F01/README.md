@@ -1,5 +1,9 @@
 # F01 — IMG Models reference reclone
 
+## Get Scouted footer
+
+The `/get-scouted` footer now uses the actual Get Scouted footer markup and original CSS, including its labels, MediaSlide credits, Instagram/Facebook/X links and `COPYRIGHT IMG WORLDWIDE, INC`. Its 12px type, 14.4px line height, 10px link gaps, 75px column gaps and 200px/40px/150px padding match the source. Measurements of every link position at 390, 768 and 1440px matched exactly; evidence is in `qa/scouting-footer-match.json`. The IMG/policy/privacy links use local React routes. The source `/faqunder18` link maps to `/under-18-faq`. The older shared footer sizing notes below now apply to other local pages.
+
 ## Shared footer sizing
 
 The shared footer now uses the captured IMG theme measurements on IMG, scouting, legal and privacy routes: 12px Lay Grotesk with 13.2px line height, 20px rows with 5px spacing, 73px desktop column gaps and the original 840px layout breakpoint. This replaces the oversized 20px Arial footer on separately styled pages. Original footer labels and the user's external link exclusions are retained.

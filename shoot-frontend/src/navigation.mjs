@@ -9,7 +9,7 @@ const aliases = new Map([
   ['/privacy-policy-2', '/privacy-policy'], ['/privacy-policy', '/privacy-policy'],
   ['/legal/privacy-policy', '/privacy-policy'],
   ['/cookies', '/cookie-policy'], ['/cookie-policy', '/cookie-policy'], ['/legal/cookies', '/cookie-policy'],
-  ['/under-18-faq', '/under-18-faq'],
+  ['/under-18-faq', '/under-18-faq'], ['/faqunder18', '/under-18-faq'],
   ['/new-york-state-fashion-workers-act', '/new-york-state-fashion-workers-act'],
   ['/do-not-sell-my-personal-info', '/do-not-sell-my-personal-info'],
 ]);

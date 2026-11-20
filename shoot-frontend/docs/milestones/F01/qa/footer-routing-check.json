@@ -135,12 +135,13 @@
       "origin": "http://localhost:4173",
       "document": "persistent",
       "frames": 0,
-      "content": 25187,
+      "content": 25190,
       "body": "f01-scouting  __variable_58d43c __variable_32e7b0 __variable_2d8a47 __variable_a30072  antialiased",
       "externalFooter": [
+        "facebook",
         "instagram",
         "site credits",
-        "tiktok"
+        "x"
       ]
     }
   ]

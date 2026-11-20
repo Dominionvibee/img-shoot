@@ -19,12 +19,12 @@ const targets=[
 const results=[];
 try{
   for(const [label,path] of targets){
-    await evaluate(`(()=>{const footer=document.querySelector('.f01-local-footer')||document.querySelector('footer.footer');const link=[...footer.querySelectorAll('a')].find(a=>a.textContent.trim().toLowerCase()===${JSON.stringify(label.toLowerCase())});if(!link)throw Error('Missing footer link');link.click()})()`);
+    await evaluate(`(()=>{const footer=document.querySelector('.f01-local-footer')||document.querySelector('footer.footer')||document.querySelector('footer');const link=[...footer.querySelectorAll('a')].find(a=>a.textContent.trim().toLowerCase()===${JSON.stringify(label.toLowerCase())});if(!link)throw Error('Missing footer link');link.click()})()`);
     await new Promise(resolve=>setTimeout(resolve,750));
-    const result=await evaluate(`({path:location.pathname,origin:location.origin,document:window.__footerReactDocument,frames:document.querySelectorAll('iframe').length,content:document.querySelector('.reference-page')?.innerHTML.length,body:document.body.className,externalFooter:[...(document.querySelector('.f01-local-footer')||document.querySelector('footer.footer')).querySelectorAll('a')].filter(a=>a.origin!==location.origin).map(a=>a.textContent.trim().toLowerCase())})`);
+    const result=await evaluate(`({path:location.pathname,origin:location.origin,document:window.__footerReactDocument,frames:document.querySelectorAll('iframe').length,content:document.querySelector('.reference-page')?.innerHTML.length,body:document.body.className,externalFooter:[...(document.querySelector('.f01-local-footer')||document.querySelector('footer.footer')||document.querySelector('footer')).querySelectorAll('a')].filter(a=>a.origin!==location.origin).map(a=>a.textContent.trim().toLowerCase())})`);
     assert.equal(result.path,path);assert.equal(result.origin,'http://localhost:4173');assert.equal(result.document,'persistent');assert.equal(result.frames,0);assert.ok(result.content>1000);
     if(['/term-of-use','/privacy-policy','/cookie-policy'].includes(path))assert.equal(await evaluate(`getComputedStyle(document.querySelector('.siteWrap')).opacity`),'1');
-    assert.deepEqual(result.externalFooter.sort(),['instagram','site credits','tiktok']);
+    assert.deepEqual(result.externalFooter.sort(),path==='/get-scouted'?['facebook','instagram','site credits','x']:['instagram','site credits','tiktok']);
     results.push({label,...result});
     // Scouting blocks scrolling until acknowledged, just like the reference.
     // Navigation remains available through React after leaving its age gate.
