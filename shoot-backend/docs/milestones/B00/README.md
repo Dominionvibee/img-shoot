@@ -43,5 +43,5 @@ None identified before validation. Integration with F00 requires both independen
 - Branch: `backend/B00-backend-initialization` (created from approved `origin/develop`).
 - Implementation commit: `01d044e2d19089a97edca6a27a2f594076d53815`.
 - Documentation commit: recorded immediately after the implementation commit.
-- Pull request: recorded after push; target `develop`.
+- Pull request: [#4](https://github.com/Dominionvibee/img-shoot/pull/4), open and targeting `develop`.
 - Status: implementation and backend validation complete; awaiting review and PR checks.
