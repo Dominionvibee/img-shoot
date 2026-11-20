@@ -1,13 +1,11 @@
 # Milestone index
 
-Milestones are recorded here once their scope and acceptance criteria are agreed. Keep one objective per milestone and one development branch per milestone.
+Frontend and backend milestones are tracked independently. Add entries only when the milestone scope is supplied.
 
 | ID | Component | Folder | Status |
 |---|---|---|---|
-| M00 | Repository workflow | repository root | Initialized locally |
-| F00 | Frontend setup/baseline | `shoot-frontend/` | Scope label reserved; stack and acceptance criteria pending |
-| F01 | First frontend feature | `shoot-frontend/` | Scope pending |
-| B00 | Backend setup/baseline | `shoot-backend/` | Scope label reserved; stack and acceptance criteria pending |
-| B01 | First backend feature | `shoot-backend/` | Scope pending |
+| F00 | Frontend initialization | `shoot-frontend/` | Validated; open for review in [PR #3](https://github.com/Dominionvibee/img-shoot/pull/3) |
+| F01 | Website replication | `shoot-frontend/` | Open for review in [PR #2](https://github.com/Dominionvibee/img-shoot/pull/2); feature work preserved |
+| B00 | Backend initialization | `shoot-backend/` | Validated; open for review in [PR #4](https://github.com/Dominionvibee/img-shoot/pull/4) |
 
-Do not create branches for F00/F01/B00/B01 until the actual milestone scope is defined and approved.
+Do not create feature branches or milestone folders before receiving their requirements.
