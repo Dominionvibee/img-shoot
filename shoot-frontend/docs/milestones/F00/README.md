@@ -61,5 +61,5 @@ The root supervisor starts the frontend in F00. It starts the backend as well on
 
 - Branch: `frontend/F00-frontend-setup`
 - Pull request: [#3 targeting `develop`](https://github.com/Dominionvibee/img-shoot/pull/3)
-- Implementation commit: recorded in the follow-up documentation commit.
+- Implementation commit: `cfe06b1570c48cd2c18a005b76cb95f59d204ba5`.
 - Completion: implementation and local validation complete; awaiting review and integration with B00.
