@@ -19,8 +19,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test -d shoot-frontend
-          test -d shoot-backend
+          test -f shoot-frontend/README.md
+          test -f shoot-backend/README.md
           test -f README.md
           test -f docs/git-workflow.md
           test -f docs/milestones/README.md
