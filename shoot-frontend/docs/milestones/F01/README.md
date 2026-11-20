@@ -1,5 +1,11 @@
 # F01 — IMG Models reference reclone
 
+## Shared footer sizing
+
+The shared footer now uses the captured IMG theme measurements on IMG, scouting, legal and privacy routes: 12px Lay Grotesk with 13.2px line height, 20px rows with 5px spacing, 73px desktop column gaps and the original 840px layout breakpoint. This replaces the oversized 20px Arial footer on separately styled pages. Original footer labels and the user's external link exclusions are retained.
+
+Browser measurements at 390, 768 and 1440px compare reference Contact against local Contact, Get Scouted, Terms and the privacy form. Footer text, line height, row size, padding, gap, layout direction and overall height match the reference IMG footer. This is a shared IMG footer across all routes; the source scouting site's different link collection is normalized to the user's requested footer links. See `qa/footer-sizing-check.json`. All ten footer route checks, frontend lint, 17 tests and production build passed.
+
 ## React routing expansion
 
 All pictured footer destinations render directly as local React pages. The former embedded pages have been replaced with captured policy markup, a local scouting implementation and a local privacy form. Original fonts, logos, videos and images needed by these pages are stored locally.

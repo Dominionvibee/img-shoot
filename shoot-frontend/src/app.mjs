@@ -26,6 +26,8 @@ function localHref(href) {
   return assetMap[href] || localRoute(href, window.location.href);
 }
 function localizeTree(root) {
+  if(root.matches?.('footer.footer'))root.classList.add('f01-local-footer');
+  root.querySelectorAll('footer.footer').forEach(footer=>footer.classList.add('f01-local-footer'));
   const media = root.matches?.('[src], [data-banner-src], [poster], [data-href]') ? [root] : [];
   media.push(...root.querySelectorAll('[src], [data-banner-src], [poster], [data-href]'));
   for (const el of media) {
