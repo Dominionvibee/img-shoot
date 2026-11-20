@@ -61,7 +61,7 @@ MongoDB is not part of F00. B00 provides the independent backend connection conf
 
 ## Outstanding integration
 
-F00 and B00 have separate passing PR checks and target `develop`. A merge preview identified conflicts in the shared README and milestone tracking files; those files are being aligned before integration. Both branches still require approval before merging. Existing F01 remains a separate review branch and will be synchronized from approved `develop` before further feature work.
+F00 and B00 have separate passing PR checks and target `develop`. A read-only merge preview of their latest pushed heads reports no conflicts. Both branches still require approval before merging. Existing F01 remains a separate review branch and will be synchronized from approved `develop` before further feature work.
 
 ## Review references
 
