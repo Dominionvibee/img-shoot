@@ -1,8 +1,7 @@
 # shoot-backend
 
-Backend application workspace. Backend milestones use the `B` prefix:
+Backend application workspace. Backend milestone branches use the `B` prefix:
 
-- **B00** — backend setup and baseline.
-- **B01** and later — backend feature milestones.
+- **B00**, **B01**, and later, according to the user's milestone instructions.
 
-This folder is currently an empty application scaffold. Define the stack and milestone acceptance criteria before implementation or branch creation.
+This folder is currently an empty application scaffold. The user provides milestone scope and acceptance criteria before implementation or branch creation.

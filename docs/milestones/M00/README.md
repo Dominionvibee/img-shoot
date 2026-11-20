@@ -13,7 +13,7 @@ Configure img-shoot for user-directed, sequential milestone work. The user suppl
 - Established `main` as the stable branch and `develop` as the integration branch.
 - Added repository documentation, a pull request template, `.gitignore`, and GitHub Actions workflows.
 - Added component workspaces `shoot-frontend/` and `shoot-backend/`.
-- Documented component-local frontend labels F00/F01... and backend labels B00/B01..., while the user-controlled repository sequence uses M00, M01, M02...
+- Documented frontend milestone IDs F00/F01... in `shoot-frontend/` and backend IDs B00/B01... in `shoot-backend/`; global M-series IDs are used only when supplied by the user.
 - Added the central milestone tracker with M00 and only the next supplied milestone, M01, awaiting instructions.
 - Set up a dedicated `setup/M00` branch from the latest `origin/develop` for this workflow update.
 
@@ -28,6 +28,9 @@ Configure img-shoot for user-directed, sequential milestone work. The user suppl
 - `docs/milestones/README.md`
 - `.github/workflows/ci.yml`
 - `.github/workflows/milestone-pr.yml`
+- `.github/pull_request_template.md`
+- `shoot-frontend/README.md`
+- `shoot-backend/README.md`
 
 ## Routes, endpoints, features, and integrations
 

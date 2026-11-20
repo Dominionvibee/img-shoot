@@ -1,6 +1,6 @@
 ## Milestone
 
-<!-- ID and objective, e.g. F01 — first frontend route -->
+<!-- ID and objective, as supplied in the milestone instructions -->
 
 ## Completed work
 

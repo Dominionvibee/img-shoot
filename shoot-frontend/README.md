@@ -1,8 +1,7 @@
 # shoot-frontend
 
-Frontend application workspace. Frontend milestones use the `F` prefix:
+Frontend application workspace. Frontend milestone branches use the `F` prefix:
 
-- **F00** — frontend setup and baseline.
-- **F01** and later — frontend feature milestones.
+- **F00**, **F01**, and later, according to the user's milestone instructions.
 
-This folder is currently an empty application scaffold. Define the stack and milestone acceptance criteria before implementation or branch creation.
+This folder is currently an empty application scaffold. The user provides milestone scope and acceptance criteria before implementation or branch creation.
