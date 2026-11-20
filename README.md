@@ -2,21 +2,22 @@
 
 Full-stack monorepo with one Git repository, one `main` branch, and one `develop` integration branch.
 
-- `shoot-frontend/` — frontend application; frontend milestones use F-series IDs (F00 establishes React and Vite).
+- `shoot-frontend/` — React and Vite application; frontend milestones use F-series IDs.
 - `shoot-backend/` — Node.js, Express, and Mongoose API; backend milestones use B-series IDs.
 - `docs/` — project workflow and independent frontend/backend milestone tracking.
 
 ## Development
 
-Install the available app packages after checkout:
+Install packages for each initialized app after checkout. A milestone branch may contain only one app; after F00 and B00 are approved into `develop`, all three installs apply:
 
 ```sh
 npm ci --prefix shoot-frontend
+npm ci --prefix shoot-backend
 npm ci
 npm run dev
 ```
 
-The root command starts each initialized application concurrently. F00's React/Vite server uses `http://127.0.0.1:4175`; the preserved F01 implementation currently serves on `http://localhost:4173`. The backend listens at `http://localhost:4000` after B00 is approved and merged into `develop`; until then the runner reports that the backend package is not initialized on this branch.
+The root command starts every initialized application concurrently. F00 serves the frontend at `http://localhost:5173`; B00 serves the backend at `http://localhost:4000`. A milestone branch reports and skips an app whose package is absent. Once both are approved into `develop`, the root command starts both.
 
 Independent commands:
 

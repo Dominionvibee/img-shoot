@@ -45,13 +45,13 @@ jobs:
         run: npm ci --prefix shoot-frontend
       - name: Lint frontend
         if: hashFiles('shoot-frontend/package.json') != ''
-        run: npm run lint --if-present --prefix shoot-frontend
+        run: npm run lint --prefix shoot-frontend
       - name: Test frontend
         if: hashFiles('shoot-frontend/package.json') != ''
-        run: npm test --if-present --prefix shoot-frontend
+        run: npm test --prefix shoot-frontend
       - name: Build frontend
         if: hashFiles('shoot-frontend/package.json') != ''
-        run: npm run build --if-present --prefix shoot-frontend
+        run: npm run build --prefix shoot-frontend
 
   backend:
     name: Backend validation
@@ -66,10 +66,10 @@ jobs:
         run: npm ci --prefix shoot-backend
       - name: Lint backend
         if: hashFiles('shoot-backend/package.json') != ''
-        run: npm run lint --if-present --prefix shoot-backend
+        run: npm run lint --prefix shoot-backend
       - name: Test backend
         if: hashFiles('shoot-backend/package.json') != ''
-        run: npm test --if-present --prefix shoot-backend
+        run: npm test --prefix shoot-backend
       - name: Build backend
         if: hashFiles('shoot-backend/package.json') != ''
-        run: npm run build --if-present --prefix shoot-backend
+        run: npm run build --prefix shoot-backend

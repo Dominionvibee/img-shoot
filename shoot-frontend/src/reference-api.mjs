@@ -136,7 +136,7 @@ async function localize(value) {
       if (item.startsWith('https://imgmodels.com/')) return localHref(item);
       if (item.includes('<')) {
         for (const [remote, local] of replacements) item = item.split(remote).join(local);
-        item = item.replace(/href="(https:\/\/imgmodels\.com\/[^\"]*)"/g, (_match, href) => `href="${localHref(href)}"`);
+        item = item.replace(/href="(https:\/\/imgmodels\.com\/[^"]*)"/g, (_match, href) => `href="${localHref(href)}"`);
       }
       return item;
     }
