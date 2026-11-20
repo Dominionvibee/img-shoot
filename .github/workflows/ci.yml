@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, develop, "milestone/**", "fix/**", "hotfix/**"]
+    branches: [main, develop, "setup/**", "milestone/**", "fix/**", "hotfix/**"]
   pull_request:
     branches: [main, develop]
 
@@ -24,4 +24,6 @@ jobs:
           test -f README.md
           test -f docs/git-workflow.md
           test -f docs/milestones/README.md
+          test -f docs/MILESTONE_TRACKER.md
+          test -f docs/milestones/M00/README.md
           test -f .github/pull_request_template.md
