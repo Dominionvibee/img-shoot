@@ -32,7 +32,7 @@ The directory and editorial archive are snapshots (`data/talent.json`, `data/arc
 
 ## Design and responsiveness
 
-Styles use the existing Lay Grotesk font URLs and IMG public media URLs from the captured data. The layout has mobile and tablet breakpoints and responsive image grids. These rules were updated to reflect the observed black-and-white IMG presentation and current page hierarchy. No screenshot-based measurements or visual-diff score are available for this refresh; actual visual fidelity is still to be checked in a functioning browser against the live reference.
+Styles use the existing Lay Grotesk font URLs and IMG public media URLs from the captured data. The layout has mobile and tablet breakpoints and responsive image grids. These rules were updated to reflect the observed black-and-white IMG presentation and current page hierarchy. Local headless Chrome captures were taken at all nine requested widths (320, 375, 390, 430, 768, 1024, 1280, 1440, and 1920px). The 320px, 390px, and 1920px captures were visually reviewed for layout; the hero and editorial image slots were blank because external IMG media/font requests were denied (`net::ERR_NETWORK_ACCESS_DENIED`). A screenshot of the live reference could not be captured from this environment, so no valid side-by-side visual comparison or pixel-diff score is available. Actual visual fidelity remains unverified.
 
 ## Run locally
 
@@ -50,7 +50,7 @@ npm run build
 
 ## Validation record
 
-For this refresh, `npm test` passed (3 tests), `npm run build` passed, and `node --check src/app.mjs` passed. HTTP smoke checks returned 200 for all nine local content routes and both local JS/CSS assets. Browser-based interaction, responsive viewport, and screenshot comparison checks were not completed because the computer-use browser service failed to connect. Do not treat earlier F01 checks as evidence for this refreshed implementation.
+For this refresh, `npm test` passed (4 tests), `npm run build` passed, and `node --check src/app.mjs` passed. HTTP smoke checks returned 200 for all nine local content routes and both local JS/CSS assets. Headless local screenshots were captured at 320, 375, 390, 430, 768, 1024, 1280, 1440, and 1920px; selected widths were visually checked, but remote images/fonts did not load. Browser interaction checks and comparison against a live reference screenshot remain incomplete because the computer-use service failed to connect and direct browser requests were denied. Do not treat earlier F01 checks as evidence for this refreshed implementation.
 
 ## Source URLs
 

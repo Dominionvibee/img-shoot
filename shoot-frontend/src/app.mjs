@@ -6,7 +6,6 @@ const path = location.pathname.replace(/\/+$/, '') || '/';
 const state = {
   territory: '', category: 'model', gender: '', view: 'grid',
   archivePage: Math.max(1, Number(path.match(/page\/(\d+)/)?.[1] || 1)),
-  cookie: localStorage.getItem('img-cookie-choice') || '',
 };
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
 const image = (url, alt = '') => url ? `<img loading="lazy" src="${esc(url)}" alt="${esc(alt)}">` : '<span class="image-placeholder" aria-hidden="true"></span>';
@@ -41,7 +40,10 @@ function workCard(item) {
 }
 function workGrid(items) { return `<div class="work-grid">${items.map(workCard).join('')}</div>`; }
 function home() {
-  return `<main><section class="hero" aria-label="${esc(homepage.hero.title)}" style="--hero:url('${esc(homepage.hero.image)}')"><div class="hero-label"><h1>${esc(homepage.hero.title)}</h1><a href="/from-the-archive/">${esc(homepage.hero.caption)}</a></div></section><section class="home-section"><h2>Latest</h2>${workGrid(homepage.latest)}</section><section class="home-section"><h2>Covers</h2>${workGrid(homepage.covers)}</section><a class="archive-link" href="/from-the-archive/">View the Archive +</a></main>`;
+  const [heroPeople, heroWork] = homepage.hero.caption.split(' Silver Lining By ');
+  const heroPeopleMarkup = esc(heroPeople).replace(' &amp; Alex Consani', ' <span class="hero-narrow-break">&amp; Alex Consani</span>');
+  const heroCaption = heroWork ? `${heroPeopleMarkup}<br class="hero-mobile-break">Silver Lining By ${esc(heroWork)}` : esc(homepage.hero.caption);
+  return `<main><section class="hero" aria-label="${esc(homepage.hero.title)}" style="--hero:url('${esc(homepage.hero.image)}')"><div class="hero-label"><h1>${esc(homepage.hero.title)}</h1><a href="/from-the-archive/">${heroCaption}</a></div></section><section class="home-section"><h2>Latest</h2>${workGrid(homepage.latest)}</section><section class="home-section"><h2>Covers</h2>${workGrid(homepage.covers)}</section><a class="archive-link" href="/from-the-archive/">View the Archive +</a></main>`;
 }
 function personCard(person) {
   const photo = typeof person.thumbnail === 'string' ? person.thumbnail : person.thumbnail?.source;
@@ -128,8 +130,6 @@ render();
 app.addEventListener('click', event => {
   const menu = event.target.closest('.menu-toggle');
   if (menu) { const open = menu.getAttribute('aria-expanded') === 'true'; menu.setAttribute('aria-expanded', String(!open)); app.querySelector('.mobile-menu').classList.toggle('open', !open); }
-  const choice = event.target.closest('[data-cookie]');
-  if (choice) { state.cookie = choice.dataset.cookie; localStorage.setItem('img-cookie-choice', state.cookie); choice.closest('.cookie-banner').remove(); }
   const view = event.target.closest('[data-view]');
   if (view) { state.view = view.dataset.view; render(); }
   const filter = event.target.closest('.filter-toggle');
