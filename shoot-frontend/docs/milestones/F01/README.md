@@ -65,3 +65,15 @@ The build writes static output to ignored `dist/`. Validation completed on this 
 - `data/work.json`: supplementary public work query snapshot.
 
 Data was obtained from unauthenticated public pages/endpoints. Only publicly accessible material is represented.
+
+## Shared project workflow update
+
+The shared root runner, CI workflows, and milestone tracker now use separate F-series and B-series IDs. A lockfile was added for this dependency-free F01 package so `npm ci` works in CI. The website implementation and captured data remain unchanged. The workflow conditionally skips lint because this existing package has no lint script; tests and build run normally.
+
+Validation on the preserved F01 branch: `npm ci` passed; three tests passed; static build passed. The root runner starts this branch's frontend on port 4173 and reports that the backend package is not present on this branch.
+
+## Git and review
+
+- Branch: `frontend/F01-website-replication`.
+- Pull request: [#2 targeting `develop`](https://github.com/Dominionvibee/img-shoot/pull/2).
+- Existing F01 implementation remains intact; synchronize from approved `develop` before additional feature work.

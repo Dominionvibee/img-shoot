@@ -1,8 +1,7 @@
 # shoot-frontend
 
-Frontend application workspace. Frontend milestones use the `F` prefix:
+The frontend app contains independently tracked F-series milestones.
 
-- **F00** — frontend setup and baseline.
-- **F01** and later — frontend feature milestones.
+This branch preserves the completed F01 website replication: a dependency-free static site with a Node.js development server on port 4173. Its routes, public-content snapshot, tests, browser comparisons, and known asset-loading limitations are documented in [F01](docs/milestones/F01/README.md).
 
-This folder is currently an empty application scaffold. Define the stack and milestone acceptance criteria before implementation or branch creation.
+F00 establishes the React/Vite application foundation on its separate review branch. F01 will be safely synchronized with approved `develop` changes before further feature work.

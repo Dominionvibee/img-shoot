@@ -5,55 +5,84 @@ on:
     branches:
       - "frontend/**"
       - "backend/**"
-      - "milestone/**"
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  open-or-update:
+  validate-and-open:
+    name: Validate milestone and open or update PR
     runs-on: ubuntu-latest
     steps:
-      - name: Open or update pull request
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate root scripts
+        run: npm ci --ignore-scripts
+      - name: Validate frontend
+        if: startsWith(github.ref, 'refs/heads/frontend/')
+        working-directory: shoot-frontend
+        run: |
+          npm ci
+          npm run lint --if-present
+          npm test --if-present
+          npm run build --if-present
+      - name: Validate backend
+        if: startsWith(github.ref, 'refs/heads/backend/')
+        working-directory: shoot-backend
+        run: |
+          npm ci
+          npm run lint --if-present
+          npm test --if-present
+          npm run build --if-present
+      - name: Open or update milestone pull request
         uses: actions/github-script@v7
         with:
           script: |
             const branch = context.ref.replace('refs/heads/', '');
-            const match = branch.match(/^(?:frontend\/(F\d{2})|backend\/(B\d{2})|milestone\/(M\d{2,}))-(.+)$/);
+            const match = branch.match(/^(frontend\/(F\d{2})|backend\/(B\d{2}))-(.+)$/);
             if (!match) {
-              core.setFailed(`Branch '${branch}' must use frontend/Fxx-<description>, backend/Bxx-<description>, or milestone/Mxx-<description>.`);
+              core.setFailed(`Branch '${branch}' must use frontend/Fxx-<description> or backend/Bxx-<description>.`);
               return;
             }
 
-            const id = match[1] || match[2] || match[3];
+            const id = match[2] ?? match[3];
             const slug = match[4];
-            const docsPath = branch.startsWith('frontend/')
-              ? `shoot-frontend/docs/milestones/${id}/README.md`
-              : branch.startsWith('backend/')
-                ? `shoot-backend/docs/milestones/${id}/README.md`
-                : `docs/milestones/${id}/README.md`;
+            const component = branch.startsWith('frontend/') ? 'shoot-frontend' : 'shoot-backend';
+            const docsPath = `${component}/docs/milestones/${id}/README.md`;
             const titleText = slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             const title = `${id}: Implement ${titleText}`;
+            const { owner, repo } = context.repo;
             const body = [
-              `## Milestone ${id}`,
+              `## ${id} milestone`,
               '',
-              `Implementation notes: [${id} milestone documentation](${docsPath})`,
-              '',
-              'Review the milestone documentation and repository pull request template for completed work, validation results, and outstanding issues.',
+              `Implementation and validation details: [${docsPath}](https://github.com/${owner}/${repo}/blob/${branch}/${docsPath}).`,
               '',
               `Source branch: \`${branch}\``,
-              'Target branch: `develop`'
+              'Target branch: `develop`',
+              '',
+              'Do not merge until reviewed and approved.'
             ].join('\n');
 
-            const { owner, repo } = context.repo;
             const head = `${owner}:${branch}`;
-            const existing = await github.rest.pulls.list({ owner, repo, state: 'open', head, base: 'develop' });
+            const existing = await github.rest.pulls.list({ owner, repo, state: 'open', head });
             if (existing.data.length) {
               const pr = existing.data[0];
               await github.rest.pulls.update({ owner, repo, pull_number: pr.number, title, body, base: 'develop' });
               core.info(`Updated pull request #${pr.number}.`);
-            } else {
+              return;
+            }
+
+            try {
               const pr = await github.rest.pulls.create({ owner, repo, head: branch, base: 'develop', title, body });
               core.info(`Created pull request #${pr.data.number}.`);
+            } catch (error) {
+              if (error.status === 403) {
+                const url = `https://github.com/${owner}/${repo}/pull/new/${encodeURIComponent(branch)}`;
+                core.notice(`GitHub Actions cannot create pull requests in this repository. Open the validated branch here: ${url}`);
+                return;
+              }
+              throw error;
             }
