@@ -41,6 +41,7 @@ None identified before validation. Integration with F00 requires both independen
 ## Git and review
 
 - Branch: `backend/B00-backend-initialization` (created from approved `origin/develop`).
-- Commit: recorded after implementation and validation.
+- Implementation commit: `01d044e2d19089a97edca6a27a2f594076d53815`.
+- Documentation commit: recorded immediately after the implementation commit.
 - Pull request: recorded after push; target `develop`.
 - Status: implementation and backend validation complete; awaiting review and PR checks.
