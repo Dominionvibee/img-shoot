@@ -1,0 +1,26 @@
+{
+  "name": "img-shoot-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "start": "node --env-file-if-exists=.env server.js",
+    "lint": "eslint .",
+    "test": "node --test",
+    "build": "node --check server.js && node --check src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "18.0.10",
+    "express": "5.3.0",
+    "helmet": "8.3.0",
+    "mongoose": "9.12.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "globals": "17.14.0",
+    "eslint": "10.15.0",
+    "supertest": "7.3.2"
+  }
+}
