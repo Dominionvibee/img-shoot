@@ -2,6 +2,8 @@
 
 ## Merge-readiness update — 21 November 2026
 
+At the user's request, every “WME Fashion Incubator” brand label is plain, non-focusable text. All 3,645 page snapshots were scanned; the four occurrences are in the shared WME header on Cookie Policy, Privacy Policy, Terms of Use and Incubator Terms. Chrome checks at 390px and 1440px confirm all four labels are spans outside interactive elements, preserve the original typography and dimensions, and do not navigate when clicked. The capture script preserves this intentional departure from the reference. Evidence: [plain-text checks](qa/incubator-plain-text.json). Frontend lint, all 43 tests and the production build pass after this change.
+
 The earlier visual and interaction results below describe their captured revision. The current local privacy preview no longer mounts a CAPTCHA widget or requires a token to display its unsent preview result. The separate CAPTCHA modules and backend verification endpoints are tested foundations, not an active production submission flow. Earlier widget comparisons do not describe the current preview.
 
 The PR's installation failure was reproduced with npm 11.19.1: its lockfile lacked `@emnapi/core@2.0.0-beta.2` and `@emnapi/runtime@2.0.0-beta.2`. Regenerating the lockfile with that npm version supplies the optional dependency records without changing direct dependency versions. Clean Windows and Linux-target dependency installs pass with the repaired lockfile. F00 and B00 are already merged into `develop`, which is included in the F01 branch.

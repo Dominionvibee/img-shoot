@@ -47,6 +47,8 @@ for (const slug of pages) {
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, '')
     .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '');
+  clean=clean.replace(/<a\b[^>]*>\s*WME\s+Fashion\s+Incubator\s*<\/a>/gi,
+    '<span class="wme-incubator-text">WME Fashion Incubator</span>');
   clean=clean.replace(/\b(href|src|poster)=(['"])(\/(?!\/)[^'"]*)\2/gi,(_m,attr,q,path)=>`${attr}=${q}${origin}${path}${q}`);
   for(const match of [...clean.matchAll(/\b(?:src|poster)=["'](https?:[^"']+)["']/g)]) {
     const local=await localAsset(match[1]);clean=clean.replaceAll(match[1],local);

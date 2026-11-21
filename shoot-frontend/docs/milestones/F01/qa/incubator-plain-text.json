@@ -1,0 +1,231 @@
+{
+  "checkedAt": "2026-11-21T09:56:43.035Z",
+  "scannedPages": 3645,
+  "labels": 4,
+  "results": [
+    {
+      "path": "/cookie-policy",
+      "width": 1440,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 193.828125,
+        "height": 14
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 193.828125,
+        "height": 14
+      },
+      "x": 1263.0859375,
+      "y": 44.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "x": 1267.140625,
+      "y": 44.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/term-of-use",
+      "width": 1440,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "x": 1267.140625,
+      "y": 44.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/the-incubator-terms",
+      "width": 1440,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.6px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 185.71875,
+        "height": 14
+      },
+      "x": 1267.140625,
+      "y": 44.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/cookie-policy",
+      "width": 390,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "x": 187.5,
+      "y": 360.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "x": 187.5,
+      "y": 360.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/term-of-use",
+      "width": 390,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "x": 187.5,
+      "y": 360.890625,
+      "clickDidNotNavigate": true
+    },
+    {
+      "path": "/the-incubator-terms",
+      "width": 390,
+      "tag": "SPAN",
+      "interactive": false,
+      "text": "WME Fashion Incubator",
+      "current": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "original": {
+        "font": "",
+        "fontWeight": "700",
+        "letterSpacing": "1.2px",
+        "color": "rgb(0, 0, 0)",
+        "textTransform": "uppercase",
+        "width": 253.375,
+        "height": 22
+      },
+      "x": 187.5,
+      "y": 360.890625,
+      "clickDidNotNavigate": true
+    }
+  ]
+}

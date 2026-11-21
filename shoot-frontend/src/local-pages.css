@@ -1,3 +1,21 @@
 /* Routing wrappers do not alter the reference page's layout or footer. */
 #app, .reference-page { display: contents; }
 a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+/* This brand label is plain text while retaining the captured typography. */
+.wme-incubator-text { cursor: text; }
+.header .header__inner .menu-main-menu-container ul li .wme-incubator-text {
+  color: var(--light);
+  font-weight: 700;
+  letter-spacing: .1rem;
+  transition: color .5s ease;
+}
+.header.dark .menu-main-menu-container ul li .wme-incubator-text { color: var(--dark); }
+.header.active .menu-main-menu-container ul li .wme-incubator-text { color: var(--dark); font-size: var(--sp-4); }
+.footer .maxWidth .wme-incubator-text {
+  color: var(--light);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
