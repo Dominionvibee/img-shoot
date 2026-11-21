@@ -1,0 +1,179 @@
+{
+  "capturedAt": "2026-11-20",
+  "kind": "Public read-only API snapshots",
+  "liveProxy": false,
+  "sources": [
+    {
+      "file": "directory-categories.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_directory_categories"
+    },
+    {
+      "file": "featured-work-30280.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30280"
+    },
+    {
+      "file": "featured-work-30343.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30343"
+    },
+    {
+      "file": "featured-work-30363.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30363"
+    },
+    {
+      "file": "featured-work-30535.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30535"
+    },
+    {
+      "file": "featured-work-30547.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30547"
+    },
+    {
+      "file": "featured-work-30558.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30558"
+    },
+    {
+      "file": "featured-work-30580.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30580"
+    },
+    {
+      "file": "featured-work-30585.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30585"
+    },
+    {
+      "file": "featured-work-30588.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30588"
+    },
+    {
+      "file": "featured-work-30753.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30753"
+    },
+    {
+      "file": "featured-work-30763.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30763"
+    },
+    {
+      "file": "featured-work-30777.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30777"
+    },
+    {
+      "file": "featured-work-30789.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30789"
+    },
+    {
+      "file": "featured-work-30801.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30801"
+    },
+    {
+      "file": "featured-work-30805.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30805"
+    },
+    {
+      "file": "featured-work-30820.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30820"
+    },
+    {
+      "file": "featured-work-30826.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30826"
+    },
+    {
+      "file": "featured-work-30874.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30874"
+    },
+    {
+      "file": "featured-work-30902.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?featured-work-id=30902"
+    },
+    {
+      "file": "sample-search-directory.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_search_directory_items?search-term=Anok"
+    },
+    {
+      "file": "sample-search-dropdown.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_search_dropdown_items?search-term=Anok"
+    },
+    {
+      "file": "sample-search-work.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_work?search-term=Anok"
+    },
+    {
+      "file": "talent-all.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=any&gender=any&talent-category=any&sort-by=az"
+    },
+    {
+      "file": "talent-london-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=london&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-london-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=london&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-london-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=london&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "talent-los-angeles-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=los-angeles&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-los-angeles-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=los-angeles&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-los-angeles-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=los-angeles&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "talent-milan-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=milan&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-milan-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=milan&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-milan-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=milan&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "talent-new-york-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=new-york&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-new-york-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=new-york&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-new-york-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=new-york&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "talent-paris-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=paris&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-paris-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=paris&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-paris-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=paris&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "talent-sydney-development.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=sydney&gender=any&talent-category=7&sort-by=az"
+    },
+    {
+      "file": "talent-sydney-model.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=sydney&gender=any&talent-category=4&sort-by=az"
+    },
+    {
+      "file": "talent-sydney-talent.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_talent?territory=sydney&gender=any&talent-category=3&sort-by=az"
+    },
+    {
+      "file": "work-131321.json",
+      "source": "https://imgmodels.com/wp-json/wme/v1/get_single_work?work-id=131321"
+    }
+  ]
+}

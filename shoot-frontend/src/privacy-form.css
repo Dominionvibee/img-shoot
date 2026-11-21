@@ -1,0 +1,6 @@
+﻿/* The original OneTrust component CSS and fonts are in assets/privacy/onetrust.css.
+   These rules implement its local interactions without changing the base layout. */
+body.f01-privacy-form .privacy-local-result { margin-top: 16px; padding: 12px; border: 1px solid #cad2d9; color: #2c3643; background: #f5f8fa; font: 14px/1.42 'Open Sans', sans-serif; }
+body.f01-privacy-form .privacy-local-result[hidden] { display: none; }
+body.f01-privacy-form .vt-option[aria-selected="true"] { background: #edf4f8; }
+body.f01-privacy-form #countryDSARElement:focus-visible { outline: none; }

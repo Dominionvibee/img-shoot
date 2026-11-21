@@ -2,6 +2,6 @@
 
 | ID | Component | Milestone | Status | Branch | PR / notes |
 |---|---|---|---|---|---|
-| F00 | Frontend | React/Vite initialization | Validated; open for review | `frontend/F00-frontend-setup` | [PR #3](https://github.com/Dominionvibee/img-shoot/pull/3); checks pass |
-| F01 | Frontend | Website replication | Implemented; open for review | `frontend/F01-website-replication` | [PR #2](https://github.com/Dominionvibee/img-shoot/pull/2); feature work preserved |
-| B00 | Backend | Express/Mongoose initialization | Validated; open for review | `backend/B00-backend-initialization` | [PR #4](https://github.com/Dominionvibee/img-shoot/pull/4); checks pass |
+| F00 | Frontend | React/Vite initialization | Merged into develop | `frontend/F00-frontend-setup` | [PR #3](https://github.com/Dominionvibee/img-shoot/pull/3); merged |
+| F01 | Frontend | Website replication | Validated; open for review | `frontend/F01-website-replication` | [PR #2](https://github.com/Dominionvibee/img-shoot/pull/2); local React routes and footer pages; Incubator brand labels are plain text |
+| B00 | Backend | Express/Mongoose initialization | Merged into develop | `backend/B00-backend-initialization` | [PR #4](https://github.com/Dominionvibee/img-shoot/pull/4); merged |

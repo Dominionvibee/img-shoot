@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-11-21T06:04:33.642Z",
+  "mode": "All captured routes rendered at 1440px; image/video requests blocked and Cache-Control:only-if-cached for structural audit only",
+  "checked": 3,
+  "failures": [],
+  "exceptions": [],
+  "blockedMediaRejections": [],
+  "listenerSamples": [],
+  "targets": [
+    "/terms-of-use/",
+    "/privacy-policy-2/",
+    "/scouting/"
+  ],
+  "finishedAt": "2026-11-21T06:04:34.352Z"
+}

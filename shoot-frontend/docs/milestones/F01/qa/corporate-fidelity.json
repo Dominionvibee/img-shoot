@@ -1,0 +1,306 @@
+{
+  "pageViewportPairs": 18,
+  "screenshotPairs": 39,
+  "pixelIdentical": 35,
+  "geometryOrStyleDifferences": 0,
+  "heightDifferences": 0,
+  "overflow": 0,
+  "maxMeanAbsoluteChannelError": 0.278622,
+  "interactions": {
+    "states": [
+      {
+        "name": "menu",
+        "menu": true,
+        "mailing": "none",
+        "cookies": "none"
+      },
+      {
+        "name": "mailing",
+        "menu": true,
+        "mailing": "block",
+        "cookies": "none"
+      },
+      {
+        "name": "cookies",
+        "menu": false,
+        "mailing": "none",
+        "cookies": "block"
+      }
+    ],
+    "preview": "Local preview only. No subscription or personal information has been submitted or stored.",
+    "productionRequests": 0,
+    "exceptions": 0
+  },
+  "pixels": [
+    {
+      "policy": "privacy",
+      "width": 320,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 320,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 375,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 375,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 390,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 390,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 430,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 430,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 768,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 768,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1024,
+      "view": "top",
+      "identical": false,
+      "meanAbsoluteChannelError": 0.278622
+    },
+    {
+      "policy": "privacy",
+      "width": 1024,
+      "view": "footer-",
+      "identical": false,
+      "meanAbsoluteChannelError": 0.278622
+    },
+    {
+      "policy": "privacy",
+      "width": 1280,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1280,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1440,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1440,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1920,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "privacy",
+      "width": 1920,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 320,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 320,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 375,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 375,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 390,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 390,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 430,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 430,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 768,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 768,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1024,
+      "view": "top",
+      "identical": false,
+      "meanAbsoluteChannelError": 0.278622
+    },
+    {
+      "policy": "cookies",
+      "width": 1024,
+      "view": "footer-",
+      "identical": false,
+      "meanAbsoluteChannelError": 0.278622
+    },
+    {
+      "policy": "cookies",
+      "width": 1280,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1280,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1440,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1440,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1920,
+      "view": "top",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "policy": "cookies",
+      "width": 1920,
+      "view": "footer-",
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "state": "menu",
+      "width": 1440,
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "state": "mailing",
+      "width": 1440,
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    },
+    {
+      "state": "cookies",
+      "width": 1440,
+      "identical": true,
+      "meanAbsoluteChannelError": 0
+    }
+  ]
+}

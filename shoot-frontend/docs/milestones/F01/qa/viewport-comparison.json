@@ -1,0 +1,473 @@
+{
+  "capturedOn": "2026-11-20",
+  "reference": "https://imgmodels.com/",
+  "browser": "Installed Chrome, headless, Windows",
+  "viewportHeight": 900,
+  "deviceScaleFactor": 1,
+  "method": "Viewport PNGs compared with Pillow mean absolute RGB channel error (0–255); videos paused at time 0 where applicable. Initial unready media captures were superseded after metadata loaded.",
+  "pairs": 90,
+  "exact": 82,
+  "maxMAE": 0.062084,
+  "records": [
+    {
+      "route": "/",
+      "width": 320,
+      "mae": 0.0006
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/",
+      "width": 430,
+      "mae": 0.008
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "mae": 0.0575
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "mae": 0.0323
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "mae": 0.0056
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "mae": 0.0155
+    },
+    {
+      "route": "/contact/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 1440,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/contact/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/about-us/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/recruitmentwarning/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/under-18-faq/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/directory/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/search/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/new-york-state-fashion-workers-act/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 1024,
+      "mae": 0.04994
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 1280,
+      "mae": 0.062084
+    },
+    {
+      "route": "/from-the-archive/",
+      "width": 1920,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 320,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 375,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 430,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 768,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 1024,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 1280,
+      "mae": 0
+    },
+    {
+      "route": "/directory/london/vanesa-lorenzo/",
+      "width": 1920,
+      "mae": 0
+    }
+  ],
+  "consent": [
+    {
+      "width": 390,
+      "mae": 0
+    },
+    {
+      "width": 1440,
+      "mae": 0
+    }
+  ]
+}

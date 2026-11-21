@@ -1,0 +1,12 @@
+{
+  "comparedAt": "2026-11-21T05:53:03.636Z",
+  "pairs": 126,
+  "pixelPairs": 252,
+  "pixelIdentical": 230,
+  "maxMeanPixelError": 9.402396,
+  "unavailable": [],
+  "textMismatches": [],
+  "geometryMismatches": [],
+  "localOverflow": [],
+  "localExceptions": []
+}

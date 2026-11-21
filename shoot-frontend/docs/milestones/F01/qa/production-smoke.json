@@ -1,0 +1,41 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "title": "IMG Models",
+      "body": "home wp-singular page-template-default page page-id-10 wp-theme-img-models  page-home",
+      "content": 34907
+    },
+    {
+      "path": "/do-not-sell-my-personal-info",
+      "title": "Privacy Web Form",
+      "body": "f01-privacy-form",
+      "content": 14784
+    },
+    {
+      "path": "/term-of-use",
+      "title": "Terms Of Use - WME Fashion",
+      "body": "f01-legal wp-singular page-template page-template- page-template-templates page-template-pages page-template-policy page-template-templatespagespolicy-php page page-id-337 wp-theme-wme-fashion page-terms-of-use",
+      "content": 25267
+    },
+    {
+      "path": "/get-scouted",
+      "title": "Get Scouted - IMG Models",
+      "body": "f01-scouting  __variable_58d43c __variable_32e7b0 __variable_2d8a47 __variable_a30072  antialiased",
+      "content": 25054
+    },
+    {
+      "path": "/img-privacy-policy",
+      "title": "Privacy Policy | IMG",
+      "body": "wp-singular page-template-default page page-id-3 wp-embed-responsive wp-theme-img hero_simple page-privacy-policy has-top-bar f01-corporate-policy",
+      "content": 96576
+    },
+    {
+      "path": "/work/10717-2/",
+      "title": "Harper’s Bazaar | IMG Models",
+      "body": "wp-singular work-template-default single single-work postid-10717 wp-theme-img-models work-10717-2 workModalActive",
+      "content": 41121
+    }
+  ],
+  "exceptions": 0
+}

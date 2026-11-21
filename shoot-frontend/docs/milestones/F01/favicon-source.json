@@ -1,0 +1,55 @@
+{
+  "reference": "https://imgmodels.com/",
+  "retrievedAt": "2026-11-21T06:12:49.895Z",
+  "assets": [
+    {
+      "filename": "favicon.ico",
+      "source": "https://imgmodels.com/favicon.ico?v=2.01",
+      "bytes": 15406,
+      "contentType": "image/x-icon",
+      "sha256": "321a82b825c6ca4066744d8f515e65a1e1871955d9023d999bbb63ef07022e04"
+    },
+    {
+      "filename": "favicon-32x32.png",
+      "source": "https://imgmodels.com/favicon-32x32.png",
+      "bytes": 461,
+      "contentType": "image/png",
+      "sha256": "211e17246c040ab109d1896a53f3d00bbf4663096568ababd2991634eb554b21"
+    },
+    {
+      "filename": "favicon-16x16.png",
+      "source": "https://imgmodels.com/favicon-16x16.png",
+      "bytes": 186,
+      "contentType": "image/png",
+      "sha256": "55b7ed0f0eddd25398a2da1562b547ad4ace0025096ad0ef51889704b667ba19"
+    },
+    {
+      "filename": "apple-touch-icon.png",
+      "source": "https://imgmodels.com/apple-touch-icon.png",
+      "bytes": 5780,
+      "contentType": "image/png",
+      "sha256": "934d1c1795bd46c4fdac8d9146fad143a29f859000f8d04a2e99ffddf16dc183"
+    },
+    {
+      "filename": "site.webmanifest",
+      "source": "https://imgmodels.com/site.webmanifest",
+      "bytes": 263,
+      "contentType": "application/manifest+json",
+      "sha256": "7a9e07ce1f7386689917602ddc5a75750ad842e605ff764f67173529c181bf04"
+    },
+    {
+      "filename": "android-chrome-192x192.png",
+      "source": "https://imgmodels.com/android-chrome-192x192.png",
+      "bytes": 6357,
+      "contentType": "image/png",
+      "sha256": "1c947b5e00adda9490daa87faa8eab0b14580923c3a7d6be15e62e08f28ff103"
+    },
+    {
+      "filename": "android-chrome-512x512.png",
+      "source": "https://imgmodels.com/android-chrome-512x512.png",
+      "bytes": 44359,
+      "contentType": "image/png",
+      "sha256": "70644166832c2d6f3c43b8268f2cc708857b332dda18bc3c5a6af8d8d9f73a55"
+    }
+  ]
+}

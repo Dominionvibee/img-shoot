@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Under-14 refusal and local home link",
+    "Header shrink matches five independently measured source scroll positions",
+    "Adult auto-scroll and source-style field/photo validation",
+    "Unsupported file and over-30MB source warnings",
+    "Height, nationality and location autocomplete with keyboard selection",
+    "Three local photo previews and explicit unsent local application result",
+    "Guardian validation, one-guardian option and unsent local result",
+    "Functional fullscreen mobile navigation and close",
+    "No reCAPTCHA added to source scouting forms that have none"
+  ],
+  "exceptions": [],
+  "writes": []
+}

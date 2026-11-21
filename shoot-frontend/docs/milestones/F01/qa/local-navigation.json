@@ -1,0 +1,127 @@
+{
+  "checks": 17,
+  "exceptions": [],
+  "results": [
+    {
+      "test": "source footer navigation",
+      "label": "About Us",
+      "kind": "img",
+      "url": "http://localhost:4173/about-us",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nAbout Us\n\nIMG Models is the international leader i"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Contact",
+      "kind": "img",
+      "url": "http://localhost:4173/contact",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nContact\nNEW YORK\n\n304 Park Ave South\nPenthouse Nor"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Recruitment Warning",
+      "kind": "img",
+      "url": "http://localhost:4173/recruitment-warning",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nRecruitment Warning\nRECRUITMENT WARNING: BEWARE OF"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Terms of use",
+      "kind": "legal",
+      "url": "http://localhost:4173/term-of-use",
+      "marker": "persistent",
+      "text": "ART + COMMERCE\nIMG MODELS\nTHE WALL GROUP\nWME FASHION INCUBATOR\nTerms of Use\n\nTer"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Privacy Policy",
+      "kind": "legal",
+      "url": "http://localhost:4173/privacy-policy",
+      "marker": "persistent",
+      "text": "ART + COMMERCE\nIMG MODELS\nTHE WALL GROUP\nWME FASHION INCUBATOR\nPrivacy Policy\n\nE"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Cookie Policy",
+      "kind": "legal",
+      "url": "http://localhost:4173/cookie-policy",
+      "marker": "persistent",
+      "text": "ART + COMMERCE\nIMG MODELS\nTHE WALL GROUP\nWME FASHION INCUBATOR\nCookies Policy\n\nE"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Under 18 FAQs",
+      "kind": "img",
+      "url": "http://localhost:4173/under-18-faq",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nFAQs for Under 18 Applicants\nFAQs for Under 18 App"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "New York State Fashion Workers Act",
+      "kind": "img",
+      "url": "http://localhost:4173/new-york-state-fashion-workers-act",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nNew York State Fashion Workers Act\n\nABOUT US\nCONTA"
+    },
+    {
+      "test": "source footer navigation",
+      "label": "Do not sell my personal info",
+      "kind": "privacy",
+      "url": "http://localhost:4173/do-not-sell-my-personal-info",
+      "marker": "persistent",
+      "text": "As a California resident you may use this webform to exercise your right to opt "
+    },
+    {
+      "test": "source footer navigation",
+      "label": "We Love Your Genes",
+      "kind": "scouting",
+      "url": "http://localhost:4173/get-scouted",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nMATY FALL, DISCOVERED BY IMG MODELS IN 2019\n\nSafety remain"
+    },
+    {
+      "test": "WME fourth policy",
+      "url": "http://localhost:4173/the-incubator-terms",
+      "marker": "persistent",
+      "text": "ART + COMMERCE\nIMG MODELS\nTHE WALL GROUP\nWME FASHION INCUBATOR\nWME Fashion Incub"
+    },
+    {
+      "test": "OneTrust original policy destination",
+      "url": "http://localhost:4173/img-privacy-policy",
+      "marker": "persistent",
+      "text": "Digital Trends Report 2027: Sign Up for Early Access\n\nPRIVACY\n \nPOLICY\n\nEffectiv"
+    },
+    {
+      "test": "OneTrust original policy destination",
+      "url": "http://localhost:4173/img-cookie-policy",
+      "marker": "persistent",
+      "text": "Digital Trends Report 2027: Sign Up for Early Access\n\nCOOKIE\n \nPOLICY\nCookie pol"
+    },
+    {
+      "test": "archive photograph gallery",
+      "url": "http://localhost:4173/from-the-archive?featured-work-id=30601",
+      "images": 12
+    },
+    {
+      "test": "same-page gallery URL and original video controls",
+      "url": "http://localhost:4173/?featured-work-id=28553#",
+      "title": "[   CLOSE   ]\nVideo Player\n00:00\n00:00\n\nSAM SABA\n\nRALPH LAUREN SS27\n\nABOUT US\nCONTACT\nWE LOVE YOUR G",
+      "players": 1
+    },
+    {
+      "test": "archive pagination",
+      "url": "http://localhost:4173/from-the-archive/page/2/",
+      "marker": "persistent",
+      "text": "DIRECTORY\nGET SCOUTED\nCONTACT\nFROM THE ARCHIVE\n\nANA CLARA FALCONI\n\nPHOEBE PHILO "
+    },
+    {
+      "test": "mobile menu route click",
+      "url": "http://localhost:4173/contact",
+      "marker": "persistent",
+      "text": "Contact\nNEW YORK\n\n304 Park Ave South\nPenthouse North\nNew York, NY 10010\nE-Mail N"
+    }
+  ]
+}
