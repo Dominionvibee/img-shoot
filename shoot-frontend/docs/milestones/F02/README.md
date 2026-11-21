@@ -52,4 +52,3 @@ Email destination: `mailto:NewYork@imgtalents.com`. Telephone destinations: `tel
 ## Outstanding issues
 
 No implementation issues found. Port 4173 is occupied by the existing F01 server, so the isolated F02 production build was verified on port 4176. After checkout/deployment, the default application port remains 4173.
-
