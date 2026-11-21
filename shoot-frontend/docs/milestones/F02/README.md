@@ -1,4 +1,4 @@
-﻿# F02 — New York Contact Information Update
+# F02 — New York Contact Information Update
 
 Status: **Implemented — Awaiting Review**
 
@@ -43,8 +43,9 @@ Email destination: `mailto:NewYork@imgtalents.com`. Telephone destinations: `tel
 
 - Baseline: approved `origin/develop` at `41e419b` (F01 merge).
 - Branch: `frontend/F02-new-york-contact-update`.
-- Implementation commit: resolve using `git log -1 --format=%H -- shoot-frontend/data/pages/contact.json` on this branch.
-- PR targets `develop`; PR URL and GitHub checks are recorded below once available.
+- Implementation commit: `a57f62b2a6abb9ecb9f53db31c38c74fa1bedaf8`.
+- PR: [#5](https://github.com/Dominionvibee/img-shoot/pull/5), targeting `develop`. GitHub confirms the PR is mergeable with no unresolved conflicts; its 11 files contain only the two New York tiles, F02 documentation/evidence and the milestone tracker.
+- GitHub checks: repository structure, frontend validation, backend validation and milestone validation. Current results are available on the [PR checks tab](https://github.com/Dominionvibee/img-shoot/pull/5/checks).
 - Existing F00 working-tree changes and the F01 worktree were preserved. No backend files, other office locations, unrelated routes or F03 work are included.
 - No automatic merge is authorized or performed.
 
