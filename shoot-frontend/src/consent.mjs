@@ -2,21 +2,39 @@
 // in this browser; this module never enables analytics or contacts consent APIs.
 const STORAGE_KEY = 'f01-cookie-consent';
 const FOCUSABLE = 'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-const readSaved = () => {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }
+const readSaved = (key = STORAGE_KEY) => {
+  try { return JSON.parse(localStorage.getItem(key) || 'null'); }
   catch { return null; }
 };
-const writeSaved = value => {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(value)); }
+const writeSaved = (value, key = STORAGE_KEY) => {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
   catch { /* The interface also works when browser storage is unavailable. */ }
 };
 const visible = element => Boolean(element.getClientRects().length)
   && getComputedStyle(element).visibility !== 'hidden'
   && !element.closest('[inert], [aria-hidden="true"]');
 
-export async function setupConsent() {
-  if (document.querySelector('#onetrust-consent-sdk')?.dataset.localConsentReady) return;
-  const {html} = await fetch('/data/pages/cookie.json').then(response => response.json());
+let currentConsent;
+let generation = 0;
+export function clearConsent(retainVariant) {
+  if (retainVariant && currentConsent?.variant === retainVariant) return;
+  generation++;
+  currentConsent?.dispose();
+  currentConsent = null;
+}
+
+export async function setupConsent({variant = 'img'} = {}) {
+  if (currentConsent?.variant === variant && currentConsent.root.isConnected) return currentConsent;
+  clearConsent();
+  const version = generation;
+  const source = variant === 'wme' ? '/data/pages/cookie-wme.json' : '/data/pages/cookie.json';
+  const {html, hostDetails = {}} = await fetch(source).then(response => response.json());
+  if (version !== generation) return;
+  const storageKey = variant === 'wme' ? `${STORAGE_KEY}-wme` : STORAGE_KEY;
+  const events = new AbortController();
+  const listen = (target, name, handler, options = {}) => target?.addEventListener(name, handler, {
+    ...(typeof options === 'boolean' ? {capture: options} : options), signal: events.signal,
+  });
   const fragment = document.createElement('template'); fragment.innerHTML = html;
   // OneTrust's blank text measurement frame is unnecessary for the local
   // consent controller, which sizes the captured dialog itself.
@@ -42,13 +60,14 @@ export async function setupConsent() {
     name: element.querySelector('.ot-cat-header')?.textContent.trim() || '',
     element,
   }));
-  let saved = readSaved();
+  let saved = readSaved(storageKey);
   let isOpen = false, listOpen = false, filterOpen = false;
   let returnFocus = null, detailsTrigger = null, selectedGroup = '';
   let activeFilters = new Set();
   let previousOverflow = '';
   let previousHtmlOverflow = '';
   const inertStates = new Map();
+  const hasCapturedHosts = Object.keys(hostDetails).length > 0;
 
   function display(element, show, value = 'block') {
     if (!element) return;
@@ -75,9 +94,56 @@ export async function setupConsent() {
   function filterChoices() {
     return [...root.querySelectorAll('.category-filter-handler')];
   }
-  function applyHostFilters() {
+  function applyHostFilters(announce = false) {
     const query = search?.value.trim().toLocaleLowerCase() || '';
     let count = 0;
+    if (hasCapturedHosts && hostList) {
+      // The SDK groups first-party cookies from the selected categories under
+      // one host. Keep the actual public host/cookie records from the capture.
+      const hosts = new Map();
+      for (const [category, html] of Object.entries(hostDetails)) {
+        if (activeFilters.size && !activeFilters.has(category)) continue;
+        const template = document.createElement('template');
+        template.innerHTML = html;
+        for (const item of template.content.children) {
+          const name = item.querySelector('.ot-host-name')?.textContent.trim() || '';
+          // OneTrust searches host labels, rather than cookie descriptions.
+          if (query && !name.toLocaleLowerCase().includes(query)) continue;
+          const existing = hosts.get(name);
+          if (existing) {
+            const cookies = existing.querySelector('.ot-host-opt');
+            for (const cookie of item.querySelectorAll('.ot-host-info')) {
+              if (![...cookies.children].some(row => row.textContent === cookie.textContent)) cookies.append(cookie);
+            }
+          } else hosts.set(name, item);
+        }
+      }
+      hostList.replaceChildren(...hosts.values());
+      hostList.style.display = 'block';
+      for (const [index, item] of [...hostList.children].entries()) {
+        const button = item.querySelector('.ot-host-box');
+        const region = item.querySelector('.ot-acc-txt');
+        if (!button || !region) continue;
+        button.id = `f01-cookie-host-${index}`;
+        region.id = `f01-cookie-host-details-${index}`;
+        button.setAttribute('aria-controls', region.id);
+        button.setAttribute('aria-expanded', 'false');
+        region.setAttribute('aria-labelledby', button.id);
+        region.setAttribute('aria-hidden', 'true');
+      }
+      count = hosts.size;
+      find('#no-results')?.remove();
+      if (!count && query) {
+        const empty = document.createElement('div'); empty.id = 'no-results';
+        const text = document.createElement('p');
+        const value = document.createElement('span'); value.id = 'user-text'; value.textContent = search.value.trim();
+        text.append(value, ' did not match any Hosts.'); empty.append(text);
+        find('#ot-lst-cnt')?.append(empty);
+      }
+      display(find('#ot-sel-blk'), Boolean(hostList.querySelector('input[type="checkbox"]')));
+      if (status) status.textContent = announce && count ? `${count} ${count === 1 ? 'host' : 'hosts'} returned.` : '';
+      return;
+    }
     for (const item of hostList?.children || []) {
       const category = item.dataset.optanongroupid || item.dataset.parentId || selectedGroup;
       const show = (!query || item.textContent.toLocaleLowerCase().includes(query))
@@ -96,6 +162,7 @@ export async function setupConsent() {
     panel?.classList.toggle('ot-shw-fltr', open);
     find('#filter-btn-handler')?.setAttribute('aria-expanded', String(open));
     if (open) {
+      if (hasCapturedHosts) find('#clear-filters-handler').textContent = 'Clear Filters';
       for (const input of filterChoices()) input.checked = activeFilters.has(input.value);
       find('#clear-filters-handler')?.focus();
     } else if (restoreFocus && isOpen && listOpen) find('#filter-btn-handler')?.focus();
@@ -110,12 +177,11 @@ export async function setupConsent() {
       selectedGroup = detailsTrigger?.dataset.parentId || '';
       activeFilters = new Set(selectedGroup ? [selectedGroup] : []);
       if (search) search.value = '';
-      // The captured response contains no host rows. Do not manufacture domains,
-      // cookie purposes, legal-interest choices, or third-party vendor records.
-      list.dataset.localSnapshot = hostList?.children.length ? 'captured' : 'host-details-unavailable';
-      display(find('#ot-sel-blk'), Boolean(hostList?.children.length));
+      list.classList.toggle('ot-hosts-ui', hasCapturedHosts);
+      list.dataset.localSnapshot = hasCapturedHosts || hostList?.children.length ? 'captured' : 'host-details-unavailable';
+      display(find('#ot-sel-blk'), false);
       applyHostFilters();
-      find('.back-btn-handler')?.focus();
+      (hasCapturedHosts ? search : find('.back-btn-handler'))?.focus();
     } else if (restoreFocus && isOpen) detailsTrigger?.focus();
   }
   function setBackgroundInert(open) {
@@ -124,7 +190,7 @@ export async function setupConsent() {
       previousHtmlOverflow = document.documentElement.style.overflow;
       // The reference keeps the page scrollbar in its full-screen mobile
       // preference center, and removes it for the floating desktop dialog.
-      if (!mobileLayout()) {
+      if (variant === 'wme' || !mobileLayout()) {
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
       }
@@ -145,18 +211,33 @@ export async function setupConsent() {
   }
   function sizePreferences() {
     if (!panel) return;
-    panel.style.height = mobileLayout() ? '100%' : `${innerHeight * 0.8}px`;
+    if (mobileLayout()) panel.style.height = '100%';
+    else if (variant === 'wme' && content) {
+      // OneTrust sizes the WME dialog to its intrinsic body, header and footer,
+      // capped at 80vh. Its content is otherwise absolutely stretched, so first
+      // measure without the bottom constraint, then restore the captured CSS.
+      const bottom = content.style.bottom;
+      const height = content.style.height;
+      content.style.bottom = 'auto';
+      content.style.height = 'auto';
+      const natural = content.scrollHeight + (find('.ot-pc-header')?.clientHeight || 0)
+        + (find('.ot-pc-footer')?.clientHeight || 0) + 20;
+      content.style.bottom = bottom;
+      content.style.height = height;
+      panel.style.height = `${Math.min(innerHeight * 0.8, natural)}px`;
+    } else panel.style.height = `${innerHeight * 0.8}px`;
     panel.classList.toggle('ot-ftr-stacked', innerWidth <= 476);
   }
   function openPreferences() {
     if (!panel || isOpen) return;
-    saved = readSaved(); restoreChoices();
+    saved = readSaved(storageKey); restoreChoices();
     returnFocus = document.activeElement;
     isOpen = true;
     showDetails(false, null, false);
     setBackgroundInert(true);
+    display(panel, true);
     sizePreferences();
-    display(panel, true); display(backdrop, true);
+    display(backdrop, true);
     panel.querySelector('[role="alertdialog"]')?.setAttribute('aria-modal', 'true');
     find('#accept-recommended-btn-handler')?.focus();
   }
@@ -179,7 +260,7 @@ export async function setupConsent() {
       syncSwitch(input); choices[input.dataset.optanongroupid] = input.checked;
     }
     saved = {value, choices, at: new Date().toISOString(), source: 'local-simulation'};
-    writeSaved(saved);
+    writeSaved(saved, storageKey);
     display(banner, false);
     closePreferences();
   }
@@ -193,6 +274,7 @@ export async function setupConsent() {
       const option = optionTemplate.cloneNode(true);
       const input = option.querySelector('input');
       input.id = `f01-cookie-filter-${group.id}`; input.value = group.id; input.checked = false;
+      input.dataset.optanongroupid = group.id;
       option.querySelector('label')?.setAttribute('for', input.id);
       option.querySelector('.ot-label-txt').textContent = group.name;
       const labelStatus = option.querySelector('.ot-label-status'); if (labelStatus) labelStatus.textContent = '';
@@ -210,7 +292,7 @@ export async function setupConsent() {
 
   window.OneTrust = {...window.OneTrust, ToggleInfoDisplay: openPreferences};
   window.Optanon = {...window.Optanon, ToggleInfoDisplay: openPreferences};
-  document.addEventListener('click', event => {
+  listen(document, 'click', event => {
     const target = event.target.closest('button,a'); if (!target) return;
     if (target.matches('#onetrust-pc-btn-handler, .ot-sdk-show-settings, .optanon-show-settings')) {
       event.preventDefault(); openPreferences(); return;
@@ -221,7 +303,7 @@ export async function setupConsent() {
     else if (target.matches('.save-preference-btn-handler')) { event.preventDefault(); save('custom'); }
     else if (target.matches('#close-pc-btn-handler')) { event.preventDefault(); closePreferences(); }
     else if (target.matches('.banner-close-button')) { event.preventDefault(); display(banner, false); }
-    else if (target.matches('[ot-accordion="true"]')) {
+    else if (target.matches('[ot-accordion="true"], .ot-host-box')) {
       event.preventDefault();
       const expanded = target.getAttribute('aria-expanded') !== 'true';
       target.setAttribute('aria-expanded', String(expanded));
@@ -233,10 +315,10 @@ export async function setupConsent() {
       event.preventDefault(); for (const input of filterChoices()) input.checked = false;
     } else if (target.matches('#filter-apply-handler')) {
       event.preventDefault(); activeFilters = new Set(filterChoices().filter(input=>input.checked).map(input=>input.value));
-      applyHostFilters(); showFilter(false);
+      applyHostFilters(true); showFilter(false);
     } else if (target.matches('#filter-cancel-handler')) { event.preventDefault(); showFilter(false); }
   });
-  root.addEventListener('change', event => {
+  listen(root, 'change', event => {
     if (event.target.matches('.category-switch-handler')) syncSwitch(event.target);
     if (event.target.matches('#select-all-hosts-groups-handler, #select-all-vendor-groups-handler, #select-all-vendor-leg-handler')) {
       for (const input of hostList?.querySelectorAll('input[type="checkbox"]') || []) {
@@ -244,8 +326,8 @@ export async function setupConsent() {
       }
     }
   });
-  search?.addEventListener('input', applyHostFilters);
-  document.addEventListener('keydown', event => {
+  listen(search, 'input', () => applyHostFilters(true));
+  listen(document, 'keydown', event => {
     if (!isOpen) return;
     if (event.key === 'Escape') {
       event.preventDefault(); event.stopImmediatePropagation();
@@ -263,13 +345,20 @@ export async function setupConsent() {
       event.preventDefault(); first.focus();
     }
   }, true);
-  document.addEventListener('focusin', event => {
+  listen(document, 'focusin', event => {
     if (!isOpen || panel.contains(event.target)) return;
     (filterOpen ? find('#clear-filters-handler') : find('#close-pc-btn-handler'))?.focus();
   });
-  window.addEventListener('resize', () => { if (isOpen) sizePreferences(); });
-  for (const name of ['wheel', 'touchmove']) document.addEventListener(name, event => {
+  listen(window, 'resize', () => { if (isOpen) sizePreferences(); });
+  for (const name of ['wheel', 'touchmove']) listen(document, name, event => {
     if (isOpen && !panel.contains(event.target)) event.preventDefault();
   }, {passive: false});
-  return {open: openPreferences, close: closePreferences};
+  currentConsent = {variant, root, open: openPreferences, close: closePreferences, dispose: () => {
+    closePreferences();
+    events.abort();
+    root.remove();
+    if (window.OneTrust?.ToggleInfoDisplay === openPreferences) delete window.OneTrust.ToggleInfoDisplay;
+    if (window.Optanon?.ToggleInfoDisplay === openPreferences) delete window.Optanon.ToggleInfoDisplay;
+  }};
+  return currentConsent;
 }

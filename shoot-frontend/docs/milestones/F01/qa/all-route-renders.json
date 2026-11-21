@@ -1,0 +1,1457 @@
+{
+  "startedAt": "2026-11-21T05:58:37.530Z",
+  "mode": "All captured routes rendered at 1440px; image/video requests blocked and Cache-Control:only-if-cached for structural audit only",
+  "checked": 3643,
+  "failures": [
+    {
+      "target": "/terms-of-use/",
+      "ready": false,
+      "path": "/term-of-use",
+      "title": "Terms Of Use - WME Fashion",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "markup": 25267,
+      "error": false
+    },
+    {
+      "target": "/privacy-policy-2/",
+      "ready": false,
+      "path": "/privacy-policy",
+      "title": "Privacy Policy - WME Fashion",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "markup": 48651,
+      "error": false
+    },
+    {
+      "target": "/scouting/",
+      "ready": false,
+      "path": "/get-scouted",
+      "title": "Get Scouted - IMG Models",
+      "origin": "http://localhost:4173",
+      "document": "persistent",
+      "markup": 25054,
+      "error": false
+    }
+  ],
+  "exceptions": [],
+  "blockedMediaRejections": [
+    {
+      "path": "/directory/new-york/leticia-hall/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240824989.927,
+            "exceptionDetails": {
+              "exceptionId": 1,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/directory/new-york/leticia-hall/",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "-4396755003146553407.2.123",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/work/hommegirls-fw25/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240907871.978,
+            "exceptionDetails": {
+              "exceptionId": 1,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/work/hommegirls-fw25/",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "-7587110064001638849.2.351",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/work/valentino-beauty-fw25/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240908658.865,
+            "exceptionDetails": {
+              "exceptionId": 2,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/work/valentino-beauty-fw25/?featured-work-id=18529",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "-4396755003146553407.2.278",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/work/gucci-eyewear-2025/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240908664.682,
+            "exceptionDetails": {
+              "exceptionId": 2,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/work/gucci-eyewear-2025/?featured-work-id=18637",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "-7587110064001638849.2.357",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/work/double-vision-fw25/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240910261.895,
+            "exceptionDetails": {
+              "exceptionId": 1,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/work/etro-campaign-september-2025/?featured-work-id=19010",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "2235877815471916953.2.340",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "/work/altuzarra-ss27/",
+      "errors": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1795240935477.963,
+            "exceptionDetails": {
+              "exceptionId": 1,
+              "text": "Uncaught (in promise)",
+              "lineNumber": 0,
+              "columnNumber": 0,
+              "scriptId": "1",
+              "url": "http://localhost:4173/work/altuzarra-ss27/",
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "NotSupportedError: Failed to load because no supported source was found.",
+                "objectId": "8286932694899832465.2.435",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "NotSupportedError: Failed to load because no supported source was found.",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "9"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "NotSupportedError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to load because no supported source was found."
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 2
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "listenerSamples": [
+    {
+      "worker": 2,
+      "visits": 100,
+      "heap": 88241787,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 9,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 100,
+      "heap": 94975336,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 100,
+      "heap": 91369290,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 100,
+      "heap": 91422397,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 200,
+      "heap": 162761653,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 200,
+      "heap": 181593498,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 200,
+      "heap": 157607118,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 200,
+      "heap": 185558795,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 7,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 2,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 300,
+      "heap": 259225098,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 300,
+      "heap": 214031443,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 300,
+      "heap": 217793981,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 300,
+      "heap": 224572425,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 400,
+      "heap": 328473554,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 400,
+      "heap": 307619901,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 400,
+      "heap": 299116894,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 400,
+      "heap": 299264940,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 500,
+      "heap": 374861530,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 500,
+      "heap": 360060806,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 600,
+      "heap": 466116563,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 500,
+      "heap": 352427938,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 8,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 500,
+      "heap": 352442748,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 700,
+      "heap": 508641873,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 600,
+      "heap": 442953700,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 600,
+      "heap": 439438002,
+      "windowListeners": {
+        "popstate": 2,
+        "resize": 7,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 1,
+        "selectionchange": 1,
+        "click": 6,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 600,
+      "heap": 427464166,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 5,
+        "mep_0": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1,
+        "mep_1": 1
+      },
+      "documentListeners": {
+        "keydown": 6,
+        "selectionchange": 1,
+        "click": 8,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 2,
+        "mep_0": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4,
+        "mep_1": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 800,
+      "heap": 576695210,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 5,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 6,
+        "selectionchange": 1,
+        "click": 8,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 2,
+        "mep_0": 4,
+        "mep_1": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 700,
+      "heap": 503641679,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 6,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 8,
+        "selectionchange": 1,
+        "click": 9,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 3,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 700,
+      "heap": 518310431,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 9,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 6,
+        "selectionchange": 1,
+        "click": 8,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 2,
+        "mep_0": 4,
+        "mep_1": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 700,
+      "heap": 499220924,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 6,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 8,
+        "selectionchange": 1,
+        "click": 9,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 3,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 900,
+      "heap": 684600701,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 7,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mep_3": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 10,
+        "selectionchange": 1,
+        "click": 10,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 4,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "mep_3": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 0,
+      "visits": 800,
+      "heap": 565387101,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 8,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mep_3": 1,
+        "mep_4": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 12,
+        "selectionchange": 1,
+        "click": 11,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 5,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "mep_3": 4,
+        "mep_4": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 2,
+      "visits": 800,
+      "heap": 550650547,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 9,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 6,
+        "selectionchange": 1,
+        "click": 8,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 2,
+        "mep_0": 4,
+        "mep_1": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 1,
+      "visits": 800,
+      "heap": 542269803,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 6,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 8,
+        "selectionchange": 1,
+        "click": 9,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 3,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    },
+    {
+      "worker": 3,
+      "visits": 1000,
+      "heap": 706234015,
+      "windowListeners": {
+        "popstate": 3,
+        "resize": 8,
+        "mep_0": 1,
+        "mep_1": 1,
+        "mep_2": 1,
+        "mep_3": 1,
+        "mep_4": 1,
+        "mouseup": 1,
+        "mousemove": 1,
+        "scroll": 2,
+        "wheel": 1,
+        "load": 1
+      },
+      "documentListeners": {
+        "keydown": 12,
+        "selectionchange": 1,
+        "click": 11,
+        "focusin": 1,
+        "wheel": 1,
+        "touchmove": 1,
+        "webkitfullscreenchange": 5,
+        "mep_0": 4,
+        "mep_1": 4,
+        "mep_2": 4,
+        "mep_3": 4,
+        "mep_4": 4,
+        "scroll": 1,
+        "touchcancel": 1,
+        "pointerdown": 1,
+        "touchstart": 1,
+        "mousedown": 1,
+        "pointerup": 1,
+        "touchend": 1,
+        "mouseup": 1,
+        "visibilitychange": 1,
+        "DOMContentLoaded": 4
+      }
+    }
+  ],
+  "finishedAt": "2026-11-21T06:02:25.878Z"
+}

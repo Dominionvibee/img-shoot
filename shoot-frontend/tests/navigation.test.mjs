@@ -21,4 +21,8 @@ test('both scouting links and legacy legal URLs use the same top-level routes',(
   assert.equal(localRoute('/home',base),'/#');
   assert.equal(localRoute('http://127.0.0.1:4173/contact/',base),'/contact');
   assert.equal(localRoute('/?featured-work-id=18798',base),'/?featured-work-id=18798#');
+  assert.equal(localRoute('http://img.com/privacypolicy/',base),'/img-privacy-policy');
+  assert.equal(localRoute('http://www.img.com/cookiepolicy/',base),'/img-cookie-policy');
+  assert.equal(localRoute('https://www.img.com/about-us',base),null);
+  assert.equal(localRoute('https://imgmodels.com/wp-content/uploads/example.jpg',base),null);
 });

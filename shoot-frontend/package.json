@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "node server.mjs",
+    "dev": "node --env-file-if-exists=.env server.mjs",
     "build": "node build.mjs",
-    "preview": "node dist/server.mjs",
+    "preview": "node --env-file-if-exists=.env dist/server.mjs",
     "test": "node scripts/run-tests.mjs",
     "lint": "eslint ."
   },

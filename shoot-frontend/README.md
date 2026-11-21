@@ -1,14 +1,14 @@
 # shoot-frontend
 
-F01 uses React 18 and React Router 6.30.1 for local routes. The public IMG Models sitemap has 3,563 URLs; the route inventory also includes archive pagination. Captured original markup, CSS, SVG logos, fonts and media preserve the reference appearance. React and React Router are vendored, so no npm installation is needed.
+F01 uses React 18 and React Router 6.30.1 for local routes. The inventory contains 3,643 paths, including the 3,563 public sitemap URLs, archive pagination, additional linked paths and local partner routes. Captured original markup, CSS, SVG logos, fonts and media preserve each site's presentation. React and React Router are vendored.
 
 The landing URL is `/#`; `/home` redirects there. IMG links use React navigation, including directory, profile, work, category, author and footer routes. Pages already captured load from disk. Other public IMG paths and uncaptured galleries use a read-only reference cache on first visit and require internet access. A reference rate limit returns an explicit retry message.
 
-Every pictured footer destination renders directly in the React document with local content and assets. Get Scouted and We Love Your Genes both use `/get-scouted`; policies use `/term-of-use`, `/privacy-policy`, and `/cookie-policy`. The privacy form uses `/do-not-sell-my-personal-info`. Legacy paths redirect to those canonical URLs. Site Credits, Instagram and TikTok retain their external destinations; copyright is non-clickable. No page is embedded in an iframe.
+Each route retains its reference header and footer, including the absence of an IMG site footer on the OneTrust form. Get Scouted uses `/get-scouted`; WME policies use `/term-of-use`, `/privacy-policy`, `/cookie-policy` and `/the-incubator-terms`. The privacy form uses `/do-not-sell-my-personal-info`; its distinct corporate policy links use `/img-privacy-policy` and `/img-cookie-policy`. Internal page navigation stays local. Original social, credit and unrelated brand destinations remain external. Whole pages are not embedded. The current privacy form is a local preview without an active CAPTCHA widget; the separately tested verification modules and backend endpoints require owner-controlled keys before use.
 
 The scouting age gate, adult/guardian forms, photo previews, and privacy form validation work locally. Submitting either form displays an explicit local preview notice; no application, personal photos, or privacy request is sent to a production service.
 
-The complete inventory and cache coverage are in `data/routes.json`. To finish storing every published page for offline use, run `node scripts/capture-all-routes.mjs` from the F01 checkout. The resumable crawler makes one request at a time and stops on HTTP 429.
+The route inventory is in `data/routes.json`; every inventoried page shell is captured. This is not a complete offline media/gallery archive. Uncached galleries and remote media still require reference-site access; HTTP 429 and offline states show an explicit local message. The resumable capture tools stop on rate limits.
 
 Run with Node 24:
 
@@ -26,4 +26,4 @@ npm run preview
 
 The production build includes `dist/server.mjs`, its API adapter, data, and assets. Stop the development server before previewing on the same port, or set `PORT` to another port. A plain static file host cannot serve the local API.
 
-See [F01 validation and limitations](docs/milestones/F01/README.md) and [asset attribution](assets/README.md). Directory and search use captured data, and consent choices stay in browser storage. The scouting and privacy interfaces use local validation and explicit preview results.
+See the [current verification report](docs/milestones/F01/VERIFICATION.md) for comparison results, remaining differences and exact QA commands, and [asset attribution](assets/README.md). Directory and search use dated captured data; consent choices stay in browser storage. Forms validate locally and report explicit unsent preview results.

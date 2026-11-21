@@ -43,7 +43,8 @@ export async function handleRouteCache(req,res){
     if(cached)value=cached;
     else{
     if(!body)throw new Error('No public page body was returned');
-    value={bodyClass:body[1],source:'https://imgmodels.com'+path,html:body[2].replace(/<!--[\s\S]*?-->/g,'').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi,'')};
+    const title=raw.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1].replaceAll('&amp;','&').replaceAll('&#8211;','–').replaceAll('&#039;',"'");
+    value={title,bodyClass:body[1],source:'https://imgmodels.com'+path,html:body[2].replace(/<!--[\s\S]*?-->/g,'').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi,'')};
     await mkdir(new URL('pages/',data),{recursive:true});await writeFile(new URL('pages/'+slug+'.json',data),JSON.stringify(value));
     }
     // The crawler owns the manifest; this deterministic cache needs no concurrent manifest write.
@@ -53,12 +54,25 @@ export async function handleRouteCache(req,res){
    if(!/^\d+$/.test(id||''))return false;
    const filename=`reference-api/${featured?'featured-work':'work'}-${id}.json`;
    if(await read(filename).catch(()=>null))return false;
+   // A caller can explicitly request the captured read-only snapshot without
+   // contacting the reference (for offline browsing and inventory audits).
+   if(req.headers['cache-control']?.includes('only-if-cached'))return false;
    value=await(await publicGet('/wp-json/wme/v1/get_single_work?'+(featured?'featured-work-id=':'work-id=')+id)).json();
    if(!Array.isArray(value)||!value.length)return false;
    await writeFile(new URL(filename,data),JSON.stringify(value));
    return false;
   }
   res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','X-Data-Source':'public-reference-cache'});res.end(req.method==='HEAD'?undefined:JSON.stringify(value));
- }catch(error){res.writeHead(error.status||502,{'Content-Type':'application/json; charset=utf-8','Retry-After':'60'});res.end(JSON.stringify({message:error.message}));}
+ }catch(error){
+  if(gallery){
+   // The local API has an explicit unavailable-gallery state. Let it render
+   // that state rather than rejecting the theme's fetch and leaving a blank
+   // modal when the public reference is offline or rate limited.
+   res.setHeader('X-Reference-Status',String(error.status||502));
+   res.setHeader('Retry-After','60');
+   return false;
+  }
+  res.writeHead(error.status||502,{'Content-Type':'application/json; charset=utf-8','Retry-After':'60'});res.end(JSON.stringify({message:error.message}));
+ }
  return true;
 }

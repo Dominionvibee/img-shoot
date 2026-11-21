@@ -1,6 +1,6 @@
 import {spawnSync} from 'node:child_process';
 const runs=[
- ['--test','tests/catalog.test.mjs','tests/navigation.test.mjs','tests/reference-api.test.mjs'],
+ ['--test','tests/catalog.test.mjs','tests/navigation.test.mjs','tests/reference-api.test.mjs','tests/favicon.test.mjs','tests/recaptcha.test.mjs','tests/verification-api.test.mjs'],
  ['node_modules/vitest/vitest.mjs','run','src/lib/api.test.js'],
 ];
 for(const args of runs){

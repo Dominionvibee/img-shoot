@@ -1,13 +1,11 @@
-import {mkdir, writeFile, readFile} from 'node:fs/promises';
+import {mkdir, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
 const origin = 'https://wmefashion.com';
-const pages = ['terms-of-use', 'privacy-policy', 'cookies'];
+const pages = ['terms-of-use', 'privacy-policy', 'cookies', 'the-incubator-terms'];
 const out = new URL('../shoot-frontend/data/legal/', import.meta.url);
 const cssOut = new URL('../shoot-frontend/assets/legal/', import.meta.url);
 const pageOut = new URL('../shoot-frontend/data/pages/', import.meta.url);
-const home=JSON.parse(await readFile(new URL('home.json',pageOut),'utf8'));
-const footer=home.html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/i)[0].replace('class="footer"','class="footer f01-local-footer"');
 const cssUrl = origin + '/wp-content/themes/wme-fashion/build-live/style-main.css?v=1.34';
 
 async function publicText(url) {
@@ -48,7 +46,6 @@ for (const slug of pages) {
     .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, '')
-    .replace(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi, '')
     .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, '');
   clean=clean.replace(/\b(href|src|poster)=(['"])(\/(?!\/)[^'"]*)\2/gi,(_m,attr,q,path)=>`${attr}=${q}${origin}${path}${q}`);
   for(const match of [...clean.matchAll(/\b(?:src|poster)=["'](https?:[^"']+)["']/g)]) {
@@ -57,6 +54,6 @@ for (const slug of pages) {
   const title = raw.match(/<title>([^<]*)<\/title>/i)?.[1] || 'WME Fashion';
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="${origin}/"><title>${title}</title><link rel="stylesheet" href="/assets/legal/wme-style.css"></head><body class="${bodyClass}">${clean}</body></html>`;
   await writeFile(new URL(slug + '.html', out), html);
-  await writeFile(new URL('legal-'+slug+'.json',pageOut),JSON.stringify({source,title,kind:'legal',bodyClass:'f01-legal '+bodyClass,styles:['/assets/legal/wme-style.css','/src/local-pages.css'],html:clean+footer}));
+  await writeFile(new URL('legal-'+slug+'.json',pageOut),JSON.stringify({source,title,kind:'legal',bodyClass:'f01-legal '+bodyClass,styles:['/assets/legal/consent.css','/assets/legal/wme-style.css','/src/local-pages.css'],html:clean}));
   console.log(`${source} -> ${slug}.html (${html.length} characters)`);
 }

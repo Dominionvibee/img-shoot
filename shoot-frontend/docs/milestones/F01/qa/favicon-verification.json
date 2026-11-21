@@ -1,0 +1,681 @@
+{
+  "checkedAt": "2026-11-21T06:20:59.862Z",
+  "origin": "http://localhost:4173",
+  "allRouteHttp": {
+    "checked": 3643,
+    "failures": []
+  },
+  "browsers": [
+    {
+      "name": "Chrome",
+      "version": "157.0.8103.79",
+      "viewports": [
+        {
+          "mode": "desktop",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": []
+        },
+        {
+          "mode": "mobile viewport",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": []
+        }
+      ]
+    },
+    {
+      "name": "Edge",
+      "version": "157.0.4341.60",
+      "viewports": [
+        {
+          "mode": "desktop",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": []
+        },
+        {
+          "mode": "mobile viewport",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": [
+            {
+              "url": "http://localhost:4173/favicon.ico?v=2.01",
+              "status": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Firefox",
+      "version": "151.0",
+      "viewports": [
+        {
+          "mode": "desktop",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": [
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "mode": "mobile viewport",
+          "routes": [
+            {
+              "path": "/",
+              "title": "IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/",
+              "title": "Directory | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/contact",
+              "title": "Contact | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/directory/london/vanesa-lorenzo/",
+              "title": "Vanesa Lorenzo | IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/from-the-archive/page/2/",
+              "title": "From the Archive | IMG Models – Page 2",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/get-scouted",
+              "title": "Get Scouted - IMG Models",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/do-not-sell-my-personal-info",
+              "title": "Privacy Web Form",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/term-of-use",
+              "title": "Terms Of Use - WME Fashion",
+              "direct": true,
+              "refresh": true
+            },
+            {
+              "path": "/img-privacy-policy",
+              "title": "Privacy Policy | IMG",
+              "direct": true,
+              "refresh": true
+            }
+          ],
+          "spaNavigation": true,
+          "decoded": [
+            {
+              "file": "favicon.ico",
+              "width": 48,
+              "height": 48
+            },
+            {
+              "file": "favicon-32x32.png",
+              "width": 32,
+              "height": 32
+            },
+            {
+              "file": "favicon-16x16.png",
+              "width": 16,
+              "height": 16
+            },
+            {
+              "file": "apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            {
+              "file": "android-chrome-192x192.png",
+              "width": 192,
+              "height": 192
+            },
+            {
+              "file": "android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            }
+          ],
+          "automaticIconRequests": [
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            },
+            {
+              "url": "http://localhost:4173/favicon-16x16.png",
+              "status": 200
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Mobile checks use emulated or mobile-sized desktop-engine viewports, not physical phones.",
+    "Headless browser checks verify original icon requests, decoding and route inheritance; native tab-strip screenshots are not captured."
+  ]
+}

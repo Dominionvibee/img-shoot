@@ -2,12 +2,34 @@ import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { createFrontendServer } from '../server.mjs';
-import { referenceApi } from '../src/reference-api.mjs';
+import { referenceApi, localizeReferenceData, normalizeGallery } from '../src/reference-api.mjs';
+import { handleRouteCache } from '../src/route-cache.mjs';
 
 const server = createFrontendServer();
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${server.address().port}`;
 after(() => new Promise(resolve => server.close(resolve)));
+
+test('uncached gallery images retain their source while page links stay local', async () => {
+  const image = 'https://imgmodels.com/wp-content/uploads/2026/11/uncached-gallery-photo.jpg';
+  const result = await localizeReferenceData({mediaItems:[{url:image}],permalink:'https://imgmodels.com/directory/london/example/'});
+  assert.equal(result.mediaItems[0].url,image);
+  assert.equal(result.permalink,'/directory/london/example/');
+});
+
+test('offline gallery browsing uses its explicit local state without requesting the reference', async () => {
+  const handled=await handleRouteCache({url:'/wp-json/wme/v1/get_single_work?featured-work-id=999999999',method:'GET',headers:{'cache-control':'only-if-cached'}},{});
+  assert.equal(handled,false);
+  const result=await referenceApi('/wp-json/wme/v1/get_single_work?featured-work-id=999999999');
+  assert.equal(result.body[0].localSnapshotUnavailable,true);
+  assert.match(result.body[0].flexiLayouts,/data-local-gallery-retry/);
+});
+
+test('gallery records with null image credits use their existing talent details', () => {
+  const gallery=normalizeGallery([{talentDetails:[{id:5355,name:'Alex Consani'}],mediaItems:[{url:'photo.jpg',talent_ids:null}]}]);
+  assert.deepEqual(gallery[0].mediaItems[0].talent_ids,[5355]);
+  assert.deepEqual(normalizeGallery([{talentDetails:[],mediaItems:null}])[0].mediaItems,[]);
+});
 
 test('directory contract returns captured roster with independent gender filtering', async () => {
   const endpoint = '/wp-json/wme/v1/get_talent?territory=new-york&talent-category=4&gender=any&sort-by=az';

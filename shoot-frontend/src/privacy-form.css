@@ -1,38 +1,6 @@
-@font-face { font-family: F01Privacy; font-style: normal; font-weight: 400; src: url('/assets/privacy/open-sans-regular.woff2') format('woff2'); }
-@font-face { font-family: F01Privacy; font-style: normal; font-weight: 600 800; src: url('/assets/privacy/open-sans-semibold.woff2') format('woff2'); }
-body.f01-privacy-form { margin: 0; padding: 0; background: white; color: #696969; font: 14px/normal F01Privacy, 'Open Sans', sans-serif; }
-body.f01-privacy-form .privacy-page, body.f01-privacy-form .privacy-page * { box-sizing: border-box; }
-body.f01-privacy-form .privacy-page { text-transform: none; font-family: F01Privacy, 'Open Sans', sans-serif; }
-body.f01-privacy-form .privacy-page p { margin: 0; padding: 0; text-transform: none; }
-body.f01-privacy-form .privacy-page a { color: #007bff; text-decoration: underline; }
-body.f01-privacy-form .privacy-logo { display: block; width: 133px; height: 80px; object-fit: contain; margin: 7px auto 0; }
-body.f01-privacy-form .privacy-language-wrap { height: 60px; padding: 27px 20px 0 0; text-align: right; }
-body.f01-privacy-form .privacy-language { width: 174px; height: 32px; border: 1px solid #a8c0d8; border-radius: 3px; background: #eee; color: #898989; font: 13px F01Privacy, sans-serif; padding: 4px 9px; appearance: none; }
-body.f01-privacy-form .privacy-content { width: 500px; max-width: calc(100% - 30px); margin: 70px auto 0; }
-body.f01-privacy-form .privacy-intro { padding: 0 30px; color: #b3b5b8; font: 15px/21.3px F01Privacy, sans-serif; }
-body.f01-privacy-form .privacy-intro p + p { margin-top: 21.3px; }
-body.f01-privacy-form .privacy-request { margin: 51px 10px 0; padding: 0; }
-body.f01-privacy-form .privacy-field { margin-bottom: 5px; }
-body.f01-privacy-form .privacy-field label { display: block; color: #1a1a1a; margin-bottom: 4px; padding-top: 5px; line-height: 20px; font: 600 14px/20px F01Privacy, sans-serif; }
-body.f01-privacy-form .privacy-required { color: #ec5656; margin-right: 4px; }
-body.f01-privacy-form .privacy-request input, body.f01-privacy-form .privacy-request select { display: block; width: 100%; height: 36px; padding: 7px 10px; background: #fff; border: 1px solid #949494; border-radius: 3px; color: #696969; font: 13px/18px F01Privacy, sans-serif; box-shadow: none; }
-body.f01-privacy-form .privacy-request input:focus, body.f01-privacy-form .privacy-request select:focus { outline: 2px solid #008acc; outline-offset: 1px; }
-body.f01-privacy-form .privacy-field .privacy-help { display: none; }
-body.f01-privacy-form .privacy-phone { display: grid; grid-template-columns: 37.5% 1fr; gap: 5px; }
-body.f01-privacy-form .privacy-phone input, body.f01-privacy-form .privacy-phone select, body.f01-privacy-form .privacy-country select { height: 32px; padding-top: 4px; padding-bottom: 4px; color: #1a1a1a; }
-body.f01-privacy-form .privacy-ack { margin-top: 9px; font: 14px/19.88px F01Privacy, sans-serif; }
-body.f01-privacy-form .privacy-ack h2 { margin: 0 0 4px; font: 600 14px/20px F01Privacy, sans-serif; color: #1a1a1a; }
-body.f01-privacy-form .privacy-submit-row { display: flex; justify-content: flex-end; margin-top: 103px; }
-body.f01-privacy-form .privacy-submit { border: 1px solid #008acc; border-radius: 3px; background: #008acc; color: #fff; font: 600 14px/20px F01Privacy, sans-serif; padding: 5px 16px; height: 32px; cursor: pointer; }
-body.f01-privacy-form .privacy-submit:hover { background: #0075ad; }
-body.f01-privacy-form .privacy-result { margin-top: 16px; padding: 12px; color: #2c3643; background: #f3f7fa; border: 1px solid #a8c0d8; font-size: 14px; }
-body.f01-privacy-form .privacy-footer { padding: 70px 20px 20px; color: #2c3643; font: 18px/25.56px F01Privacy, sans-serif; }
-body.f01-privacy-form .privacy-footer .privacy-footer-title { margin-bottom: 25px; }
-body.f01-privacy-form .privacy-footer .privacy-london { margin-top: 51px; }
-body.f01-privacy-form .privacy-powered { display: block; width: 178px; height: 19px; margin: 45px auto 25px; }
-body.f01-privacy-form .privacy-home { display: block; text-align: center; margin: 20px; font-size: 14px; }
-@media (max-width: 540px) {
- body.f01-privacy-form .privacy-content { width: 100%; max-width: calc(100% - 30px); }
- body.f01-privacy-form .privacy-intro { padding: 0 20px; }
- body.f01-privacy-form .privacy-language-wrap { padding-right: 20px; }
-}
+﻿/* The original OneTrust component CSS and fonts are in assets/privacy/onetrust.css.
+   These rules implement its local interactions without changing the base layout. */
+body.f01-privacy-form .privacy-local-result { margin-top: 16px; padding: 12px; border: 1px solid #cad2d9; color: #2c3643; background: #f5f8fa; font: 14px/1.42 'Open Sans', sans-serif; }
+body.f01-privacy-form .privacy-local-result[hidden] { display: none; }
+body.f01-privacy-form .vt-option[aria-selected="true"] { background: #edf4f8; }
+body.f01-privacy-form #countryDSARElement:focus-visible { outline: none; }

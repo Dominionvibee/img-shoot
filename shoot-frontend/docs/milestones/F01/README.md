@@ -1,5 +1,9 @@
 # F01 — IMG Models reference reclone
 
+**Current verification:** [21 November 2026 report](VERIFICATION.md). That report supersedes the historical notes below, particularly the former shared-footer behavior, incomplete route inventory, missing privacy reCAPTCHA and older test counts. The historical notes remain as implementation history, not current acceptance claims.
+
+**Favicon update:** [Original IMG Models favicon](FAVICON.md) now applies to every local route. Source hashes, Chrome/Edge/Firefox checks, mobile-viewport coverage and testing limits are documented there.
+
 ## Get Scouted footer
 
 The `/get-scouted` footer now uses the actual Get Scouted footer markup and original CSS, including its labels, MediaSlide credits, Instagram/Facebook/X links and `COPYRIGHT IMG WORLDWIDE, INC`. Its 12px type, 14.4px line height, 10px link gaps, 75px column gaps and 200px/40px/150px padding match the source. Measurements of every link position at 390, 768 and 1440px matched exactly; evidence is in `qa/scouting-footer-match.json`. The IMG/policy/privacy links use local React routes. The source `/faqunder18` link maps to `/under-18-faq`. The older shared footer sizing notes below now apply to other local pages.

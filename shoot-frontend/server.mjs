@@ -1,16 +1,18 @@
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
-import { extname, resolve, sep } from 'node:path';
+import { extname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { handleReferenceApi } from './src/reference-api.mjs';
 import { handleRouteCache } from './src/route-cache.mjs';
+import { handleVerificationApi } from './src/verification-api.mjs';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const types = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
   '.gif': 'image/gif', '.webp': 'image/webp', '.ico': 'image/x-icon',
   '.mp4': 'video/mp4', '.webm': 'video/webm', '.woff': 'font/woff',
@@ -20,19 +22,32 @@ const types = {
 export function createFrontendServer() {
   return createServer(async (req, res) => {
     try {
+      if (await handleVerificationApi(req, res)) return;
       if (await handleRouteCache(req, res)) return;
       if (await handleReferenceApi(req, res)) return;
       if (!['GET', 'HEAD'].includes(req.method)) {
         res.writeHead(405, { Allow: 'GET, HEAD' }); res.end('Method not allowed'); return;
       }
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+      // Runtime environment files and repository metadata are never public
+      // assets, even when an operator creates .env beside this server.
+      if (pathname.split(/[\\/]/).some(part => part.startsWith('.') && part !== '.well-known')) {
+        res.writeHead(403); res.end('Forbidden'); return;
+      }
       let target = resolve(root, `.${pathname}`);
       if (target !== resolve(root) && !target.startsWith(`${resolve(root)}${sep}`)) {
         res.writeHead(403); res.end('Forbidden'); return;
       }
       let info;
+      // Match Vite's public directory semantics: public assets are available
+      // at the origin root, including on direct navigation to nested routes.
+      const publicTarget = resolve(root, 'public', relative(root, target));
       try {
-        info = await stat(target);
+        const publicInfo = await stat(publicTarget);
+        if (publicInfo.isFile()) { target = publicTarget; info = publicInfo; }
+      } catch { /* Continue with source files and the application router. */ }
+      try {
+        if (!info) info = await stat(target);
         if (info.isDirectory()) { target = resolve(target, 'index.html'); info = await stat(target); }
       } catch {
         // Content routes use the application router. Missing assets must never

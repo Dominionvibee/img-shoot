@@ -93,7 +93,7 @@ function uncapturedWork(id, isFeatured) {
   const card = archiveCards.find(item => String(item.featuredId) === String(id));
   const title = card?.title || 'Gallery unavailable';
   const officialUrl = `https://imgmodels.com/?${isFeatured ? 'featured-work-id' : 'work-id'}=${encodeURIComponent(id)}`;
-  const notice = `<div class="freeText flexiLayout"><div class="freeText__inner"><p>This gallery is outside the captured local snapshot. The live gallery is available on <a href="${esc(officialUrl)}" target="_blank" rel="noreferrer">IMG Models</a>.</p></div></div>`;
+  const notice = `<div class="freeText flexiLayout"><div class="freeText__inner"><p>This gallery is outside the captured local snapshot. Its reference data is currently unavailable. <button type="button" data-local-gallery-retry>Retry loading this gallery</button></p><p>Reference: <a href="${esc(officialUrl)}">IMG Models</a>.</p></div></div>`;
   const talent = card && nameToTalent(card.talent);
   const detail = { id: talent?.id || '', name: card?.talent || '', permalink: talent?.permalink || '' };
   return [{ id, title: `${title} — local snapshot`, featuredWorkType: 'slider', mediaItems: [],
@@ -123,12 +123,16 @@ function singleWork(params) {
 
 // Rewrite available media to the checked-in assets. Keep uncaptured media URLs
 // intact, so missing captures remain visible and can be reported honestly.
-async function localize(value) {
+export async function localizeReferenceData(value) {
   const assets = await readJson('asset-map.json').catch(() => ({}));
   const replacements = Object.entries(assets).sort(([a], [b]) => b.length - a.length);
   const localHref = href => {
     if (!href.startsWith('https://imgmodels.com/')) return href;
-    const url = new URL(href); return `${url.pathname}${url.search}${url.hash}`;
+    const url = new URL(href);
+    // Uncached uploads must keep their working source URL. Turning media into
+    // an app route makes the local server return 404 for gallery photographs.
+    if (/^\/(?:wp-content|wp-includes)\//.test(url.pathname)) return href;
+    return `${url.pathname}${url.search}${url.hash}`;
   };
   function visit(item) {
     if (typeof item === 'string') {
@@ -147,6 +151,16 @@ async function localize(value) {
   return visit(value);
 }
 
+export function normalizeGallery(items) {
+  return items.map(item=>{
+    const details=Array.isArray(item.talentDetails)?item.talentDetails:[item.talentDetails];
+    const ids=details.map(detail=>detail?.id).filter(Boolean);
+    return {...item,mediaItems:(item.mediaItems||[]).map(media=>({
+      ...media,talent_ids:Array.isArray(media.talent_ids)?media.talent_ids:ids,
+    }))};
+  });
+}
+
 /** Resolves only captured, read-only public API contracts. */
 export async function referenceApi(input) {
   const url = input instanceof URL ? input : new URL(input, 'http://localhost');
@@ -161,7 +175,7 @@ export async function referenceApi(input) {
       const featured=url.searchParams.get('featured-work-id'), work=url.searchParams.get('work-id');
       const id=featured||work;
       const captured=/^\d+$/.test(id||'') ? await readJson(`reference-api/${featured?'featured-work':'work'}-${id}.json`).catch(()=>null) : null;
-      body=captured||singleWork(url.searchParams);break;
+      body=normalizeGallery(captured||singleWork(url.searchParams));break;
     }
     case 'get_search_dropdown_items': {
       body = { talent: filterDirectory(url.searchParams, true).slice(0, 10), work: filterWork(url.searchParams).sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10).map(({ id, title }) => ({ id, title })) };
@@ -169,7 +183,7 @@ export async function referenceApi(input) {
     }
     default: return { status: 404, body: { code: 'local_snapshot_endpoint_unavailable', message: 'This endpoint is not part of the captured local snapshot.' } };
   }
-  return { status: 200, body: await localize(body) };
+  return { status: 200, body: await localizeReferenceData(body) };
 }
 
 export async function handleReferenceApi(req, res) {
